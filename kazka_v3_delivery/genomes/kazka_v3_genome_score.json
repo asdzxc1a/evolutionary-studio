@@ -1,0 +1,18 @@
+{
+  "file": "genomes/kazka_v3_genome.yaml",
+  "timestamp": "2026-05-31T19:07:57.571769",
+  "overall_score": 0.586,
+  "killed": false,
+  "kill_reasons": [],
+  "dimensions": {
+    "surprise_factor": 0.4,
+    "emotional_danger": 0.75,
+    "specificity": 0.52,
+    "thematic_depth": 0.44,
+    "character_edge": 0.74,
+    "originality": 0.8,
+    "dna_fidelity": 0.6000000000000001,
+    "cultural_authenticity": 0.42000000000000004
+  },
+  "pass": false
+}

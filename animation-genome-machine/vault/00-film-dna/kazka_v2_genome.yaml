@@ -1,0 +1,1660 @@
+# =============================================================================
+# Film Genome Document: KAZKA v2 (Казка) — Transmuted from Zootopia DNA
+# =============================================================================
+# TRANSMUTATION LOG:
+#   Source DNA:       Zootopia (2016)
+#   Genome Version:   2.0 (rebuilt from scratch after v1 KILL)
+#   v1 Kill Reasons:
+#     - External villain (The Archivist / corporate force) → FIXED: no villain
+#     - Bumper sticker theme ("stories matter!") → FIXED: irreconcilable paradox
+#     - Tourist settings ("Paris", "Alps") → FIXED: specific rooms, times, smells
+#     - Fairy tales as cute helpers → FIXED: involuntary, pre-moral, destructive
+#
+#   DNA PRESERVED:    Beat timing (timestamp_pct), emotional arc shape (cinderella),
+#                     causal chain logic (because_of_that / until_finally),
+#                     Save the Cat structure, character relationship dynamics
+#   DNA MUTATED:      Everything else
+#
+#   GENRE COLLISION:  Surface = coming-of-age road movie
+#                     Hidden  = psychological horror
+#                     "Looks like Pixar, feels like Pan's Labyrinth"
+#
+#   ONE-SENTENCE PITCH:
+#     "A displaced Ukrainian girl's fairy tales escape her grandmother's book
+#      as dangerous forces that feed on her trauma — and every time one appears,
+#      she loses a real memory."
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# STRAND 1: METADATA
+# ---------------------------------------------------------------------------
+metadata:
+  title: "Kazka (Казка) v2"
+  reference_film: "Zootopia (2016, Walt Disney Animation Studios)"
+  genome_version: "2.0"
+  author: "Animation Genome Machine — Generation Engine"
+  created: "2026-05-31"
+  target_duration_minutes: 94
+  target_format: feature
+  genre_collision:
+    surface: "Coming-of-age road movie"
+    hidden: "Psychological horror"
+    tone_reference: "Looks like a Pixar adventure, feels like Pan's Labyrinth"
+  pitch: >
+    A displaced Ukrainian girl's fairy tales escape her grandmother's book
+    as dangerous forces that feed on her trauma — and every time one appears,
+    she loses a real memory of the grandmother who gave them to her.
+
+# ---------------------------------------------------------------------------
+# STRAND 2: NARRATIVE DNA
+# ---------------------------------------------------------------------------
+# PRESERVED from Zootopia:
+#   - Structure: Save the Cat (12 beats)
+#   - Emotional arc: cinderella (rise-fall-rise)
+#   - Beat timestamp_pct values (exact match within ±0.02)
+#   - Causal chain dominance: because_of_that
+#
+# MUTATED:
+#   - NO external villain. Conflict = Olenka vs her own trauma.
+#   - Fairy tales = involuntary panic attacks, not allies.
+#   - Theme = paradox (remember to heal vs. remembering reopens wound).
+#   - Settings = specific rooms with sensory detail, not countries.
+# ---------------------------------------------------------------------------
+narrative_dna:
+  structure: save_the_cat
+  emotional_arc_shape: cinderella  # PRESERVED: rise → fall → rise
+
+  beats:
+    # ------------------------------------------------------------------
+    # BEAT 1: Opening Image
+    # Zootopia: Young Judy performs school play (0.00, valence 0.4)
+    # Kazka v2: Grandmother reads fairy tale. The room is safe. The
+    #           book is just a book. This is the last normal moment.
+    # ------------------------------------------------------------------
+    - id: beat_01
+      name: "Opening Image — The Last Story"
+      type: setup
+      timestamp_pct: 0.00        # PRESERVED
+      emotional_valence: 0.4     # PRESERVED
+      emotional_arousal: 0.3     # PRESERVED
+      description: >
+        A kitchen in Kherson Oblast, Ukraine. Winter. The radiator clicks.
+        Grandmother HALYNA reads from a leather-bound book of fairy tales.
+        Twelve-year-old OLENKA sits at the table, drawing, half-listening.
+        On the page: an illustration of Lys the Fox, grinning. Halyna's
+        voice is low — not performing, just telling. The way she always does.
+
+        Olenka's pencil stops. She looks up. Halyna is crying, silently,
+        while she reads. Olenka doesn't ask why. She doesn't want to know.
+
+        Outside: the sound of something distant, concussive, muffled by snow.
+        Neither of them acknowledges it.
+
+        The book is just a book. For now.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 2: Theme Stated
+    # Zootopia: "Anyone can be anything" — theme as aspiration (0.03)
+    # Kazka v2: Theme as PARADOX — two valid positions, irreconcilable.
+    # ------------------------------------------------------------------
+    - id: beat_02
+      name: "Theme Stated — The Paradox"
+      type: setup
+      timestamp_pct: 0.03        # PRESERVED
+      emotional_valence: 0.2     # PRESERVED
+      emotional_arousal: 0.4     # PRESERVED
+      description: >
+        Halyna closes the book. She holds Olenka's face in both hands.
+
+        HALYNA: "Remember everything, Olenka. Every story. Every word.
+        If you forget, we disappear."
+
+        Later that night, Olenka overhears her mother on the phone with
+        a cousin in France:
+
+        MOTHER: "They said she needs to adapt. New school, new language,
+        new life. The therapist said — she needs to let go of the old
+        things. It's the only way she'll be okay."
+
+        THEMATIC PARADOX STATED:
+        Side A (Halyna): Remember everything. Carry it forward. Resist erasure.
+        Side B (Mother/therapist): Forget and move forward. Assimilate. Let go.
+        The film will argue BOTH sides honestly. Neither is fully right.
+      duration_pct: 0.02
+
+    # ------------------------------------------------------------------
+    # BEAT 3: Set-Up
+    # Zootopia: Judy graduates, arrives in Zootopia (0.05)
+    # Kazka v2: Olenka arrives in Calais. First displacement shock.
+    # ------------------------------------------------------------------
+    - id: beat_03
+      name: "Set-Up — Calais"
+      type: setup
+      timestamp_pct: 0.05        # PRESERVED
+      emotional_valence: 0.6     # PRESERVED
+      emotional_arousal: 0.3     # PRESERVED
+      description: >
+        LOCATION: Basement of a refugee processing center, Calais, France.
+        2:14 AM, February. Fluorescent lights that buzz at a frequency that
+        makes your teeth itch. Bleach on concrete. Instant coffee in styrofoam.
+        Children sleeping on green military cots. A poster on the wall reads
+        "BIENVENUE" in cheerful font — the B is peeling off.
+
+        Olenka sits on a cot, clutching grandmother's book. Her mother is
+        at a desk being processed. A French aid worker smiles too brightly
+        and offers Olenka a juice box. Olenka takes it. Doesn't drink it.
+
+        She opens the book under her blanket, using her phone as a flashlight.
+        The illustrations look different here. The Iron Wolf's eyes seem
+        to track her. She closes the book fast.
+
+        First night in a country that is not hers.
+      duration_pct: 0.07
+
+    # ------------------------------------------------------------------
+    # BEAT 4: Catalyst
+    # Zootopia: Assigned to parking duty (0.12)
+    # Kazka v2: First involuntary manifestation. The fairy tales are
+    #           not helpers. They are symptoms.
+    # ------------------------------------------------------------------
+    - id: beat_04
+      name: "Catalyst — The First Manifestation"
+      type: catalyst
+      timestamp_pct: 0.12        # PRESERVED
+      emotional_valence: 0.3     # PRESERVED
+      emotional_arousal: 0.5     # PRESERVED
+      description: >
+        LOCATION: Same processing center, a shared bathroom. Morning.
+        Olenka brushes her teeth. A French girl her age pushes past her
+        to get to the mirror. The girl says something in French — not mean,
+        just dismissive. "Bouge-toi."
+
+        Olenka's jaw clenches. She doesn't have words for what she feels.
+        It's not anger at the girl. It's anger at BEING HERE. At the
+        fluorescent lights. At the juice box. At everything.
+
+        In the mirror: behind Olenka's reflection, for one frame, the
+        Iron Wolf's silhouette. Massive. Black iron. Eyes like furnace coals.
+
+        Olenka blinks. Gone.
+
+        But in the hallway, a radiator pipe has BURST. Scalding water sprays
+        across the corridor. Children scream. Aid workers rush. Nobody
+        connects it to Olenka.
+
+        OLENKA connects it to Olenka.
+
+        She looks at the book in her bag. The page with the Iron Wolf
+        illustration is BLANK. He's not in the book anymore.
+
+        And she can't remember — did Halyna read her that story last
+        Tuesday, or last Wednesday? The memory is smudged. Not gone.
+        Just... less precise.
+
+        MUTATION NOTE: This is NOT the Pagemaster. The fairy tales are
+        involuntary expressions of trauma. Olenka didn't summon the Wolf.
+        Her displacement rage did. And it COST her a real memory.
+      duration_pct: 0.03
+
+    # ------------------------------------------------------------------
+    # BEAT 5: Debate
+    # Zootopia: Takes the missing mammals case, 48-hour deadline (0.15)
+    # Kazka v2: Olenka debates whether the manifestations are real.
+    #           Her mother's solution: a therapist. Side B begins to push.
+    # ------------------------------------------------------------------
+    - id: beat_05
+      name: "Debate — Real or Not Real"
+      type: debate
+      timestamp_pct: 0.15        # PRESERVED
+      emotional_valence: 0.4     # PRESERVED
+      emotional_arousal: 0.6     # PRESERVED
+      description: >
+        LOCATION: A psychiatric facility for displaced children near Zurich,
+        Switzerland. White walls. Antiseptic smell that tries to be lavender
+        but isn't. The therapist, DR. KATRIN BERGER, has a clicking pen she
+        doesn't know she clicks. Her voice is calm in the way that makes you
+        want to throw things.
+
+        Olenka has been sent here after "behavioral incidents" in Calais.
+        Her mother agreed. It's voluntary. It doesn't feel voluntary.
+
+        DR. BERGER: "You're carrying a lot, Olenka. The book, the stories —
+        they're beautiful. But they're also keeping you anchored to a place
+        you can't go back to. Sometimes, to move forward, we have to —"
+
+        OLENKA: "Forget?"
+
+        DR. BERGER: (clicking pen) "Release."
+
+        Olenka knows Berger is partly right. She hates that Berger is
+        partly right.
+
+        That night, alone in her assigned room (single bed, too-tight
+        hospital corners, a window that only opens four inches), Olenka
+        tries NOT to feel anything. She stares at the ceiling. She breathes.
+
+        But grief is not a faucet.
+
+        MAVKA manifests. Not visible — audible. A voice like water over
+        stones, singing a Ukrainian lullaby Halyna used to sing. The song
+        fills the hallway. Three other displaced children wander from their
+        rooms toward the sound, eyes glassy, smiling — trapped in their
+        own best memories.
+
+        A nurse finds them standing in the corridor at 3 AM, completely
+        unresponsive.
+
+        It takes forty minutes to bring them back.
+
+        Olenka checks the book. The page with Mavka's illustration is
+        fading. And she can't remember — what did Halyna's kitchen
+        smell like? She KNOWS it smelled like something. She just...
+        can't access it.
+
+        THE DEBATE: Are the fairy tales protecting her or destroying her?
+        Is remembering healing or harm? Dr. Berger says release them.
+        Halyna said never forget. Both are speaking with love.
+        Both might be wrong.
+      duration_pct: 0.10
+
+    # ------------------------------------------------------------------
+    # BEAT 6: Break Into Two
+    # Zootopia: Teams with Nick Wilde (0.25)
+    # Kazka v2: Olenka leaves the facility. Lys manifests — not as
+    #           an ally, but as a LIAR. He is the trickster, and
+    #           tricksters serve themselves.
+    # ------------------------------------------------------------------
+    - id: beat_06
+      name: "Break Into Two — The Fox Arrives"
+      type: break_into_2
+      timestamp_pct: 0.25        # PRESERVED
+      emotional_valence: 0.5     # PRESERVED
+      emotional_arousal: 0.7     # PRESERVED
+      description: >
+        Olenka's mother has found a placement in Berlin. Olenka leaves
+        the Zurich facility — not discharged, just transferred. Dr. Berger
+        says: "We'll continue by video." Olenka nods. She won't call.
+
+        On the train from Zurich to Berlin, Olenka sits alone with
+        the book. She opens it. Half the illustrations are gone now.
+        The pages where they were are blank, slightly warm to the touch.
+
+        Then: a voice beside her.
+
+        LYS: "You're doing this all wrong, you know."
+
+        He's sitting in the next seat. A fox the size of a large dog,
+        wearing a look of absolute contempt. Not translucent. Not
+        glowing. Just... there. Like he belongs on a Deutsche Bahn
+        regional train.
+
+        OLENKA: "Are you going to break something too?"
+
+        LYS: "I'm the Fox. I don't break things. I make people
+        believe things that aren't true. Much more elegant."
+
+        He tells her: the manifestations will keep happening. Every
+        strong emotion is a doorway. Every time a fairy tale comes out,
+        it eats a real memory. Eventually she'll have the fairy tales
+        but nothing else — no grandmother, no kitchen, no Ukraine.
+        Just stories with no one to tell them to.
+
+        OLENKA: "How do I stop them?"
+
+        LYS: "You don't. But you might learn to choose which ones come
+        out and when. Maybe. If you're not as stupid as you look."
+
+        LYS IS NOT AN ALLY. He's the trickster archetype — he helps
+        when it amuses him, sabotages when it's funnier. He cannot
+        be trusted. He also cannot be dismissed. He is the only one
+        who understands what's happening to her.
+
+        MUTATION NOTE: Maps to Judy + Nick reluctant partnership.
+        Same dynamic: protagonist needs the trickster but can't trust him.
+        Difference: Nick has a hidden heart of gold. Lys might not.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 7: Fun and Games (Promise of the Premise)
+    # Zootopia: Investigation across Zootopia districts (0.35)
+    # Kazka v2: Berlin. Olenka tries to live a normal life. The fairy
+    #           tales won't let her. Each manifestation costs more.
+    # ------------------------------------------------------------------
+    - id: beat_07
+      name: "Fun and Games — The Berlin Months"
+      type: fun_and_games
+      timestamp_pct: 0.35        # PRESERVED
+      emotional_valence: 0.7     # PRESERVED
+      emotional_arousal: 0.6     # PRESERVED
+      description: >
+        LOCATION: An empty apartment in Berlin-Neukölln, assigned by social
+        services. Third floor, building with a cage elevator that smells like
+        old cigarettes. New paint smell. IKEA KALLAX shelves still in the box.
+        Someone else's curtains — yellow, with daisies. Turkish music through
+        the walls. The neighbor's baby cries at 4 AM.
+
+        Olenka starts school. She learns German badly and fast. She makes
+        a sort-of-friend: ELIF, a Turkish-German girl who also knows what
+        it's like to be from two places at once. Elif doesn't ask where
+        Olenka is "from from."
+
+        But the fairy tales keep coming:
+
+        — Olenka laughs at Elif's joke (her first real laugh in months) →
+          the Firebird flickers to life in the school courtyard, beautiful,
+          golden — and sets a recycling bin on fire. Students scream.
+          Nobody sees the bird. Everyone sees the fire.
+
+        — Olenka lies to her mother ("I'm fine, Mama") → Lys appears in
+          the apartment and makes EVERYONE in the building lie for a day.
+          The neighbor tells his wife he doesn't love her. The landlord tells
+          the city inspector the wiring is dangerous. Chaos. Consequences.
+
+        — Olenka gets a good grade on a German test and feels guilty for
+          being happy in a language that isn't hers → the Rusalka manifests
+          in the apartment's bathtub and floods the bathroom below.
+
+        Each time: a page goes blank. A memory fades.
+
+        She can't remember Halyna's hands anymore. She knows they were
+        wrinkled. She knows they were warm. But she can't SEE them.
+
+        Lys watches all of this with the fascination of a cat watching
+        a fish tank.
+
+        LYS: "You're losing a memory for every feeling you have.
+        Eventually you'll be very calm and very empty."
+
+        OLENKA: "Help me."
+
+        LYS: "I just told you I'm a liar. Why would you trust my help?"
+
+        The "fun" in Fun and Games is deeply ironic. This is the premise
+        delivered: fairy tales as panic attacks. Beautiful and catastrophic.
+      duration_pct: 0.15
+
+    # ------------------------------------------------------------------
+    # BEAT 8: Midpoint
+    # Zootopia: Find missing mammals — all predators gone savage (0.50)
+    # Kazka v2: Olenka discovers the COST is accelerating. False victory
+    #           inverted — she thinks she's learning control.
+    #           She's actually feeding them.
+    # ------------------------------------------------------------------
+    - id: beat_08
+      name: "Midpoint — False Control"
+      type: midpoint
+      timestamp_pct: 0.50        # PRESERVED
+      emotional_valence: 0.5     # PRESERVED
+      emotional_arousal: 0.8     # PRESERVED
+      description: >
+        LOCATION: Still Berlin-Neukölln. Olenka's apartment, 11 PM.
+        She's been practicing. Lys has — reluctantly, mockingly — shown
+        her that if she reads the story WHILE feeling the emotion, she
+        can channel the manifestation. Direct it. Almost control it.
+
+        She tries it. She's angry about a letter from social services
+        (her case is being "reviewed"). She opens the book to the Iron
+        Wolf. She reads his story aloud. He manifests — enormous, black
+        iron, furnace eyes — but this time he doesn't break the apartment.
+        He stands in the living room, breathing rust, and waits.
+
+        FALSE VICTORY. Olenka thinks she's found the answer.
+
+        LYS: (slow clap) "Magnificent. You've learned to aim the gun.
+        Now check the magazine."
+
+        Olenka looks at the book. FIVE more pages have gone blank.
+        Not one. Five. Controlled manifestation costs MORE.
+
+        And she can't remember her mother's maiden name. She can't
+        remember the name of the street she lived on in Kherson.
+        She can't remember if Halyna had brown eyes or green.
+
+        MIDPOINT REVERSAL: Control isn't the answer. Every interaction
+        with the fairy tales — willing or unwilling — consumes her.
+        She's not learning to manage them. She's accelerating toward
+        a cliff: the point where she has the fairy tales but no real
+        memories at all.
+
+        MAPS TO Zootopia midpoint: false victory that reveals a deeper
+        problem. Judy finds the mammals → they're all savage. Olenka
+        finds control → it costs more than chaos did.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 9: Bad Guys Close In
+    # Zootopia: Press conference — Judy's bias exposed (0.55)
+    # Kazka v2: Olenka hurts someone innocent. She becomes the villain
+    #           of someone else's story.
+    # ------------------------------------------------------------------
+    - id: beat_09
+      name: "Bad Guys Close In — Olenka Becomes the Villain"
+      type: bad_guys_close_in
+      timestamp_pct: 0.55        # PRESERVED
+      emotional_valence: -0.3    # PRESERVED
+      emotional_arousal: 0.6     # PRESERVED
+      description: >
+        LOCATION: The apartment. Evening. Olenka's mother has been
+        fostered by a German family — the NEUMANNS — as part of a
+        resettlement support program. The Neumanns have a biological
+        daughter, ANNA (10), who tries painfully hard to be nice.
+
+        Anna shows Olenka her room. "You can borrow any of my books!"
+        Anna has a stuffed rabbit she's too old for but can't let go of.
+        Anna's "problem" this week: her best friend didn't invite her
+        to a birthday party.
+
+        Anna tells Olenka about it, eyes wet, wanting connection.
+
+        OLENKA: (flat, cold) "That's your problem? Someone didn't invite
+        you to a party? You've never had a real problem in your life."
+
+        Anna's face crumbles. She takes her stuffed rabbit and leaves.
+        She doesn't cry in front of Olenka. She cries in the bathroom.
+        Through the door.
+
+        Olenka hears it. She knows she should apologize. She knows
+        Anna is ten years old and her pain is REAL to her. She knows
+        she was cruel.
+
+        She can't bring herself to knock on that door.
+
+        LYS: (from the windowsill, quiet for once) "That was ugly."
+
+        OLENKA: "Shut up."
+
+        LYS: "You just did what everyone has done to you. Told someone
+        their pain doesn't count."
+
+        Olenka says nothing. The Iron Wolf manifests anyway — unbidden,
+        feeding on her shame. He doesn't break the apartment this time.
+        He breaks the framed family photo on the Neumanns' wall. Glass
+        everywhere. Anna screams.
+
+        Olenka loses another memory: she can no longer remember the
+        fairy tale of the Iron Wolf itself. The story is gone. Only
+        the creature remains — story-less, purposeless, just force.
+
+        MAPS TO Zootopia's press conference: protagonist's unconscious
+        bias harms the person closest to them. Judy's words hurt Nick.
+        Olenka's words hurt Anna. Both reveal the protagonist IS the
+        problem, not external forces.
+      duration_pct: 0.10
+
+    # ------------------------------------------------------------------
+    # BEAT 10: All Is Lost
+    # Zootopia: Judy resigns, goes home (0.70)
+    # Kazka v2: Olenka can't remember Halyna's face.
+    # ------------------------------------------------------------------
+    - id: beat_10
+      name: "All Is Lost — The Face Goes"
+      type: all_is_lost
+      timestamp_pct: 0.70        # PRESERVED
+      emotional_valence: -0.8    # PRESERVED
+      emotional_arousal: 0.5     # PRESERVED
+      description: >
+        LOCATION: A school hallway in a London comprehensive school.
+        Olenka has been moved again — the Neumann placement "didn't
+        work out." Now she's in the UK system. Different country,
+        different language (her fourth), different linoleum.
+
+        She sits on the floor between lockers during the bell between
+        classes. Students flow around her like water around a stone.
+        Nobody stops.
+
+        She opens the book. Three pages left with illustrations.
+        Everything else is blank. Warm blank. The stories are out
+        there somewhere — manifesting in places she's been, feeding
+        on emotions she left behind.
+
+        She tries to picture Halyna.
+
+        She can't.
+
+        She knows Halyna exists. She knows the word "Babusya."
+        She knows there was a kitchen, and a tree, and a book.
+        But the FACE — the specific arrangement of lines and light
+        that was her grandmother — is gone. Eaten by the Firebird,
+        or the Wolf, or Mavka. She doesn't know which one took it.
+
+        She closes the book.
+
+        OLENKA: (to Lys, who sits on a locker, barely visible)
+        "If I let them all out, I'll have every fairy tale in the world
+        and no reason to tell any of them."
+
+        Lys says nothing. He's fading too. His story is one of the three
+        remaining pages. If he manifests fully, his page goes blank,
+        and Olenka loses the memory of what a fox even means to her.
+
+        The hallway empties. The bell stops. Silence. Linoleum.
+
+        MAPS TO Judy resigning: the protagonist has lost everything
+        that gave the quest meaning. Both sit alone in a diminished
+        space, having become what they fought against.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 11: Dark Night of the Soul
+    # Zootopia: Judy discovers night howlers are flowers (0.75)
+    # Kazka v2: The paradox resolves — not into an answer, but into
+    #           acceptance that both sides are true.
+    # ------------------------------------------------------------------
+    - id: beat_11
+      name: "Dark Night of the Soul — Both Are True"
+      type: dark_night
+      timestamp_pct: 0.75        # PRESERVED
+      emotional_valence: -0.4    # PRESERVED
+      emotional_arousal: 0.3     # PRESERVED
+      description: >
+        LOCATION: The school's empty art room after hours. Olenka has
+        stayed behind. Rain on skylights. She sits with the book open
+        to the last three illustrated pages: Lys, Mavka, the Firebird.
+
+        She calls Dr. Berger. For the first time, she actually talks.
+
+        OLENKA: "You said I should let go. My grandmother said I should
+        remember everything. You were both wrong."
+
+        DR. BERGER: "Then what's right?"
+
+        OLENKA: "Nothing. Both of you are right and both of you are
+        wrong and there ISN'T an answer. The remembering hurts.
+        The forgetting kills. I'm stuck between them forever."
+
+        DR. BERGER: (long pause) "Yes."
+
+        OLENKA: "That's it? That's all you have?"
+
+        DR. BERGER: "Olenka... that IS the answer. You don't solve it.
+        You carry it."
+
+        Silence. Rain.
+
+        Olenka looks at the book. She looks at Lys, who is watching her
+        with an expression she's never seen on his face before — not
+        contempt, not amusement. Something like recognition.
+
+        LYS: (very quietly) "The old woman knew. The stories were never
+        supposed to stay in the book. And they were never supposed to
+        come out like this. They were supposed to be TOLD. By you. To
+        someone. Not held. Not released. Told."
+
+        OLENKA: "But telling costs memories too."
+
+        LYS: "Everything costs something. The question is what you
+        get in return."
+
+        INSIGHT: The fairy tales don't have to be KEPT (hoarded, like
+        Halyna feared) or RELEASED (expelled, like the trauma responses).
+        They have to be GIVEN — told to someone else, which transforms
+        them from involuntary force into voluntary gift. This doesn't
+        stop the memory cost. But it makes the cost WORTH something.
+
+        MAPS TO Judy's night howler realization: the problem was
+        reframed. Not biology, chemistry. Not keep vs. release,
+        but hoard vs. give.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 12: Break Into Three
+    # Zootopia: Judy apologizes to Nick (0.80)
+    # Kazka v2: Olenka goes back to apologize to Anna. Then tells
+    #           Anna a fairy tale — the first voluntary telling.
+    # ------------------------------------------------------------------
+    - id: beat_12a
+      name: "Break Into Three — The Apology"
+      type: break_into_3
+      timestamp_pct: 0.80        # PRESERVED
+      emotional_valence: 0.2     # PRESERVED
+      emotional_arousal: 0.5     # PRESERVED
+      description: >
+        Olenka takes a bus back to Berlin. She stands outside the
+        Neumanns' apartment door for eleven minutes before she knocks.
+
+        Anna opens the door. She's holding the stuffed rabbit.
+
+        OLENKA: "You were right to be sad about the party. I was
+        wrong to say it wasn't real. It was real to you. That's
+        what matters."
+
+        Anna doesn't say "it's okay." She says: "My mom said you
+        had bad things happen. But bad things happening to you
+        doesn't mean you get to be mean to me."
+
+        OLENKA: "I know. I'm sorry."
+
+        Beat.
+
+        ANNA: "Do you want to come in?"
+
+        Olenka sits on Anna's bed. She opens the book. Three
+        illustrated pages.
+
+        OLENKA: "Can I tell you a story? A real one, from my
+        grandmother?"
+
+        Anna nods.
+
+        Olenka tells the story of Lys — not reading it, TELLING it,
+        in halting German with Ukrainian words mixed in where her
+        German fails. It's imperfect. It's hers.
+
+        As she tells it, Lys manifests — but differently. Not
+        involuntary. Not destructive. He appears behind Olenka,
+        visible only to us (the audience) and to Anna (whose eyes
+        go wide). He's solid. Fully colored. Not flickering.
+
+        And the book: his page doesn't go blank. Instead, new lines
+        appear — Anna's version of the fox, drawn in a child's hand,
+        layered over Halyna's original illustration.
+
+        The memory cost still happens. Olenka loses one more memory of
+        Halyna — the specific sound of her laugh. But in its place,
+        something new: the memory of ANNA's face, listening. The
+        memories aren't replaced. They're continued.
+
+        MAPS TO Judy's apology: same function. Protagonist names
+        their flaw, earns forgiveness through action not words.
+        Key difference: Anna doesn't fully forgive — she lets
+        Olenka TRY. Forgiveness is a process, not a scene.
+      duration_pct: 0.05
+
+    # ------------------------------------------------------------------
+    # BEAT 13: Finale
+    # Zootopia: Museum confrontation, Bellwether exposed (0.85)
+    # Kazka v2: No villain to confront. The finale is Olenka CHOOSING
+    #           to tell the remaining stories, knowing the cost, to
+    #           people who need them. The battle is internal.
+    # ------------------------------------------------------------------
+    - id: beat_13
+      name: "Finale — The Voluntary Telling"
+      type: finale
+      timestamp_pct: 0.85        # PRESERVED
+      emotional_valence: 0.7     # PRESERVED
+      emotional_arousal: 1.0     # PRESERVED
+      description: >
+        LOCATION: A community center in Berlin-Neukölln. Elif helped
+        Olenka organize it. A "story night" — anyone can come, anyone
+        can tell. The room is ugly: folding chairs, a microphone that
+        feeds back, coffee from a machine. Twenty people show up.
+        Displaced kids. Local kids. Parents. A few curious adults.
+
+        Olenka steps to the microphone. She has the book. Two
+        illustrated pages left: Mavka and the Firebird.
+
+        She knows what will happen. She will tell the stories. The
+        fairy tales will manifest — but as GIFTS, not attacks, because
+        she's choosing this. And she will lose two more memories of
+        Halyna. Maybe the last ones she has.
+
+        She tells Mavka's story first. The water spirit, beautiful
+        and drowning. As she speaks, the room fills with the sound
+        of water — everyone hears it. A boy in the audience (Syrian,
+        twelve, hasn't spoken in weeks) closes his eyes and starts
+        to cry, silently, because the story sounds like one his own
+        grandmother told him.
+
+        Mavka appears — not visible, but FELT. The room is briefly
+        underwater, a warmth, a pressure. Then it passes.
+
+        The boy opens his eyes. He whispers to the girl next to him:
+        "We have a story like that. About a river."
+
+        Olenka tells the Firebird's story last. The bird that burns
+        and is reborn. As she speaks, the room warms. The fluorescent
+        lights flicker and, for just a moment, everything is golden.
+        Not magic. Not CGI. Just the warmth of someone telling a
+        story that matters to them, in a room full of people who
+        are listening.
+
+        The Firebird manifests — a flash of wings at the edge of
+        vision, a heat on every face, gone in a breath.
+
+        The book: all pages blank now. Every illustration gone.
+
+        Olenka's memory: she can no longer picture Halyna's face, or
+        hear her voice, or smell her kitchen. But she remembers THIS:
+        that Halyna told her stories. That the stories mattered. That
+        she was loved. The feeling remains when the details are gone.
+
+        And the room is full of people telling their own stories now.
+        Turkish stories, Syrian stories, German stories, Ukrainian
+        stories. Not because Olenka's stories were better. Because
+        hearing one real story told with love makes you remember
+        your own.
+
+        NO VILLAIN DEFEATED. No machine destroyed. No corporation
+        exposed. Just a girl in a community center, giving away the
+        last thing she has, because giving it is the only way to
+        keep it.
+      duration_pct: 0.10
+
+    # ------------------------------------------------------------------
+    # BEAT 14: Final Image
+    # Zootopia: Nick becomes a cop, Gazelle concert (0.95)
+    # Kazka v2: Mirror of opening — but changed.
+    # ------------------------------------------------------------------
+    - id: beat_14
+      name: "Final Image — The Reflection"
+      type: final_image
+      timestamp_pct: 0.95        # PRESERVED
+      emotional_valence: 0.9     # PRESERVED (but bittersweet, not triumphant)
+      emotional_arousal: 0.6     # PRESERVED
+      description: >
+        LOCATION: Somewhere in the United States. Months later. Olenka
+        and her mother have been resettled. A city — it doesn't matter
+        which one. Ordinary.
+
+        Olenka walks past a window. She stops.
+
+        In the reflection, she sees herself — but not alone. Behind
+        her reflection, barely there, like a watermark on glass: Lys.
+        Sitting. Watching. One eye open. Not gone. Not here. Just...
+        carried.
+
+        Olenka touches the glass. She's holding the book — blank now,
+        all pages white. But the leather is warm. And in the corner
+        of the last page, in handwriting that might be Halyna's or
+        might be Olenka's own, four words in Ukrainian:
+
+        "Розкажи комусь. Пам'ятай."
+        (Tell someone. Remember.)
+
+        She closes the book. She walks on.
+
+        She is not healed. She is not whole. She is not done grieving.
+        But she is carrying it forward — the paradox unresolved, the
+        wound still open, the stories still alive because she gave
+        them away.
+
+        FINAL NOTE: This is not a happy ending. It's a CONTINUING
+        ending. The paradox — remember to heal vs. remembering
+        reopens the wound — is not solved. It's accepted. She'll
+        carry both truths forever. That's the cost of surviving
+        displacement with your identity intact.
+
+        MAPS TO Zootopia's final image: both show a changed world.
+        But Zootopia's ending is triumphant (everyone dancing).
+        Kazka's ending is something rarer: earned ambiguity.
+      duration_pct: 0.05
+
+  # ------------------------------------------------------------------
+  # CAUSAL CHAIN
+  # PRESERVED structure: because_of_that dominant, until_finally at midpoint
+  # ------------------------------------------------------------------
+  causal_chain:
+    - cause: beat_01
+      effect: beat_02
+      relationship: because_of_that  # Halyna's story → paradox stated
+
+    - cause: beat_02
+      effect: beat_03
+      relationship: because_of_that  # Paradox → displacement begins
+
+    - cause: beat_03
+      effect: beat_04
+      relationship: because_of_that  # Displacement → first manifestation
+
+    - cause: beat_04
+      effect: beat_05
+      relationship: because_of_that  # Manifestation → therapy/debate
+
+    - cause: beat_05
+      effect: beat_06
+      relationship: because_of_that  # Debate unresolved → Lys arrives
+
+    - cause: beat_06
+      effect: beat_07
+      relationship: because_of_that  # Lys's "guidance" → Berlin months
+
+    - cause: beat_07
+      effect: beat_08
+      relationship: until_finally    # Escalating manifestations → false control
+
+    - cause: beat_08
+      effect: beat_09
+      relationship: because_of_that  # False control → Olenka hurts Anna
+
+    - cause: beat_09
+      effect: beat_10
+      relationship: because_of_that  # Guilt + shame → memories accelerate loss
+
+    - cause: beat_10
+      effect: beat_11
+      relationship: because_of_that  # Losing Halyna's face → dark night insight
+
+    - cause: beat_11
+      effect: beat_12a
+      relationship: because_of_that  # "You carry it" → apology + first telling
+
+    - cause: beat_12a
+      effect: beat_13
+      relationship: because_of_that  # Anna's response → the voluntary telling
+
+  # ------------------------------------------------------------------
+  # THEMES
+  # NOT bumper stickers. Each is a genuine paradox with two valid sides.
+  # ------------------------------------------------------------------
+  themes:
+    - paradox: "To heal, you must remember. But remembering is what keeps the wound open."
+      side_a: "Forget and move forward. Assimilate. Let go of what you can't return to."
+      side_b: "Remember everything. Carry it forward. Resist erasure."
+      resolution: "Neither. Both. You carry the contradiction. That's the cost."
+
+    - paradox: "Fairy tales are the most dangerous form of love."
+      side_a: "The stories are trauma responses — they manifest as destruction."
+      side_b: "The stories are identity — without them, she's no one from nowhere."
+      resolution: "They must be GIVEN, not kept or expelled. Giving has a cost too."
+
+    - paradox: "Displacement turns the displaced into the thing that displaced them."
+      side_a: "Olenka's pain is real and explains her cruelty."
+      side_b: "Anna's pain is real regardless of Olenka's. Pain isn't a competition."
+      resolution: "Understanding why you hurt someone doesn't undo the hurt."
+
+# ---------------------------------------------------------------------------
+# STRAND 3: CHARACTER DNA
+# ---------------------------------------------------------------------------
+# PRESERVED from Zootopia:
+#   - Protagonist archetype: reluctant_hero
+#   - Deuteragonist archetype: charming_trickster
+#   - Relationship arc: distrust → partnership → betrayal → repair
+#
+# MUTATED:
+#   - Protagonist has EDGE (angry, cruel sometimes, not naive)
+#   - Trickster is GENUINELY untrustworthy (not secretly good)
+#   - No villain character. Antagonist = protagonist's own trauma.
+#   - Therapist is compassionate AND partly wrong.
+# ---------------------------------------------------------------------------
+character_dna:
+  characters:
+
+    - id: char_olenka
+      name: "Olenka (Оленка)"
+      archetype: reluctant_hero
+      age: 12
+      arc: >
+        Angry, displaced girl who pushes away help because accepting help
+        means accepting her old life is gone → learns fairy tales are
+        trauma made visible → tries to control them (fails) → hurts an
+        innocent person → accepts the paradox of remembering vs. forgetting →
+        gives the stories away, losing her last memories of home but
+        keeping the feeling of being loved.
+
+        KEY DIFFERENCE FROM V1: She is NOT naive. She is ANGRY. Her
+        default mode is sarcasm and rejection. She is the villain of
+        Anna's story for an entire act.
+      traits:
+        - angry (default emotion, covers grief)
+        - sarcastic (learned from survival, not from cleverness)
+        - stubborn (refuses help as identity defense)
+        - bilingual (Ukrainian/English, learning French and German badly)
+        - cruel when cornered (tells Anna her problems aren't real)
+        - fiercely intelligent (understands the paradox before the adults do)
+        - loyal underneath everything (comes back to apologize)
+      introduction_beat: beat_01
+      worst_action: >
+        She tells Anna, a ten-year-old, that her problems aren't real
+        problems. Anna cries in the bathroom. Olenka hears it and
+        cannot bring herself to apologize. This haunts the film.
+      relationships:
+        - target: char_lys
+          type: "distrust → reluctant dependence → something that isn't friendship but resembles it"
+          evolution: >
+            She doesn't trust him (he's a liar). He doesn't trust her
+            (she's a human). They need each other. By the end, she
+            carries him in reflection — not as a friend but as part of
+            herself she can't name.
+        - target: char_halyna
+          type: "granddaughter → keeper → someone who's lost the face but kept the feeling"
+          evolution: >
+            Loves Halyna but took her for granted → losing memories of her is
+            the film's emotional spine → by the end, she can't picture Halyna
+            but knows she was loved.
+        - target: char_berger
+          type: "patient → adversary → someone she calls voluntarily at the end"
+          evolution: >
+            Sees Berger as the enemy of memory → recognizes Berger is partly right →
+            calls Berger during dark night and gets the hardest truth: there is no answer.
+      visual:
+        color_palette:
+          - "#8B7355"   # Brown hair, darker than v1's wheat-blonde
+          - "#2E86AB"   # Sharp blue eyes (cold, not warm)
+          - "#C0392B"   # Red vyshyvanka embroidery (fades through film)
+          - "#4A4A4A"   # Grey hoodie she wears over the vyshyvanka
+          - "#1A1A1A"   # Black jeans, scuffed shoes
+        description: >
+          12-year-old Ukrainian girl. Brown hair in a messy braid she
+          stopped caring about. Blue eyes that look right through you.
+          Wears a traditional vyshyvanka under a grey hoodie — tradition
+          hidden beneath a shell of "I don't care." Carries the book
+          in a plastic bag because the leather bag broke in Calais and
+          she hasn't replaced it. Bites her nails. Stands with her
+          arms crossed. Smiles rarely, and it changes her whole face
+          when she does.
+      voice:
+        style: >
+          Clipped. Defensive. Speaks Ukrainian to the book, English
+          to everyone else, German when forced to. Accent is strong —
+          she doesn't try to hide it. Gets very quiet before she says
+          something cruel. Her voice cracks once, in the dark night
+          scene, and she hates that it does.
+
+    - id: char_lys
+      name: "Lys (Лис — The Fox)"
+      archetype: charming_trickster
+      arc: >
+        Appears as cynical fairy-tale creature who can't be trusted →
+        proves he can't be trusted (makes everyone lie) → but also
+        proves he understands Olenka better than any human does →
+        reveals he's afraid: if his page goes blank, he ceases to exist →
+        in the end, he survives as a reflection — not fully alive,
+        not fully gone. Carried.
+
+        KEY DIFFERENCE FROM V1: He is NOT secretly good. He IS
+        the trickster. He lies. He manipulates. He also tells truths
+        no one else will say. He is PRE-MORAL — he doesn't understand
+        modern ethics. He understands stories.
+      traits:
+        - sardonic (genuinely, not as a cover)
+        - pre-moral (doesn't understand "should" — only "is")
+        - manipulative (for amusement, not malice)
+        - perceptive (sees through every lie Olenka tells)
+        - existentially afraid (if his page goes blank, he dies)
+        - loyal to narrative, not to people
+      introduction_beat: beat_06
+      relationships:
+        - target: char_olenka
+          type: "observer → reluctant guide → something unnameable"
+          evolution: >
+            Watches her with detached fascination → helps when it's
+            interesting, sabotages when it's funnier → realizes she's the
+            only person who might carry his story → by the end, exists
+            as her reflection. Not tamed. Not befriended. Survived.
+      visual:
+        color_palette:
+          - "#8B4513"   # Darker rust fur (not bright orange — subtler)
+          - "#F5DEB3"   # Cream chest
+          - "#2C1810"   # Near-black markings around eyes
+          - "#FFD700"   # Gold eyes
+          - "#000000"   # Black paws, black-tipped ears
+        description: >
+          A fox the size of a large dog. Not anthropomorphized — walks
+          on four legs, sits like a fox. But speaks. His eyes are too
+          intelligent — uncanny valley of animal and person. No clothes,
+          no vest, no accessories. He's a fox. He looks like a fox.
+          The only "magical" element: his shadow is wrong — always too
+          large, shaped like something with more legs than he has.
+      voice:
+        style: >
+          Dry. Precise. Speaks Ukrainian with archaic constructions —
+          he learned the language centuries ago and hasn't updated.
+          Occasionally slips into other languages mid-sentence (French,
+          German, Japanese) because he exists in all those traditions.
+          Never raises his voice. The quieter he gets, the more
+          dangerous the thing he's saying.
+
+    - id: char_halyna
+      name: "Grandmother Halyna (Бабуся Галина)"
+      archetype: wise_mentor  # PRESERVED from Zootopia
+      arc: >
+        Physically present only in the opening scene. Her presence is
+        felt through the book, through memories that are DISAPPEARING,
+        through the paradox she set in motion by telling Olenka to
+        "remember everything" — an impossible command given to a child
+        being forced to build a new life.
+
+        She is not a saint. She gave Olenka an impossible burden.
+        She did it out of love. Love and cruelty are not always
+        distinguishable.
+      traits:
+        - loving (fiercely, possessively)
+        - stubborn (won't leave, won't adapt)
+        - afraid (that her culture dies with her)
+        - unfair (putting the weight of cultural survival on a child)
+      introduction_beat: beat_01
+      relationships:
+        - target: char_olenka
+          type: "grandmother → impossible standard → memory that fades"
+      visual:
+        color_palette:
+          - "#8B7355"   # Weathered brown skin
+          - "#FFFFFF"   # White headscarf
+          - "#4A5D23"   # Dark green shawl
+          - "#3E2723"   # Deep brown eyes
+        description: >
+          Elderly Ukrainian woman. Deep lines in her face — not from
+          smiling, from weather. Hands that are too strong for someone
+          her age. Headscarf knotted tight. She is NEVER idealized
+          visually — she looks tired, real, old. When she reads fairy
+          tales, her eyes don't light up. She concentrates. Telling
+          stories is work for her, not play.
+      voice:
+        style: >
+          Low. Not warm — determined. She tells stories the way
+          someone hammers nails: with purpose, not pleasure. Her
+          voice is the one Olenka can't remember by Act 3, and
+          the audience should feel that loss.
+
+    - id: char_berger
+      name: "Dr. Katrin Berger (Therapist)"
+      archetype: threshold_guardian
+      arc: >
+        Represents Side A of the paradox (let go, assimilate, heal by
+        forgetting). She is COMPASSIONATE. She is GOOD at her job. She
+        is also partly wrong — and brave enough to admit it in the
+        dark night scene when she says "Yes" to Olenka's realization
+        that there is no answer.
+
+        She is the closest thing to an antagonist the film has, and
+        she is not an antagonist. She's a well-meaning professional
+        who doesn't have the tools for this.
+      traits:
+        - calm (trained, not natural)
+        - empathetic (genuinely)
+        - clicking pen (nervous habit she doesn't know about)
+        - honest when pushed (admits she doesn't have answers)
+        - limited (trained for adaptation, not for paradox)
+      introduction_beat: beat_05
+      relationships:
+        - target: char_olenka
+          type: "therapist → accidental antagonist → the person who says 'yes'"
+      visual:
+        color_palette:
+          - "#F5F5F5"   # White clinical setting
+          - "#5B7065"   # Muted green cardigan
+          - "#8B7355"   # Light brown hair, pulled back
+          - "#C0C0C0"   # Silver pen, silver watch
+        description: >
+          Swiss-German woman, early 40s. Competent appearance — cardigan,
+          practical shoes, hair that was neat this morning. Not cold, not
+          warm — professional. Her office has one plant (struggling) and
+          one photo (her own daughter, which Olenka notices and resents).
+      voice:
+        style: >
+          Measured. Therapeutic cadence — always a beat before responding.
+          German-accented English. The clicking pen punctuates her pauses.
+          In the dark night phone call, her voice breaks slightly on
+          "Yes." It's the most honest sound in the film.
+
+# ---------------------------------------------------------------------------
+# STRAND 4: VISUAL DNA
+# ---------------------------------------------------------------------------
+# PRESERVED from Zootopia:
+#   - Act color arc: warm → cool → desaturated → warm (modified)
+#   - Shot distribution ratios (close-up heavy for emotion)
+#   - Visual diversity per location
+#
+# MUTATED:
+#   - Each location has SPECIFIC sensory texture
+#   - Color desaturation tracks memory loss (not external threat)
+#   - Style: 3D with increasing 2D intrusions (fairy tales bleeding in)
+# ---------------------------------------------------------------------------
+visual_dna:
+  color_dna:
+    act_1_ukraine_and_calais:
+      palette:
+        - "#D4A373"   # Warm amber — Ukraine memory
+        - "#1A1A1A"   # Harsh black — Calais night
+        - "#00FF41"   # Sick green — fluorescent processing center
+        - "#C0392B"   # Red embroidery — only warm color in Calais
+      mood: "Whiplash between golden memory and harsh displacement reality"
+      saturation_level: split  # Ukraine = saturated, Calais = drained
+      contrast: extreme  # Jump cuts between memory warmth and present cold
+
+    act_2a_zurich_and_berlin:
+      palette:
+        - "#F5F5F5"   # Clinical white — Zurich facility
+        - "#7B8794"   # Institutional grey
+        - "#C9B458"   # Pale gold — Lys's first appearance
+        - "#6B4226"   # Berlin brick and autumn
+      mood: "Controlled surfaces with something dangerous underneath"
+      saturation_level: desaturating  # Colors slowly draining as memories are lost
+      contrast: medium
+
+    act_2b_berlin_dark:
+      palette:
+        - "#2C2C2C"   # Night apartment
+        - "#FF4500"   # Iron Wolf's furnace eyes (only hot color)
+        - "#1C3144"   # Shame blue — Anna scene
+        - "#3D3D3D"   # Everything going grey
+      mood: "Color almost gone. Olenka's world contracting."
+      saturation_level: nearly_monochrome
+      contrast: low_except_manifestations
+
+    act_3_london_and_return:
+      palette:
+        - "#4A4A4A"   # London grey
+        - "#F4D03F"   # Gold RETURNS — but only during storytelling
+        - "#C0392B"   # Red returns — vyshyvanka visible again
+        - "#FFFFFF"   # Blank book pages
+      mood: "Grey world with earned moments of color when stories are told"
+      saturation_level: selective  # Color only appears during voluntary telling
+      contrast: high  # Stark difference between storytelling warmth and reality
+
+  shot_distribution:
+    wide: 0.20                   # PRESERVED from Zootopia reference
+    medium: 0.30                 # Adjusted -10% from reference
+    close_up: 0.35               # PRESERVED — emotion-heavy film
+    extreme_close_up: 0.10       # Doubled — book pages, hands, eyes losing recognition
+    overhead: 0.05               # PRESERVED
+
+  style:
+    render_style: "3d_grounded"  # NOT mixed_media like v1. Grounded realism.
+    lighting_approach: >
+      Practical lighting only — every light source is motivated.
+      Calais: overhead fluorescents, green-white, unflattering.
+      Zurich: diffused clinical white, no shadows (designed to feel safe, feels sterile).
+      Berlin: warm orange street light through curtains, cold blue phone screens.
+      London: flat grey daylight through institutional windows.
+      Manifestations: their OWN light source that violates the practical lighting —
+      the only time light appears that isn't from a visible source in the scene.
+      This is the horror element: fairy tales break the lighting rules.
+    reference_films_visual:
+      - "Pan's Labyrinth (2006) — fantasy as psychological threat"
+      - "Room (2015) — confinement, then overwhelming scale of outside"
+      - "Persepolis (2007) — displacement through a child's eyes"
+      - "The Breadwinner (2017) — folk art intrusion into reality"
+      - "Flee (2021) — trauma animation, documentary texture"
+    art_direction_notes: >
+      KEY RULE: The real world is grounded, specific, ugly-beautiful (IKEA
+      furniture, fluorescent lights, institutional everything). Fairy tale
+      manifestations are the ONLY source of visual wonder — and they're
+      always slightly WRONG. The Iron Wolf is too large for any room he's in.
+      Mavka's water fills spaces water shouldn't go. The Firebird's golden
+      light makes the fluorescents look sickly by comparison. The fairy
+      tales are beautiful the way a fever dream is beautiful.
+
+      Olenka's vyshyvanka is the visual throughline: vivid red embroidery
+      on white. As her memories fade, the embroidery APPEARS to desaturate
+      in her visual representation. In the finale, when she tells stories
+      voluntarily, the red returns — but different. Not restoration.
+      Continuation.
+
+# ---------------------------------------------------------------------------
+# STRAND 5: PACING DNA
+# ---------------------------------------------------------------------------
+pacing_dna:
+  average_shot_length_seconds: 4.2   # PRESERVED from Zootopia
+  asl_by_act:
+    "1": 5.0     # PRESERVED — slow, establishing
+    "2a": 3.8    # PRESERVED — Berlin months, faster
+    "2b": 6.0    # MUTATED — slows DOWN during dark section (dread pacing)
+    "3": 3.0     # PRESERVED — finale, fastest
+
+  cutting_dynamics: "decelerating_then_accelerating"
+  # MUTATED from Zootopia's simple "accelerating". Kazka slows down
+  # during the shame/loss section (2b) — the audience should feel trapped
+  # in Olenka's inability to act — then accelerates into the finale.
+
+  tension_curve:
+    # SHAPE PRESERVED from Zootopia — cinderella (rise-fall-rise)
+    - [0.00, 0.2]    # Ukraine kitchen — quiet
+    - [0.03, 0.3]    # Paradox stated — unease
+    - [0.05, 0.3]    # Calais — displaced but not yet broken
+    - [0.12, 0.5]    # First manifestation — shock
+    - [0.15, 0.4]    # Zurich — debate, containment
+    - [0.25, 0.6]    # Lys arrives — uncertainty + dark energy
+    - [0.35, 0.7]    # Berlin manifestations escalate
+    - [0.45, 0.8]    # False control attempt
+    - [0.50, 0.7]    # Midpoint — false victory collapses
+    - [0.55, 0.6]    # Olenka hurts Anna — internal shame tension
+    - [0.65, 0.5]    # Consequences compound
+    - [0.70, 0.3]    # All is lost — Halyna's face gone
+    - [0.75, 0.4]    # Dark night — the paradox accepted
+    - [0.80, 0.5]    # Apology to Anna — tension of vulnerability
+    - [0.85, 0.8]    # Community center telling begins
+    - [0.90, 1.0]    # Peak — all stories released
+    - [0.95, 0.3]    # Resolution — bittersweet calm
+    - [1.00, 0.2]    # Final image — carrying forward
+
+  rhythm_pattern: >
+    Act 1: Lingering shots. Long dissolves between Ukraine memory and
+    Calais reality. Sound bridges — Halyna's voice over fluorescent hum.
+    
+    Act 2a: Controlled rhythm. Berlin scenes have the pace of routine —
+    school, apartment, school. Manifestations BREAK the rhythm with
+    sudden cuts and wrong-duration shots (too long or too short).
+    
+    Act 2b: Deceleration. The Anna scene plays in near-real-time.
+    No cuts during Olenka's cruel speech. The camera doesn't look away.
+    
+    Act 3: Acceleration into the community center, then a HOLD —
+    the finale is told in long takes. Olenka speaking uninterrupted.
+    The rhythm matches oral storytelling cadence: pause, build, pause,
+    release.
+
+# ---------------------------------------------------------------------------
+# STRAND 6: AUDIO DNA
+# ---------------------------------------------------------------------------
+audio_dna:
+  dialogue_ratio: 0.40   # Lower than Zootopia — more silence, more ambient
+  music_coverage: 0.55   # Much lower — silence is a weapon in this film
+
+  silence_moments:
+    - beat_id: beat_04
+      duration_seconds: 4.0
+      purpose: >
+        After the first manifestation. The radiator pipe bursts. Screaming.
+        Then: cut to Olenka looking at the blank page. TOTAL SILENCE.
+        The audience must understand before she does.
+
+    - beat_id: beat_09
+      duration_seconds: 8.0
+      purpose: >
+        After Olenka tells Anna "you've never had a real problem in your
+        life." Eight seconds of silence. Anna's face. Then Anna walking
+        away. No music. No score. Just the sound of a child leaving a
+        room with a stuffed rabbit.
+
+    - beat_id: beat_10
+      duration_seconds: 6.0
+      purpose: >
+        Olenka tries to picture Halyna's face and can't. Six seconds of
+        her sitting in the school hallway, eyes closed, trying to
+        REMEMBER. The silence is the sound of a memory not arriving.
+
+    - beat_id: beat_11
+      duration_seconds: 3.0
+      purpose: >
+        Dr. Berger says "Yes." Three seconds of silence before Olenka
+        responds. The silence is Berger's honesty — she doesn't fill
+        the space with comfort. She lets the truth sit.
+
+  music_style:
+    genre: "Sparse chamber music with Ukrainian folk elements"
+    reference: "Hildur Guðnadóttir (Joker) meets Valentin Silvestrov (Ukrainian composer)"
+    emotional_arc_follows: true
+    instruments:
+      - "Solo cello — Olenka's loneliness, the thread between scenes"
+      - "Bandura — Ukraine memories ONLY, never in present-day scenes"
+      - "Prepared piano — manifestation moments (strings dampened, wrong notes)"
+      - "Children's voices — NOT a choir, just two or three, unpolished, during finale"
+      - "Silence — treated as an instrument. More silence than score in Act 2b."
+      - "Field recordings — real ambient sound from processing centers, trains, schools"
+
+  voice_styles:
+    char_olenka:
+      style: "Clipped, defensive, accent strong. Cracks once. Gets very quiet before cruelty."
+    char_lys:
+      style: "Dry, archaic Ukrainian. Precise. Never loud. Terrifyingly calm during truths."
+    char_halyna:
+      style: "Low, determined. Not warm — purposeful. Heard only in memory, degrading in quality through the film."
+    char_berger:
+      style: "Measured. Therapeutic cadence. German accent. Clicking pen audible in her pauses."
+
+# ---------------------------------------------------------------------------
+# STRAND 7: SCENE MANIFEST
+# ---------------------------------------------------------------------------
+# Two key scenes, 4+ shots each. Each with specific sensory detail.
+# ---------------------------------------------------------------------------
+scene_manifest:
+  scenes:
+
+    # =====================================================================
+    # SCENE 1: The First Manifestation (Calais Processing Center)
+    # Function: Catalyst — the fairy tales are not helpers, they're symptoms
+    # Zootopia equivalent: Judy's first day on parking duty (the promise
+    # of the premise — but here the premise is horror, not comedy)
+    # =====================================================================
+    - id: scene_first_manifestation
+      beat_id: beat_04
+      act: 1
+      location: >
+        Refugee processing center, Calais, France. Basement level.
+        Shared bathroom — six sinks, three stalls, one flickering light.
+        Condensation on mirror. Bleach smell. Someone's toothbrush
+        in a paper cup. 7:22 AM, February.
+      time_of_day: early_morning
+      weather: "Irrelevant — underground. No windows."
+      characters_present:
+        - char_olenka
+      emotional_target:
+        valence: 0.2   # Unease tipping into dread
+        arousal: 0.6
+      duration_seconds: 68
+
+      shots:
+        - id: shot_bathroom_wide
+          type: wide_establishing
+          duration_seconds: 3.5
+          camera_movement: static
+          description: >
+            Wide shot of the bathroom. Institutional. Six sinks, mirrors
+            clouded with condensation. Olenka at the far sink, brushing
+            her teeth. The fluorescent light above her flickers — not
+            dramatically, just a bad bulb. A French girl enters frame
+            left, pushes past Olenka to reach the mirror. "Bouge-toi."
+            Olenka's shoulders tighten.
+          characters_in_frame:
+            - char_olenka
+          dialogue: "FRENCH GIRL: (passing, dismissive) Bouge-toi."
+          sfx:
+            - "fluorescent_buzz"
+            - "water_running"
+            - "toothbrush_on_teeth"
+          transition_to_next: cut
+
+        - id: shot_olenka_mirror
+          type: close_up
+          duration_seconds: 5.0
+          camera_movement: slow_push
+          description: >
+            Close-up of Olenka's face in the mirror. Toothbrush stops.
+            Jaw clenches. Her eyes aren't angry at the girl — they're
+            angry at EVERYTHING. The displacement. The bleach. The
+            fact that "bouge-toi" is now part of her vocabulary.
+
+            Behind her reflection, in the condensation on the mirror:
+            a shape. Massive. Black. Two points of orange light where
+            eyes would be. The Iron Wolf. One frame of full visibility,
+            then the condensation shifts and he's gone.
+
+            Olenka's breath catches. Her eyes widen. She wipes the mirror.
+            Nothing there.
+          characters_in_frame:
+            - char_olenka
+          dialogue: null
+          sfx:
+            - "breath_catching"
+            - "mirror_wipe_squeak"
+            - "SUBSONIC_RUMBLE (almost below hearing — the wolf's presence)"
+          transition_to_next: cut
+
+        - id: shot_hallway_burst
+          type: medium
+          duration_seconds: 4.0
+          camera_movement: static_then_handheld
+          description: >
+            Medium shot of the hallway outside the bathroom. Quiet.
+            Green-painted walls. A radiator pipe runs along the ceiling.
+
+            BANG. The pipe bursts. Scalding water erupts. Steam fills
+            the frame. Camera goes handheld — chaotic. Children in the
+            corridor scream. An aid worker runs into frame, arms up.
+
+            The camera finds Olenka standing in the bathroom doorway,
+            untouched by the water. Staring. She knows.
+          characters_in_frame:
+            - char_olenka
+          dialogue: "AID WORKER: (French, panicked) Sortez! Tout le monde dehors!"
+          sfx:
+            - "pipe_burst_metallic"
+            - "steam_hiss"
+            - "children_screaming"
+            - "running_feet_on_concrete"
+          transition_to_next: cut
+
+        - id: shot_book_blank_page
+          type: extreme_close_up
+          duration_seconds: 5.0
+          camera_movement: static
+          description: >
+            Extreme close-up: Olenka's hands opening the book on her
+            cot. She turns to the Iron Wolf's page. It's BLANK. The
+            thick paper is warm to the touch — you can see her
+            fingertip press slightly into it, as if something recently
+            left the surface.
+
+            She turns to other pages. They're all still there — Lys,
+            Mavka, the Firebird, others. Just the Wolf is gone.
+
+            Her hand trembles. She closes the book.
+          characters_in_frame:
+            - char_olenka
+          dialogue: null
+          sfx:
+            - "book_pages_turning (slow)"
+            - "SILENCE (the ambient noise DROPS OUT during this shot)"
+            - "olenka_breathing (shaky)"
+          transition_to_next: cut
+
+        - id: shot_olenka_trying_to_remember
+          type: close_up
+          duration_seconds: 4.0
+          camera_movement: static
+          description: >
+            Close-up of Olenka's face. Eyes closed. She's trying to
+            remember something. Her lips move silently — she's running
+            through a memory. When did Halyna read her the Wolf story?
+            Was it Tuesday? Wednesday? By the radiator or under the tree?
+
+            Her eyes open. She can't place it. The memory isn't gone —
+            just smudged. Like a photograph left in the rain.
+
+            This is the COST. And it's only the beginning.
+          characters_in_frame:
+            - char_olenka
+          dialogue: null
+          sfx:
+            - "room_tone_empty"
+            - "distant_commotion_from_pipe (muffled)"
+          transition_to_next: fade_to_black
+
+    # =====================================================================
+    # SCENE 2: Olenka Hurts Anna (Berlin Apartment)
+    # Function: Bad Guys Close In — the protagonist IS the bad guy
+    # Zootopia equivalent: Press conference scene (protagonist's bias exposed)
+    # =====================================================================
+    - id: scene_olenka_hurts_anna
+      beat_id: beat_09
+      act: 2
+      location: >
+        Neumanns' apartment, Berlin-Neukölln. Anna's bedroom. IKEA
+        HEMNES bed, white duvet with horses on it. Shelf of books
+        (mostly in German, some English). A stuffed rabbit on the
+        pillow — grey, one ear flopping. Purple fairy lights around
+        the window. Evening, 7:15 PM.
+      time_of_day: evening
+      weather: "Berlin autumn rain, heard through closed window"
+      characters_present:
+        - char_olenka
+      emotional_target:
+        valence: -0.6   # Shame and cruelty
+        arousal: 0.7
+      duration_seconds: 92
+
+      shots:
+        - id: shot_anna_bedroom_wide
+          type: wide_establishing
+          duration_seconds: 3.0
+          camera_movement: static
+          description: >
+            Wide shot of Anna's bedroom. Purple fairy lights. Horse duvet.
+            Anna (10, round face, nervous energy) sits cross-legged on
+            the bed, showing Olenka her bookshelf with desperate
+            hospitality. "You can borrow any of them!"
+            Olenka stands in the doorway, arms crossed, not entering fully.
+          characters_in_frame:
+            - char_olenka
+          dialogue: >
+            ANNA: You can borrow any of them! This one's really good,
+            it's about a girl who finds a dragon—
+          sfx:
+            - "rain_on_window_soft"
+            - "fairy_lights_electrical_hum"
+          transition_to_next: cut
+
+        - id: shot_anna_tells_problem
+          type: medium_two_shot
+          duration_seconds: 6.0
+          camera_movement: static
+          description: >
+            Medium two-shot. Anna sits on the bed. Olenka has sat down
+            on the edge — barely. Anna's face shifts from hosting-mode
+            to something real. She pulls the stuffed rabbit onto her lap.
+
+            She tells Olenka about the birthday party she wasn't invited
+            to. Her voice is small. She's asking for connection — the
+            universal gesture of a child saying "this happened to me,
+            does it matter?"
+          characters_in_frame:
+            - char_olenka
+          dialogue: >
+            ANNA: (holding rabbit) My best friend, Lena? She's having
+            a birthday party next Saturday and she invited everyone
+            except me. And I don't know what I did wrong. I keep
+            thinking about what I said or— (she looks at Olenka,
+            eyes wet) —do you ever feel like you did something wrong
+            but you don't know what?
+          sfx:
+            - "rain_on_window"
+            - "clock_ticking (real, from hallway)"
+          transition_to_next: cut
+
+        - id: shot_olenka_delivers_cruelty
+          type: close_up
+          duration_seconds: 7.0
+          camera_movement: static  # NO CAMERA MOVEMENT. The stillness is the point.
+          description: >
+            Close-up of Olenka. Static camera. No score. She looks at
+            Anna. Something moves behind her eyes — not anger exactly.
+            Contempt born from pain. The expression of someone who has
+            been carrying a weight too heavy and just watched someone
+            complain about a pebble in their shoe.
+
+            She doesn't raise her voice. That's what makes it worse.
+          characters_in_frame:
+            - char_olenka
+          dialogue: >
+            OLENKA: (flat, quiet) That's your problem? Someone didn't
+            invite you to a party?
+
+            (pause — two seconds)
+
+            You've never had a real problem in your life.
+          sfx:
+            - "SILENCE (all ambient drops out during the line)"
+            - "clock_ticking (returns after the line)"
+          transition_to_next: cut
+
+        - id: shot_anna_face
+          type: close_up
+          duration_seconds: 4.0
+          camera_movement: static
+          description: >
+            Close-up of Anna's face. The crumble. It's not dramatic — no
+            wail, no argument. Just a ten-year-old's face learning that
+            someone she wanted to like her thinks she's nothing.
+
+            Anna picks up the stuffed rabbit. She gets off the bed.
+            She walks past Olenka without looking at her. She goes to
+            the bathroom. The door closes. Click of the lock.
+          characters_in_frame: []
+          dialogue: null
+          sfx:
+            - "door_closing_soft"
+            - "lock_clicking"
+          transition_to_next: cut
+
+        - id: shot_olenka_hears_crying
+          type: medium
+          duration_seconds: 8.0
+          camera_movement: static
+          description: >
+            Medium shot. Olenka alone in Anna's bedroom. The fairy lights
+            pulse. Through the wall: the sound of a ten-year-old crying
+            quietly, trying not to be heard. Olenka's jaw tightens. She
+            looks at the door. Her hand moves toward it. Stops. Drops.
+
+            She cannot knock. She KNOWS she should. She physically cannot
+            do it. Because knocking means admitting she was wrong, and
+            admitting she was wrong means admitting that her pain and
+            Anna's pain can coexist, and that means the world is more
+            complicated than "I have it worse."
+
+            Eight seconds. Static camera. No score. The crying through
+            the wall. The rain. The fairy lights.
+
+            LYS appears on the windowsill. For once, not smirking.
+
+            LYS: "That was ugly."
+            OLENKA: "Shut up."
+            LYS: "You just did what everyone has done to you. Told
+            someone their pain doesn't count."
+          characters_in_frame:
+            - char_olenka
+            - char_lys
+          dialogue: >
+            LYS: That was ugly.
+            OLENKA: Shut up.
+            LYS: You just did what everyone has done to you. Told someone
+            their pain doesn't count.
+          sfx:
+            - "child_crying_through_wall (quiet, muffled)"
+            - "rain_on_window"
+            - "fairy_lights_hum"
+          transition_to_next: cut
+
+        - id: shot_wolf_breaks_photo
+          type: wide
+          duration_seconds: 4.0
+          camera_movement: static_then_shake
+          description: >
+            Wide shot of the hallway. The Iron Wolf manifests — unbidden,
+            fed by Olenka's shame. He's enormous, filling the corridor,
+            black iron scraping the walls. He doesn't roar. He turns his
+            head and his tail SWIPES the framed Neumann family photo off
+            the wall. Glass shatters.
+
+            Anna screams from the bathroom.
+
+            The Wolf looks at Olenka — not with malice. With nothing.
+            He's pre-moral. He doesn't understand what he did or why.
+            He's just force, shaped like an animal, summoned by a feeling
+            Olenka couldn't contain.
+
+            He fades. The glass remains.
+          characters_in_frame:
+            - char_olenka
+          dialogue: "ANNA: (from bathroom, scared) Was ist passiert?!"
+          sfx:
+            - "iron_scraping_walls"
+            - "glass_shattering"
+            - "anna_scream_muffled"
+          transition_to_next: fade_to_black
+
+# ---------------------------------------------------------------------------
+# STRAND 8: RENDERING HINTS
+# ---------------------------------------------------------------------------
+rendering_hints:
+  preferred_models:
+    character_closeups: "kling_3.0"        # Best character consistency + emotion
+    establishing_shots: "veo_3.1"          # Best photorealistic environments
+    dialogue_scenes: "seedance_2.0"        # Native lip-sync support
+    action_sequences: "hunyuan_video"      # Open source, self-hosted
+    bulk_transitions: "wan_2.1"            # Cost-effective
+    manifestation_sequences: "veo_3.1"     # Manifestations need photorealism + wrongness
+
+  budget_mode: false
+  max_cost_usd: 750
+  quality_threshold: 0.85
+  target_resolution: "1080p"
+  target_fps: 24
+
+  special_rendering_notes: >
+    MANIFESTATION SEQUENCES: The fairy tales must look WRONG in a specific way.
+    They're photorealistic but violate scale (too large for the room), lighting
+    (their own light source in a practically-lit scene), and physics (the Iron
+    Wolf is too heavy for any floor). This "wrongness" is the horror element —
+    use Veo 3.1 for the realism, then deliberately break one physical rule
+    per manifestation. The audience should feel something uncanny, not magical.
+
+    MEMORY DEGRADATION: As Olenka loses memories, brief flashback inserts of
+    Ukraine should degrade — not like film damage, but like trying to remember:
+    out of focus, wrong colors, details missing (Halyna's face becomes a blur,
+    then a shape, then nothing). Use post-processing on Kling outputs — gradual
+    Gaussian blur on specific face regions across the film's runtime.
+
+    VYSHYVANKA DESATURATION: Olenka's red embroidery must be tracked as a
+    persistent visual element. It desaturates 15% per act. In the finale,
+    it returns to full saturation during the voluntary telling — but a
+    DIFFERENT red (slightly warmer, slightly orange). Not restoration.
+    Continuation.
+
+    NO MUSICAL SCORE DURING MANIFESTATIONS: Manifestation sequences use
+    only practical sound (the actual room sounds) plus one additional element:
+    a subsonic rumble at 15-25Hz (felt, not heard). This is the "horror" audio
+    signature. The fairy tales don't get beautiful music. They get the sound
+    of a building settling wrong.

@@ -1,0 +1,173 @@
+title: Zootopia DNA Reference
+reference_film: Zootopia (2016)
+genome_version: '1.0'
+author: Film DNA Extractor v1.0
+created: '2026-05-31'
+target_duration_minutes: 108.0
+target_format: feature
+narrative:
+  structure: save_the_cat
+  emotional_arc_shape: cinderella
+  beats:
+  - id: beat_01
+    name: Opening Image
+    type: setup
+    timestamp_pct: 0.0
+    emotional_valence: 0.4
+    emotional_arousal: 0.3
+    description: Young Judy performs school play about predator-prey harmony
+    duration_pct: 0.0
+  - id: beat_02
+    name: Theme Stated
+    type: setup
+    timestamp_pct: 0.03
+    emotional_valence: 0.2
+    emotional_arousal: 0.4
+    description: Gideon Grey bullies Judy — anyone can be anything vs know your place
+    duration_pct: 0.0
+  - id: beat_03
+    name: Set-Up
+    type: setup
+    timestamp_pct: 0.05
+    emotional_valence: 0.6
+    emotional_arousal: 0.3
+    description: Judy graduates police academy, arrives in Zootopia
+    duration_pct: 0.0
+  - id: beat_04
+    name: Catalyst
+    type: catalyst
+    timestamp_pct: 0.12
+    emotional_valence: 0.3
+    emotional_arousal: 0.5
+    description: Assigned to parking duty instead of real cases
+    duration_pct: 0.0
+  - id: beat_05
+    name: Debate
+    type: debate
+    timestamp_pct: 0.15
+    emotional_valence: 0.4
+    emotional_arousal: 0.6
+    description: Takes the missing mammals case with 48-hour deadline
+    duration_pct: 0.0
+  - id: beat_06
+    name: Break Into Two
+    type: break_into_2
+    timestamp_pct: 0.25
+    emotional_valence: 0.5
+    emotional_arousal: 0.7
+    description: Teams with Nick Wilde — reluctant partnership begins
+    duration_pct: 0.0
+  - id: beat_07
+    name: Fun and Games
+    type: fun_and_games
+    timestamp_pct: 0.35
+    emotional_valence: 0.7
+    emotional_arousal: 0.6
+    description: 'Investigation: Mystic Springs, DMV, Tundratown'
+    duration_pct: 0.0
+  - id: beat_08
+    name: Midpoint
+    type: midpoint
+    timestamp_pct: 0.5
+    emotional_valence: 0.5
+    emotional_arousal: 0.8
+    description: Find missing mammals — all predators gone savage
+    duration_pct: 0.0
+  causal_chain: []
+  themes:
+  - prejudice
+  - identity
+  - systemic bias
+  - perseverance
+  - unlikely partnerships
+characters:
+- id: char_judy
+  name: Judy Hopps
+  archetype: reluctant_hero
+  arc: naive idealist -> disillusioned realist -> wiser agent of change
+  traits:
+  - optimistic
+  - stubborn
+  - compassionate
+  - determined
+  introduction_beat: beat_01
+  relationships: []
+  visual:
+    reference_sheet: ''
+    turnaround: ''
+    expression_sheet: ''
+    color_palette:
+    - '#8B8B8B'
+    - '#9B59B6'
+    - '#2C3E50'
+    description: Small gray rabbit with purple eyes, police uniform
+  voice:
+    style: ''
+    reference_audio: ''
+    tts_model: ''
+- id: char_nick
+  name: Nick Wilde
+  archetype: charming_trickster
+  arc: cynical con artist -> vulnerable truth revealed -> genuine partner
+  traits:
+  - sarcastic
+  - street-smart
+  - guarded
+  - secretly hurt
+  introduction_beat: beat_06
+  relationships: []
+  visual:
+    reference_sheet: ''
+    turnaround: ''
+    expression_sheet: ''
+    color_palette:
+    - '#D35400'
+    - '#F39C12'
+    - '#27AE60'
+    description: Red fox with green Hawaiian shirt, confident smirk
+  voice:
+    style: ''
+    reference_audio: ''
+    tts_model: ''
+visual:
+  color_dna: {}
+  shot_distribution:
+    wide: 0.25
+    medium: 0.4
+    close_up: 0.25
+    extreme_close_up: 0.05
+    overhead: 0.05
+  style:
+    render_style: 3d_stylized
+    lighting_approach: cinematic_three_point
+    reference_films_visual: []
+    art_direction_notes: ''
+pacing:
+  average_shot_length_seconds: 4.0
+  asl_by_act: {}
+  cutting_dynamics: accelerating
+  tension_curve: []
+  rhythm_pattern: ''
+audio:
+  dialogue_ratio: 0.45
+  music_coverage: 0.7
+  silence_moments: []
+  music_style:
+    genre: ''
+    reference: ''
+    emotional_arc_follows: true
+    instruments: []
+  voice_styles: {}
+scenes: []
+rendering:
+  preferred_models:
+    character_closeups: kling_3.0
+    establishing_shots: veo_3.1
+    dialogue_scenes: seedance_2.0
+    action_sequences: hunyuan_video
+    bulk_transitions: wan_2.1
+  budget_mode: false
+  max_cost_usd: 500.0
+  quality_threshold: 0.85
+  target_resolution: 1080p
+  target_fps: 24

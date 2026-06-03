@@ -1,0 +1,160 @@
+@page {
+  size: 148mm 210mm;
+  margin: 12mm 10mm 14mm 10mm;
+}
+
+:root {
+  color-scheme: light;
+  --text: #1f2937;
+  --muted: #5b6472;
+  --line: #d7deea;
+  --panel: #f6f8fb;
+  --quote: #ecf3ff;
+  --accent: #1d4ed8;
+}
+
+html {
+  font-size: 11pt;
+}
+
+body {
+  margin: 0 auto;
+  color: var(--text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.52;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main,
+body > *:not(style):not(script) {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #0f172a;
+  line-height: 1.2;
+  page-break-after: avoid;
+  break-after: avoid-page;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.8rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 1.4rem 0 0.55rem;
+  padding-top: 0.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.1rem 0 0.45rem;
+}
+
+h4 {
+  font-size: 0.95rem;
+  margin: 0.9rem 0 0.35rem;
+}
+
+p,
+li,
+td,
+th,
+blockquote {
+  overflow-wrap: anywhere;
+}
+
+p,
+ul,
+ol,
+table,
+blockquote {
+  margin: 0.55rem 0 0.85rem;
+}
+
+ul,
+ol {
+  padding-left: 1.15rem;
+}
+
+li + li {
+  margin-top: 0.22rem;
+}
+
+strong {
+  color: #111827;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1.2rem 0;
+}
+
+blockquote {
+  background: var(--quote);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  color: #10223f;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.9rem;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr,
+img {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  background: var(--panel);
+  font-weight: 700;
+}
+
+code {
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.93em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+em {
+  color: var(--muted);
+}

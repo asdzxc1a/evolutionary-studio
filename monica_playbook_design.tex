@@ -1,0 +1,778 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=14mm,top=15mm,bottom=16mm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Arial Unicode MS}
+\newfontfamily\cyrillicfont{Arial Unicode MS}
+\newfontfamily\cyrillicfontsf{Arial Unicode MS}
+\newfontfamily\headingfont{Georgia}
+\newfontfamily\sansfont{Arial Unicode MS}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\hypersetup{hidelinks}
+
+\definecolor{paperbg}{HTML}{F5EFE7}
+\definecolor{paperwhite}{HTML}{FFFDFB}
+\definecolor{ink}{HTML}{1D2332}
+\definecolor{muted}{HTML}{60697A}
+\definecolor{navy}{HTML}{20283D}
+\definecolor{navysoft}{HTML}{39435F}
+\definecolor{accent}{HTML}{C1874F}
+\definecolor{accentsoft}{HTML}{F2E4D6}
+\definecolor{emerald}{HTML}{1F6B62}
+\definecolor{emeraldsoft}{HTML}{E2EFEA}
+\definecolor{rose}{HTML}{8E4A5D}
+\definecolor{rosesoft}{HTML}{F4E6EB}
+\definecolor{line}{HTML}{D7D2CB}
+
+\pagecolor{paperbg}
+\color{ink}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.28}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\color{muted}\sffamily\small \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\tcbset{
+  frame hidden,
+  sharp corners,
+  boxrule=0pt,
+  enhanced,
+  breakable
+}
+
+\newtcolorbox{glassbox}[1][]{
+  colback=paperwhite,
+  borderline={0.5pt}{0pt}{line},
+  arc=7mm,
+  left=5mm,
+  right=5mm,
+  top=4mm,
+  bottom=4mm,
+  drop shadow={black!12!paperbg},
+  #1
+}
+
+\newtcolorbox{softbox}[1][]{
+  colback=white,
+  borderline={0.5pt}{0pt}{line},
+  arc=5mm,
+  left=4mm,
+  right=4mm,
+  top=3mm,
+  bottom=3mm,
+  #1
+}
+
+\newtcolorbox{navybox}[1][]{
+  colback=navy,
+  coltext=white,
+  arc=7mm,
+  left=5mm,
+  right=5mm,
+  top=4mm,
+  bottom=4mm,
+  drop shadow={black!22!paperbg},
+  #1
+}
+
+\newcommand{\eyebrow}[1]{{\sansfont\fontsize{8.5}{10}\selectfont\color{muted}\MakeUppercase{#1}}}
+\newcommand{\titlefont}[1]{{\headingfont #1}}
+\newcommand{\pill}[1]{%
+  \tikz[baseline=(n.base)] \node[rounded corners=9pt, fill=white, fill opacity=0.08, text opacity=1,
+  draw=white!18, inner xsep=9pt, inner ysep=5.5pt] (n)
+  {\color{white}\sansfont\fontsize{8.5}{9}\selectfont\MakeUppercase{#1}};%
+}
+\newcommand{\kicker}[2]{%
+  \begin{softbox}[colback=#1!10]
+    {\sansfont\bfseries\color{#1} #2}
+  \end{softbox}
+}
+\newcommand{\stephead}[2]{%
+  \begin{tikzpicture}[baseline=(title.base)]
+    \node[rounded corners=4mm, fill=navy, minimum width=12mm, minimum height=12mm, text=white, font=\headingfont\bfseries\large] (badge) {#1};
+    \node[right=4mm of badge, anchor=west] (title) {\begin{minipage}{0.8\linewidth}{\headingfont\fontsize{18}{20}\selectfont #2}\end{minipage}};
+  \end{tikzpicture}
+}
+\newcommand{\minititle}[1]{{\sansfont\bfseries\fontsize{9.5}{11}\selectfont\color{rose}\MakeUppercase{#1}}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{titlepage}
+\pagecolor{navy}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[navy] (current page.south west) rectangle (current page.north east);
+  \fill[accent, opacity=0.16] ($(current page.north west)+(2.2,-2.0)$) circle (3.2cm);
+  \fill[emerald, opacity=0.14] ($(current page.north east)+(-2.1,-2.6)$) circle (2.4cm);
+  \fill[accent, opacity=0.11] ($(current page.south west)+(1.8,1.6)$) circle (2.7cm);
+  \draw[white, opacity=0.10, line width=0.5pt] ($(current page.north east)+(-2.1,-2.6)$) circle (3.8cm);
+  \draw[white, opacity=0.07, line width=10pt] ($(current page.north east)+(-2.1,-2.6)$) circle (3.0cm);
+  \draw[white, opacity=0.05, line width=18pt] ($(current page.north east)+(-2.1,-2.6)$) circle (2.1cm);
+\end{tikzpicture}
+
+\vspace*{8mm}
+\noindent\pill{Confidential \hspace{2mm} Переговорный playbook}
+\hfill
+\pill{@monicastyle.mc \hspace{2mm} April 2026}
+
+\vspace{24mm}
+
+\begin{minipage}[t]{0.62\linewidth}
+{\color{white!68}\sansfont\fontsize{9}{11}\selectfont FBI Negotiation + NLP Frame\par}
+\vspace{6mm}
+{\headingfont\color{white}\fontsize{28}{30}\selectfont Playbook защиты команды @monicastyle.mc\par}
+\vspace{8mm}
+{\color{white!82}\fontsize{13.2}{18}\selectfont
+Документ для спокойных и уверенных переговоров с клиентом, который хочет сократить бюджет.
+Цель - не спорить, а мягко вернуть разговор к ценности системы, ролей и 8-недельного спринта.\par}
+
+\vspace{14mm}
+
+\begin{tcolorbox}[colback=white, colframe=white, opacityback=0.08, opacityframe=0.12, arc=6mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\sansfont\bfseries\color{white!92} Ситуация}\par
+{\color{white!76}\fontsize{10.8}{14}\selectfont Клиент хочет оставить только монтажёра, SMM и PM, потому что пока не видит достаточный ROI на ранней стадии аккаунта.}
+\end{tcolorbox}
+
+\vspace{4mm}
+
+\begin{tcolorbox}[colback=white, colframe=white, opacityback=0.08, opacityframe=0.12, arc=6mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\sansfont\bfseries\color{white!92} Наша задача}\par
+{\color{white!76}\fontsize{10.8}{14}\selectfont Сохранить команду через структуру Chris Voss, маркировку эмоций клиента и NLP-рефрейм ролей как функций бренда.}
+\end{tcolorbox}
+
+\vspace{4mm}
+
+\begin{tcolorbox}[colback=white, colframe=white, opacityback=0.08, opacityframe=0.12, arc=6mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\sansfont\bfseries\color{white!92} Тон переговоров}\par
+{\color{white!76}\fontsize{10.8}{14}\selectfont Late-Night FM DJ: медленно, тёпло, уверенно. Никакого давления, только ясность, факты и чувство контроля у клиента.}
+\end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+\vspace{18mm}
+\begin{tcolorbox}[colback=white, colframe=white, opacityback=0.09, opacityframe=0.14, arc=9mm, left=6mm, right=6mm, top=8mm, bottom=8mm, height=0.56\textheight]
+{\color{white}\fontsize{36}{36}\selectfont 01\par}
+\vspace{18mm}
+{\color{white!70}\sansfont\fontsize{8.5}{10}\selectfont Ключевой тезис\par}
+\vspace{3mm}
+{\headingfont\color{white}\fontsize{18}{20}\selectfont Не 7 человек. 4 функции бренда.\par}
+\vspace{7mm}
+{\color{white!80}\fontsize{11.2}{15}\selectfont
+Убрать людей легко. Восстановить систему, визуальное превосходство, reach и темп роста - в разы дороже.\par}
+\vfill
+{\color{white!68}\sansfont\fontsize{8.5}{11}\selectfont Основа документа\par}
+{\color{white!78}\fontsize{10.2}{14}\selectfont Chris Voss, NLP framework, Reddit / X research, маркетинговые наблюдения 2026.}
+\end{tcolorbox}
+\end{minipage}
+\end{titlepage}
+
+\clearpage
+\pagecolor{paperbg}
+\color{ink}
+\setcounter{page}{2}
+
+\begin{navybox}
+\eyebrow{Стратегическая рамка}\par
+\vspace{1.5mm}
+{\fontsize{13.4}{17}\selectfont \textbf{Золотое правило Voss:} люди давят не потому, что правы, а потому что чувствуют, что их не слышат. Убери это чувство - и давление исчезает.}
+\end{navybox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{22}{24}\selectfont Executive Summary}\hfill
+{\color{muted}\sansfont\fontsize{9.5}{12}\selectfont Сначала снимаем защиту, потом даём клиенту ощущение контроля, потом продаём не людей, а систему.}
+
+\vspace{4mm}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth}}
+\rowcolor{paperbg}
+\textbf{279} & \textbf{8 недель} & \textbf{4 функции} & \textbf{2x} \\
+\fontsize{9.6}{12}\selectfont Подписчиков сейчас. Клиент видит это как ``слишком мало для такой команды''. &
+\fontsize{9.6}{12}\selectfont Реалистичный горизонт, чтобы честно оценить рост и не ломать систему преждевременно. &
+\fontsize{9.6}{12}\selectfont Визуал, рост, credibility, системность. Именно их нужно защищать. &
+\fontsize{9.6}{12}\selectfont Ориентир стоимости перезапуска после паузы по сравнению с удержанием темпа сейчас. \\
+\end{tabularx}
+
+\vspace{5mm}
+
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{1. Accusation Audit} & \textbf{2. Labeling} \\
+\fontsize{9.8}{12}\selectfont Озвучиваем все страхи клиента первыми и гасим защитную реакцию. &
+\fontsize{9.8}{12}\selectfont Называем чувства вслух, чтобы снизить напряжение и вернуть доверие. \\
+\rowcolor{paperbg}
+\textbf{3. That's Right} & \textbf{4. Reframing} \\
+\fontsize{9.8}{12}\selectfont Точно суммируем позицию клиента и добиваемся ``Вот именно''. &
+\fontsize{9.8}{12}\selectfont Меняем угол зрения: не ``много людей'', а ``функции бренда''. \\
+\rowcolor{paperbg}
+\textbf{5. Data Layer} & \textbf{6. Team Defense} \\
+\fontsize{9.8}{12}\selectfont Подкрепляем разговор фактами про алгоритм, CAC, mindshare и скорость роста. &
+\fontsize{9.8}{12}\selectfont Каждый человек получает конкретную функцию и конкретную цену потери. \\
+\rowcolor{paperbg}
+\textbf{7. Future Pacing} & \textbf{8. Agreement Frame} \\
+\fontsize{9.8}{12}\selectfont Рисуем два будущих: с системой и с урезанной командой. &
+\fontsize{9.8}{12}\selectfont Продаём 8-недельный спринт с KPI вместо прямого отказа на сокращение. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{multicols}{2}
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Что клиент думает}\par
+\vspace{2mm}
+\begin{softbox}[colback=accentsoft]
+\begin{itemize}[leftmargin=5mm,itemsep=2.5mm,topsep=1mm]
+  \item ``Слишком дорого для аккаунта с 279 подписчиками.''
+  \item ``Я могу справиться меньшей командой.''
+  \item ``Не вижу ROI от каждого человека.''
+  \item ``Пока нет результата - зачем платить за большую команду?''
+\end{itemize}
+\end{softbox}
+\end{glassbox}
+
+\columnbreak
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Что за этим стоит}\par
+\vspace{2mm}
+\begin{softbox}[colback=emeraldsoft]
+\minititle{Страх}\par
+Деньги уходят быстрее, чем виден рост. Это про тревогу, а не про враждебность.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=emeraldsoft]
+\minititle{Контроль}\par
+Клиент хочет понимать, за что платит, и ощущать измеримость вложений.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=emeraldsoft]
+\minititle{Ранняя стадия}\par
+Проект ещё не доказал себя. Значит, нужно продавать не прошлый успех, а систему будущего.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=emeraldsoft]
+\minititle{Внешнее давление}\par
+Могут влиять партнёр, семья или финансы. Это надо уважить, а не спорить с этим.
+\end{softbox}
+\end{glassbox}
+\end{multicols}
+
+\clearpage
+
+\begin{glassbox}
+\stephead{1}{Accusation Audit}
+
+\vspace{3mm}
+\begin{softbox}[colback=accentsoft]
+\textbf{Цель:} перечислить вслух все возможные обвинения до того, как клиент их сформулирует. Это снимает напряжение и переводит разговор из конфликта в сотрудничество.
+\end{softbox}
+
+\vspace{3mm}
+\begin{navybox}
+\eyebrow{Скрипт Яны}\par
+\vspace{2mm}
+``Прежде чем мы начнём обсуждать дальнейшие шаги, мне важно сказать кое-что.
+Я уверена, ты думаешь, что команда слишком большая для аккаунта с 279 подписчиками.
+Возможно, тебе кажется, что мы перестарались и что всё это можно сделать проще и дешевле.
+Вполне вероятно, ты чувствуешь, что платишь за много людей, а результат пока не на том уровне, на котором хочется его видеть.
+И может быть, ты даже думаешь, что мы просто оправдываем существование каждой позиции, чтобы удержать контракт.
+Я хочу, чтобы ты знала - мы это понимаем. И я не буду с тобой спорить. Вместо этого я хочу показать тебе, что именно делает каждый человек и что случится с проектом, если его убрать.'' 
+\end{navybox}
+
+\vspace{3mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Что произойдёт} & \textbf{Что важно не делать} \\
+\fontsize{10}{13}\selectfont Клиент почти автоматически начнёт смягчать свою позицию: ``Ну, я не прямо так считаю...'' Именно это и нужно. Защита уже ослаблена. &
+\fontsize{10}{13}\selectfont Не оправдываться, не спорить и не торопиться с цифрами. Сначала нужно дать клиенту почувствовать, что вы уже услышали её страхи. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+\stephead{2}{Labeling}
+
+\vspace{3mm}
+\begin{softbox}[colback=accentsoft]
+\textbf{Цель:} вслух маркировать переживание клиента словами ``Похоже...'' или ``Кажется...'', чтобы она почувствовала: её состояние поняли без нападения.
+\end{softbox}
+
+\vspace{3mm}
+\rowcolors{2}{paperbg}{paperwhite}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.31\linewidth} Y}
+\toprule
+\rowcolor{paperbg}
+\textbf{Когда клиент говорит} & \textbf{Лейбл в ответ} \\
+Мне кажется, это слишком дорого. & Похоже, ты чувствуешь, что инвестиция не пропорциональна тому, где аккаунт находится сейчас. \\
+Я хочу оставить только троих. & Кажется, тебе важно чувствовать, что каждый человек реально нужен, а не просто присутствует в команде. \\
+279 подписчиков - это мало. & Звучит так, будто ты переживаешь, что рост идёт медленнее, чем ты ожидала. \\
+Мне посоветовали сократить. & Похоже, на тебя есть внешнее давление, и тебе важно принять максимально взвешенное решение. \\
+\bottomrule
+\end{tabularx}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+\stephead{3}{That's Right}
+
+\vspace{3mm}
+\begin{navybox}
+\eyebrow{Скрипт перехода}\par
+\vspace{2mm}
+``Правильно ли я понимаю? Ты видишь аккаунт с 279 подписчиками и при этом команду из 7 человек.
+Ты чувствуешь, что соотношение не сходится. Ты хочешь видеть, что каждый рубль работает на рост, а не просто на процесс.
+И при этом тебе важно не потерять визуальное качество, которое уже есть, потому что именно оно отличает Monica от остальных в этой нише.'' 
+\end{navybox}
+
+\vspace{3mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Ожидаемый ответ} & \textbf{Почему это ключевой момент} \\
+\fontsize{10}{13}\selectfont ``Вот именно'' или ``Да, именно так''. После этого окно к предложению открывается. &
+\fontsize{10}{13}\selectfont До ``That's Right'' клиент отстаивает позицию. После ``That's Right'' клиент готов рассматривать путь вперёд. \\
+\end{tabularx}
+\end{glassbox}
+
+\clearpage
+
+\begin{glassbox}
+\stephead{4}{Reframing}
+
+\vspace{3mm}
+\begin{softbox}[colback=accentsoft]
+\textbf{Главный рефрейм:} не ``вы платите за 7 человек'', а ``вы удерживаете 4 функции бренда, без которых система не выдержит стадию роста''.
+\end{softbox}
+
+\vspace{3mm}
+\rowcolors{2}{paperbg}{paperwhite}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.31\linewidth} Y}
+\toprule
+\rowcolor{paperbg}
+\textbf{Как клиент видит} & \textbf{Как мы переформатируем} \\
+7 человек - дорого. & 4 функции бренда, без которых система разваливается. \\
+279 подписчиков - мало. & 279 - это ядро. Мы на стартовой площадке ракеты, а не на финише. \\
+Можно обойтись тремя. & Трое умеют поддерживать. Семеро строят бренд, который потом сможет зарабатывать. \\
+Пока нет ROI. & Видимый ROI у этой системы проявляется через 8 недель. Ей нужно время, чтобы доказать себя. \\
+\bottomrule
+\end{tabularx}
+
+\vspace{3mm}
+\begin{navybox}
+\eyebrow{Ключевая метафора}\par
+\vspace{2mm}
+``Представь, что Monica - это стартап. Сейчас ты на pre-seed стадии.
+Все стартапы на этом этапе инвестируют больше, чем зарабатывают.
+Но те, кто сокращают команду именно на стадии роста, потом теряют в два раза больше,
+когда приходится нанимать заново и разгонять алгоритм практически с нуля.''
+\end{navybox}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+\stephead{5}{Факты и данные}
+
+\vspace{3mm}
+\rowcolors{2}{paperbg}{paperwhite}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.30\linewidth} >{\raggedright\arraybackslash}p{0.44\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth}}
+\toprule
+\rowcolor{paperbg}
+\textbf{Факт} & \textbf{Зачем он нужен в разговоре} & \textbf{Источник} \\
+Стоимость перезапуска может быть в 2x выше, чем стоимость поддержания системы. & Показывает, что сокращение сегодня может создать более дорогую проблему завтра. & The Drum, MarketingFuel UK \\
+Instagram быстро ``забывает'' аккаунт после 2-3 недель непоследовательности. & Объясняет, почему ежедневный ритм и непрерывность нельзя недооценивать. & SpurNow, InfluenceFlow 2026 \\
+CAC обычно растёт, когда маркетинговую систему режут слишком рано. & Показывает, что каждый новый подписчик потом может обходиться дороже. & CMSwire \\
+Engagement velocity в первые 30-60 минут - ключевой сигнал алгоритму. & Поддерживает важность тайминга, сторис, комментариев и системного SMM. & Storybox HQ \\
+Бренды, которые замолкают, могут терять до 50\% mindshare за 4 недели. & Добавляет вес аргументу о цене паузы и потере внимания аудитории. & One2Create UK \\
+Нано-инфлюенсеры с ER 3.5-8\% - один из самых ценных сегментов для брендов в 2026. & Рамка ``279 подписчиков'' меняется на рамку ``высокий актив ранней стадии''. & Amplify Influencer \\
+\bottomrule
+\end{tabularx}
+
+\vspace{2mm}
+{\color{muted}\sansfont\fontsize{8.8}{11}\selectfont Данные в документе используются как разговорный слой поддержки рефрейма. Их задача - не ``забомбить цифрами'', а придать уверенность ключевому тезису: раннюю систему нельзя резать по метрике одной недели.}
+\end{glassbox}
+
+\clearpage
+
+\begin{glassbox}
+{\headingfont\fontsize{22}{24}\selectfont Защита команды - Часть I}\hfill
+{\color{muted}\sansfont\fontsize{9.5}{12}\selectfont Каждый человек = отдельная функция системы. Убирая человека, клиент убирает не роль, а рычаг роста.}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Ира}\hfill
+{\sansfont\bfseries\color{emerald} Визуальный язык}
+
+{\color{muted} Визуал, криейтор, идеи, креатив}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Создаёт визуальный язык бренда Monica и удерживает ощущение quality overshoot - когда маленький аккаунт выглядит как бренд на 50K.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Ира делает так, что Monica на 279 подписчиках выглядит как аккаунт на 50K. Наш AI-аудит показал, что визуальное качество контента уже на уровне микро-инфлюенсера. Это не случайность. Если убрать Иру, контент станет обычным - и бренд потеряет своё главное конкурентное преимущество.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Как ты видишь сохранение этого визуального уровня без человека, который его создаёт? & Все 4 рубрики визуально завязаны на Иру. Без неё Monica Style Edit теряет эстетику ``styled for her story''. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Лера}\hfill
+{\sansfont\bfseries\color{emerald} Алгоритм и рост}
+
+{\color{muted} Head of SMM}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Стратегический мозг роста: алгоритм, хештеги, timing, caption SEO, системный анализ сигналов reach.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Лера - это не просто человек, который постит. Она знает, когда публиковать, какие хештеги использовать и как Instagram 2026 читает аккаунт. Монтажёр может собрать видео. Но без Леры это видео никто не увидит.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Что произойдёт с охватом, если хештег-стратегия и тайминг публикаций перестанут быть системными? & Retention в первые секунды reels, saves и DM shares важнее лайков. KPI роста невозможны без системного SMM. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Диана}\hfill
+{\sansfont\bfseries\color{emerald} Портфолио и статус}
+
+{\color{muted} Главный фотограф}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Создаёт статусный визуальный актив Fashion Photo - ту самую витрину, которая нужна будущим brand collaborations.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Диана - причина, по которой бренды захотят работать с Monica. Fashion Photo - это визитная карточка для Bonpoint, Il Gufo и Baby Dior. Это не то, что можно заменить телефоном. Без Дианы рубрика умирает, а вместе с ней умирает и модельное портфолио для Q3-монетизации.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Как мы покажем потенциальным брендам профессиональное модельное портфолио без профессионального фотографа? & Fashion Photo раз в 7-14 дней - это статус, визуальная память и актив для медиакита. \\
+\end{tabularx}
+\end{glassbox}
+
+\clearpage
+
+\begin{glassbox}
+{\headingfont\fontsize{22}{24}\selectfont Защита команды - Часть II}\hfill
+{\color{muted}\sansfont\fontsize{9.5}{12}\selectfont Сохраняем ритм, ускорение, credibility и каркас системы. Это не ``доп. люди'', это архитектура роста.}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Настя}\hfill
+{\sansfont\bfseries\color{emerald} Ежедневный пульс}
+
+{\color{muted} Ведёт страницу Моники}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Stories, ответы на комментарии и DM, ежедневный engagement с нишей - всё, что даёт сигнал живого аккаунта.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Настя - это ежедневный пульс Monica. Если этот ритм остановить хотя бы на 2 недели, алгоритм начнёт забывать аккаунт. Это не расход. Это защита уже сделанной инвестиции.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Кто будет поддерживать ежедневную алгоритмическую активность аккаунта, если Настя уйдёт? & Пауза в 2-3 недели создаёт ощущение перезапуска. Восстановление потом обходится ощутимо дороже. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Настя}\hfill
+{\sansfont\bfseries\color{emerald} Ускоритель роста}
+
+{\color{muted} Таргетолог}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Платный рост, который помогает пройти ``valley of death'' от 279 до 1 000 подписчиков без затяжки на полгода.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Настя-таргетолог превращает путь к 1 000 подписчиков из 6 месяцев в 8 недель. Каждая неделя ожидания - это неделя, когда конкуренты занимают внимание твоей аудитории. Она не излишество, она ускоритель.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Если мы уберём платное продвижение, сколько месяцев ты готова ждать до первых коллабораций? & Без таргета путь к 1K - 6+ месяцев. С таргетом появляется шанс на UGC и первые бренд-запросы уже летом. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Маша}\hfill
+{\sansfont\bfseries\color{emerald} Credibility и медиа}
+
+{\color{muted} PR}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Выводит Monica за пределы Instagram: медиа, мероприятия, внешние контакты, брендовая репутация.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Маша превращает Instagram-страницу в бренд, о котором говорят. Одно правильное упоминание в медиа или одно верное событие в Монако могут принести не только подписчиков, но и реальные бренды в воронку.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Как ты планируешь получить первые 2-3 бренд-партнёрства без человека, который отвечает за внешние коммуникации? & PR на ранней стадии отличает проекты, которые взлетают, от тех, что годами стоят на месте. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{18}{20}\selectfont Яна}\hfill
+{\sansfont\bfseries\color{emerald} Каркас системы}
+
+{\color{muted} Проджект-менеджер}
+
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Функция в системе}\par
+Координация, ритм, защита от хаоса и удержание стратегии как системы, а не набора красивых, но случайных идей.
+\end{softbox}
+\vspace{2mm}
+\begin{softbox}[colback=paperbg]
+\minititle{Bullet Point для клиента}\par
+``Яна - это причина, почему стратегия существует как система. Без неё 4 рубрики снова станут случайным набором постов, ритм развалится, и проект вернётся к постоянной перестройке.''
+\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Калиброванный вопрос} & \textbf{NLP-привязка} \\
+Кто будет следить за тем, чтобы 4 рубрики выходили по графику и система не развалилась через 3 недели? & Если убрать PM, клиент экономит на человеке, но снова начинает платить хаосом, переделками и потерей фокуса. \\
+\end{tabularx}
+\end{glassbox}
+
+\clearpage
+
+\begin{glassbox}
+\stephead{7}{Future Pacing}
+
+\vspace{3mm}
+\begin{tabularx}{\linewidth}{Y Y}
+\rowcolor{paperbg}
+\textbf{Сценарий A - Полная команда} & \textbf{Сценарий B - Только трое} \\
+\fontsize{10.2}{14}\selectfont
+Через 8 недель, к июню 2026, Monica выходит на 800-1000 подписчиков.
+Reels стабильно дотягиваются до 5K просмотров.
+Bonpoint присылает первый бартер.
+У команды уже есть медиакит, который Маша отправила в 10 релевантных редакций.
+Диана делает фотосессию, которой хочется гордиться.
+Ира доводит страницу до уровня, где бренды сами пишут в DM.
+А Яна держит процесс настолько чистым, что клиенту не нужно жить в операционке.
+&
+\fontsize{10.2}{14}\selectfont
+Через 8 недель аккаунт остаётся в районе 350 подписчиков.
+Контент выходит нерегулярно, reels без сильного хука набирают 200 просмотров.
+Нет PR, нет коллабораций, нет медиакита.
+Фото на телефон визуально не отличают Monica от десятков других страниц.
+И снова появляется мысль: ``Может, нужна новая стратегия?''
+На практике это означает возврат к хаосу и более дорогой перезапуск позже. \\
+\end{tabularx}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+\stephead{8}{Agreement Frame}
+
+\vspace{3mm}
+\begin{navybox}
+\eyebrow{Финальное предложение}\par
+\vspace{2mm}
+{\headingfont\fontsize{18}{20}\selectfont 8-недельный спринт вместо резкого сокращения\par}
+\vspace{3mm}
+``Я понимаю, что бюджет - это важно. И при этом мы обе хотим, чтобы Monica стала брендом, а не просто красивой страницей.
+Я предлагаю не сокращать людей сейчас, а зафиксировать 8-недельный спринт.
+Через 8 недель мы вместе оценим результат: если рост не соответствует KPI, мы сами предложим оптимизацию.
+Но если система покажет результат - а она его покажет - ты будешь рада, что не сократила её слишком рано.
+Как тебе такой вариант?''
+\end{navybox}
+
+\vspace{3mm}
+\begin{multicols}{2}
+\begin{softbox}[colback=paperbg]
+\textbf{1.} Не говорим ``нет'' сокращению. Говорим: ``Давай оценим честно через 8 недель''.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=paperbg]
+\textbf{2.} Даём контроль через KPI: рост подписчиков, ER, бренд-контакты.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=paperbg]
+\textbf{3.} Используем presupposition: система покажет результат, если её не ломать раньше времени.
+\end{softbox}
+\vspace{2.5mm}
+\begin{softbox}[colback=paperbg]
+\textbf{4.} Финальный вопрос мягкий: ``Как тебе такой вариант?'' - клиент соглашается своей формулировкой.
+\end{softbox}
+\end{multicols}
+\end{glassbox}
+
+\vspace{4mm}
+
+\begin{glassbox}
+{\headingfont\fontsize{20}{22}\selectfont Сводная таблица}\par
+\vspace{2mm}
+\rowcolors{2}{paperbg}{paperwhite}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.31\linewidth} Y}
+\toprule
+\rowcolor{paperbg}
+\textbf{Человек} & \textbf{Функция бренда} & \textbf{Что теряем без этого человека} & \textbf{Стоимость потери} \\
+\textbf{Ира} & Визуальный язык & Контент становится обычным, исчезает quality overshoot. & Потеря USP и визуального превосходства. \\
+\textbf{Лера} & Алгоритм и стратегия & Ломаются хештеги, timing и caption SEO. & Reach может просесть на 50-70\%. \\
+\textbf{Настя} & Ежедневный пульс & Алгоритм перестаёт считывать Monica как живой аккаунт. & Восстановление ритма обойдётся дороже текущей работы. \\
+\textbf{Диана} & Модельное портфолио & Fashion Photo умирает, бренду нечего показывать партнёрам. & Замедление монетизации и потери collab-воронки. \\
+\textbf{Настя (таргет)} & Ускоритель роста & Путь к 1K растягивается на месяцы. & 4+ месяца упущенного импульса. \\
+\textbf{Маша} & Credibility & Нет медиа, нет выхода за пределы Instagram. & Годы вместо месяцев до статуса. \\
+\textbf{Яна} & Каркас системы & Рубрики распадаются, стратегия снова становится хаосом. & Потеря всей архитектуры роста. \\
+\bottomrule
+\end{tabularx}
+\end{glassbox}
+
+\clearpage
+
+\begin{glassbox}
+{\headingfont\fontsize{23}{25}\selectfont Шпаргалка для Яны}\hfill
+{\color{muted}\sansfont\fontsize{9.5}{12}\selectfont Краткий боевой лист на переговоры: в каком порядке говорить и какое ощущение создавать у клиента.}
+\end{glassbox}
+
+\vspace{3mm}
+
+\begin{multicols}{3}
+\begin{softbox}[colback=paperwhite]
+\minititle{1. Открытие}\par
+Начни с Accusation Audit: перечисли 4 главных страха клиента раньше неё самой.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{2. Labeling}\par
+На каждое возражение отвечай ``Похоже, ты чувствуешь...'' вместо аргумента или спора.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{3. That's Right}\par
+Точно суммируй её позицию и не двигайся дальше, пока не услышишь ``Вот именно''.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{4. Reframe}\par
+Переведи разговор из формулы ``7 человек'' в формулу ``4 функции бренда''.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{5. Факты}\par
+Дай 2-3 сильных сигнала: алгоритм забывает, перезапуск дороже, early-stage бренд нельзя резать раньше времени.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{6. Команда}\par
+Каждую роль объясняй через функцию, боль потери и один калиброванный вопрос.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{7. Будущее}\par
+Нарисуй два сценария через 8 недель: яркий и тусклый. Пускай контраст работает за вас.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{8. Закрытие}\par
+Не упирайся. Предложи 8-недельный спринт с KPI и совместной оценкой по итогам.
+\end{softbox}
+
+\vspace{2.5mm}
+\begin{softbox}[colback=paperwhite]
+\minititle{Тон}\par
+Late-Night FM DJ: медленный, тёплый, уверенный. Не давим. Не оправдываемся. Показываем.
+\end{softbox}
+\end{multicols}
+
+\vspace{4mm}
+
+\begin{glassbox}
+{\color{muted}\sansfont\fontsize{9.5}{12}\selectfont
+Playbook создан: 1 апреля 2026 \hfill
+Источники: Chris Voss (FBI), NLP framework, Reddit, The Drum, CMSwire, MarketingFuel UK, SpurNow, InfluenceFlow 2026
+}
+\end{glassbox}
+
+\end{document}

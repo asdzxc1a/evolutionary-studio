@@ -1,0 +1,161 @@
+═══ SCENE-LEVEL JUDGMENT — BEAT REPORT ═══
+
+  Overall Average:  0.335
+  Weakest Beat:     0.277  (beat_01)
+  Effective Score:  0.312  (avg×0.6 + weakest×0.4)
+
+─── BEAT-BY-BEAT SCORES ───
+
+  🔴 beat_01 — Opening Image — The Last Story
+     Type: setup   Score: 0.277
+     sur=0.18 | emo=0.10 | spe=0.35 | the=0.20 | cha=0.05 | ori=0.75 | dna=0.35 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.05), emotional_danger critically low (0.10)
+
+  🔴 beat_02 — Theme Stated — The Paradox
+     Type: setup   Score: 0.358
+     sur=0.19 | emo=0.14 | spe=0.20 | the=0.80 | cha=0.05 | ori=0.75 | dna=0.35 | cul=0.15
+     ✅ thematic_depth strong (0.80), originality strong (0.75)
+     ❌ character_edge critically low (0.05), emotional_danger critically low (0.14)
+
+  🔴 beat_03 — Set-Up — Calais
+     Type: setup   Score: 0.289
+     sur=0.18 | emo=0.09 | spe=0.65 | the=0.10 | cha=0.05 | ori=0.75 | dna=0.35 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.05), emotional_danger critically low (0.09)
+
+  🔴 beat_04 — Catalyst — The First Manifestation
+     Type: catalyst   Score: 0.309
+     sur=0.20 | emo=0.24 | spe=0.35 | the=0.20 | cha=0.13 | ori=0.72 | dna=0.35 | cul=0.25
+     ✅ originality strong (0.72)
+     ❌ character_edge critically low (0.13), surprise_factor critically low (0.20)
+
+  🔴 beat_05 — Debate — Real or Not Real
+     Type: debate   Score: 0.353
+     sur=0.21 | emo=0.10 | spe=0.60 | the=0.40 | cha=0.05 | ori=0.75 | dna=0.35 | cul=0.45
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.05), emotional_danger critically low (0.10)
+
+  🔴 beat_06 — Break Into Two — The Fox Arrives
+     Type: break_into_2   Score: 0.299
+     sur=0.22 | emo=0.13 | spe=0.40 | the=0.10 | cha=0.05 | ori=0.80 | dna=0.53 | cul=0.05
+     ✅ originality strong (0.80)
+     ❌ character_edge critically low (0.05), cultural_authenticity critically low (0.05)
+
+  🔴 beat_07 — Fun and Games — The Berlin Months
+     Type: fun_and_games   Score: 0.339
+     sur=0.29 | emo=0.21 | spe=0.60 | the=0.20 | cha=0.05 | ori=0.75 | dna=0.35 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.05), cultural_authenticity critically low (0.15)
+
+  🔴 beat_08 — Midpoint — False Control
+     Type: midpoint   Score: 0.381
+     sur=0.39 | emo=0.21 | spe=0.55 | the=0.20 | cha=0.13 | ori=0.75 | dna=0.53 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.13), cultural_authenticity critically low (0.15)
+
+  🔴 beat_09 — Bad Guys Close In — Olenka Becomes the Villain
+     Type: bad_guys_close_in   Score: 0.413
+     sur=0.21 | emo=0.53 | spe=0.30 | the=0.20 | cha=0.53 | ori=0.75 | dna=0.59 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ cultural_authenticity critically low (0.15), thematic_depth critically low (0.20)
+
+  🔴 beat_10 — All Is Lost — The Face Goes
+     Type: all_is_lost   Score: 0.314
+     sur=0.20 | emo=0.33 | spe=0.25 | the=0.10 | cha=0.13 | ori=0.75 | dna=0.47 | cul=0.25
+     ✅ originality strong (0.75)
+     ❌ thematic_depth critically low (0.10), character_edge critically low (0.13)
+
+  🔴 beat_11 — Dark Night of the Soul — Both Are True
+     Type: dark_night   Score: 0.379
+     sur=0.18 | emo=0.39 | spe=0.30 | the=0.50 | cha=0.13 | ori=0.75 | dna=0.47 | cul=0.15
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.13), cultural_authenticity critically low (0.15)
+
+  🔴 beat_12a — Break Into Three — The Apology
+     Type: break_into_3   Score: 0.307
+     sur=0.20 | emo=0.21 | spe=0.35 | the=0.10 | cha=0.13 | ori=0.75 | dna=0.47 | cul=0.25
+     ✅ originality strong (0.75)
+     ❌ thematic_depth critically low (0.10), character_edge critically low (0.13)
+
+  🔴 beat_13 — Finale — The Voluntary Telling
+     Type: finale   Score: 0.340
+     sur=0.25 | emo=0.25 | spe=0.45 | the=0.20 | cha=0.13 | ori=0.75 | dna=0.35 | cul=0.35
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.13), thematic_depth critically low (0.20)
+
+  🔴 beat_14 — Final Image — The Reflection
+     Type: final_image   Score: 0.330
+     sur=0.21 | emo=0.17 | spe=0.25 | the=0.30 | cha=0.05 | ori=0.75 | dna=0.47 | cul=0.55
+     ✅ originality strong (0.75)
+     ❌ character_edge critically low (0.05), emotional_danger critically low (0.17)
+
+─── BEAT RANKING (weakest → strongest) ───
+
+   1. [█████░░░░░░░░░░░░░░░] 0.277  beat_01
+   2. [█████░░░░░░░░░░░░░░░] 0.289  beat_03
+   3. [█████░░░░░░░░░░░░░░░] 0.299  beat_06
+   4. [██████░░░░░░░░░░░░░░] 0.307  beat_12a
+   5. [██████░░░░░░░░░░░░░░] 0.309  beat_04
+   6. [██████░░░░░░░░░░░░░░] 0.314  beat_10
+   7. [██████░░░░░░░░░░░░░░] 0.330  beat_14
+   8. [██████░░░░░░░░░░░░░░] 0.339  beat_07
+   9. [██████░░░░░░░░░░░░░░] 0.340  beat_13
+  10. [███████░░░░░░░░░░░░░] 0.353  beat_05
+  11. [███████░░░░░░░░░░░░░] 0.358  beat_02
+  12. [███████░░░░░░░░░░░░░] 0.379  beat_11
+  13. [███████░░░░░░░░░░░░░] 0.381  beat_08
+  14. [████████░░░░░░░░░░░░] 0.413  beat_09
+
+─── SURGICAL PRESCRIPTIONS (3 weakest) ───
+
+  🔧 beat_01:
+     [character_edge = 0.05]
+     The protagonist is too safe here. They need to do something UNCOMFORTABLE.
+     Not a mistake — a CHOICE that makes the audience question them.
+     What would make this character hard to like in this moment?
+     
+     [emotional_danger = 0.10]
+     The stakes feel safe here. The protagonist must RISK something real.
+     What's the WORST thing that could happen in this moment?
+     Make the audience genuinely afraid — not for the body, for the soul.
+     
+     [cultural_authenticity = 0.15]
+     Cultural elements are surface-level or absent here.
+     Add details only someone from this culture would know.
+     Make the cultural elements DRIVE the beat, not decorate it.
+     
+
+  🔧 beat_03:
+     [character_edge = 0.05]
+     The protagonist is too safe here. They need to do something UNCOMFORTABLE.
+     Not a mistake — a CHOICE that makes the audience question them.
+     What would make this character hard to like in this moment?
+     
+     [emotional_danger = 0.09]
+     The stakes feel safe here. The protagonist must RISK something real.
+     What's the WORST thing that could happen in this moment?
+     Make the audience genuinely afraid — not for the body, for the soul.
+     
+     [thematic_depth = 0.10]
+     This beat doesn't engage the film's central paradox.
+     Every beat should make the audience feel the TENSION between the two sides.
+     How does this moment argue FOR and AGAINST the theme simultaneously?
+     
+
+  🔧 beat_06:
+     [character_edge = 0.05]
+     The protagonist is too safe here. They need to do something UNCOMFORTABLE.
+     Not a mistake — a CHOICE that makes the audience question them.
+     What would make this character hard to like in this moment?
+     
+     [cultural_authenticity = 0.05]
+     Cultural elements are surface-level or absent here.
+     Add details only someone from this culture would know.
+     Make the cultural elements DRIVE the beat, not decorate it.
+     
+     [thematic_depth = 0.10]
+     This beat doesn't engage the film's central paradox.
+     Every beat should make the audience feel the TENSION between the two sides.
+     How does this moment argue FOR and AGAINST the theme simultaneously?
+     

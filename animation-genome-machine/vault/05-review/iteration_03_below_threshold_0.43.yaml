@@ -1,0 +1,33 @@
+# Iteration 3 — Status: below_threshold — Score: 0.43
+# Timestamp: 2026-05-31T16:52:19.636438
+
+
+metadata:
+  title: "Test Film"
+  reference_film: "Zootopia"
+  genome_version: "1.0"
+  target_duration_minutes: 90
+  target_format: feature
+
+narrative_dna:
+  structure: save_the_cat
+  emotional_arc_shape: cinderella
+  beats:
+    - id: beat_01
+      name: "Opening"
+      type: setup
+      timestamp_pct: 0.0
+      emotional_valence: 0.3
+      emotional_arousal: 0.2
+      description: "A displaced girl arrives in a foreign city"
+      duration_pct: 0.05
+  themes:
+    - "displacement"
+    - "identity"
+
+character_dna:
+  characters:
+    - id: char_protagonist
+      name: "Olenka"
+      archetype: reluctant_hero
+      arc: "Angry displaced girl learns to carry her heritage without being consumed by it"

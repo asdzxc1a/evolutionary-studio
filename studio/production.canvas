@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    {
+      "id": "brief",
+      "type": "file",
+      "x": 0,
+      "y": 0,
+      "width": 300,
+      "height": 200,
+      "color": "#ff0000",
+      "file": "creative_brief.md"
+    },
+    {
+      "id": "concepts",
+      "type": "text",
+      "x": 400,
+      "y": 0,
+      "width": 300,
+      "height": 200,
+      "color": "",
+      "text": "Concepts will appear here"
+    },
+    {
+      "id": "scenes",
+      "type": "text",
+      "x": 800,
+      "y": 0,
+      "width": 300,
+      "height": 200,
+      "color": "",
+      "text": "Scenes will appear here"
+    }
+  ],
+  "edges": []
+}

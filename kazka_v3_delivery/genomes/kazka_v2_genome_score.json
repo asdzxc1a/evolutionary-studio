@@ -1,0 +1,18 @@
+{
+  "file": "vault/00-film-dna/kazka_v2_genome.yaml",
+  "timestamp": "2026-05-31T17:07:49.761388",
+  "overall_score": 0.668,
+  "killed": false,
+  "kill_reasons": [],
+  "dimensions": {
+    "surprise_factor": 0.7,
+    "emotional_danger": 0.7000000000000001,
+    "specificity": 0.58,
+    "thematic_depth": 0.6799999999999999,
+    "character_edge": 0.42000000000000004,
+    "originality": 0.8,
+    "dna_fidelity": 0.8,
+    "cultural_authenticity": 0.42000000000000004
+  },
+  "pass": false
+}

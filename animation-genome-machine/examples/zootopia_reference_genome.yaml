@@ -1,0 +1,754 @@
+# =============================================================================
+# Film Genome Document: Zootopia (2016) — Reference Genome
+# =============================================================================
+# This is a PARTIAL genome extracted from the film Zootopia.
+# It serves as a reference implementation and test fixture for the
+# Animation Genome Machine compiler.
+#
+# NOTE: This is a study/analysis document. Timestamps and details are
+# approximations based on public analysis of the film's structure.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# STRAND 1: METADATA
+# ---------------------------------------------------------------------------
+metadata:
+  title: "Zootopia — Reference Genome"
+  reference_film: "Zootopia (2016, Walt Disney Animation Studios)"
+  genome_version: "1.0"
+  author: "Animation Genome Machine"
+  created: "2025-01-15"
+  target_duration_minutes: 108
+  target_format: feature
+
+# ---------------------------------------------------------------------------
+# STRAND 2: NARRATIVE DNA
+# ---------------------------------------------------------------------------
+narrative_dna:
+  structure: save_the_cat
+  emotional_arc_shape: cinderella  # Rise → Fall → Rise
+
+  beats:
+    - id: beat_opening_image
+      name: "Opening Image — Young Judy's Play"
+      type: setup
+      timestamp_pct: 0.00
+      emotional_valence: 0.6
+      emotional_arousal: 0.5
+      description: >
+        Young Judy Hopps performs in a school play about Zootopia's history,
+        declaring she will be the first bunny police officer. She is mocked
+        by Gideon Grey but stands her ground, establishing her determination
+        and the prejudice she faces.
+      duration_pct: 0.05
+
+    - id: beat_theme_stated
+      name: "Theme Stated — Anyone Can Be Anything"
+      type: setup
+      timestamp_pct: 0.05
+      emotional_valence: 0.7
+      emotional_arousal: 0.3
+      description: >
+        Judy's parents warn her about the dangers of dreaming too big.
+        The theme is stated explicitly: "In Zootopia, anyone can be anything."
+        This is both the promise and the lie the film will interrogate.
+      duration_pct: 0.03
+
+    - id: beat_catalyst
+      name: "Catalyst — Judy Graduates Police Academy"
+      type: catalyst
+      timestamp_pct: 0.10
+      emotional_valence: 0.9
+      emotional_arousal: 0.8
+      description: >
+        Montage of Judy training at the police academy, initially failing
+        but using her small size and agility to her advantage. She graduates
+        top of her class and is assigned to Zootopia's prestigious Precinct One.
+      duration_pct: 0.05
+
+    - id: beat_debate
+      name: "Debate — Meter Maid Duty"
+      type: debate
+      timestamp_pct: 0.15
+      emotional_valence: -0.2
+      emotional_arousal: 0.4
+      description: >
+        Chief Bogo assigns Judy to parking duty instead of real cases.
+        She excels at it (200 tickets before noon) but is frustrated.
+        She encounters Nick Wilde, a con artist fox, and is hustled by him.
+        Internal debate: accept her limited role or push for more?
+      duration_pct: 0.10
+
+    - id: beat_break_into_2
+      name: "Break into Two — The Otterton Case"
+      type: break_into_2
+      timestamp_pct: 0.25
+      emotional_valence: 0.4
+      emotional_arousal: 0.6
+      description: >
+        Mrs. Otterton desperately seeks help finding her missing husband.
+        Judy volunteers against Bogo's wishes. Assistant Mayor Bellwether
+        supports her publicly, forcing Bogo to give Judy 48 hours.
+        Bogo's condition: fail, and she resigns. Judy's all-in.
+      duration_pct: 0.05
+
+    - id: beat_fun_and_games
+      name: "Fun and Games — The Buddy Investigation"
+      type: fun_and_games
+      timestamp_pct: 0.30
+      emotional_valence: 0.5
+      emotional_arousal: 0.7
+      description: >
+        Judy blackmails Nick into helping her investigate. They visit
+        the Naturalist Club, track Mr. Manchas the jaguar, witness him
+        go savage, chase through the Rainforest District, and discover
+        the missing mammals are being held in a secret prison.
+        Classic buddy-cop fun with a predator-prey twist.
+      duration_pct: 0.20
+
+    - id: beat_midpoint
+      name: "Midpoint — The Mayor's Secret Prison"
+      type: midpoint
+      timestamp_pct: 0.50
+      emotional_valence: 0.3
+      emotional_arousal: 0.9
+      description: >
+        Judy and Nick discover all 14 missing predators locked in a
+        secret facility on Mayor Lionheart's orders. They call the police.
+        False victory: the case is solved, Judy is celebrated, Lionheart
+        is arrested. But the real mystery — WHY predators are going savage —
+        remains unsolved.
+      duration_pct: 0.05
+
+    - id: beat_bad_guys_close_in
+      name: "Bad Guys Close In — The Press Conference"
+      type: bad_guys_close_in
+      timestamp_pct: 0.55
+      emotional_valence: -0.3
+      emotional_arousal: 0.6
+      description: >
+        At a press conference, Judy speculates that predators may be
+        reverting to their "biological" instincts. This triggers citywide
+        fear and discrimination against predators. Nick, deeply hurt,
+        confronts Judy about her own prejudice. Their partnership shatters.
+        The city descends into fear and division.
+      duration_pct: 0.10
+
+    - id: beat_all_is_lost
+      name: "All Is Lost — Judy Quits"
+      type: all_is_lost
+      timestamp_pct: 0.70
+      emotional_valence: -0.8
+      emotional_arousal: 0.5
+      description: >
+        Judy, realizing she's become part of the problem, resigns from
+        the police force and returns to her parents' farm. She has lost
+        Nick's friendship, her career, and her belief in herself.
+        Zootopia is tearing itself apart along predator-prey lines.
+      duration_pct: 0.05
+
+    - id: beat_dark_night
+      name: "Dark Night of the Soul — Night Howlers"
+      type: dark_night
+      timestamp_pct: 0.75
+      emotional_valence: -0.4
+      emotional_arousal: 0.3
+      description: >
+        Working on her parents' farm, Judy learns that "night howlers"
+        are not wolves — they're toxic flowers that cause savage behavior.
+        The mammals weren't reverting to instinct; they were being POISONED.
+        Her entire assumption was wrong. She must fix what she broke.
+      duration_pct: 0.05
+
+    - id: beat_break_into_3
+      name: "Break into Three — Judy Finds Nick"
+      type: break_into_3
+      timestamp_pct: 0.80
+      emotional_valence: 0.2
+      emotional_arousal: 0.5
+      description: >
+        Judy returns to Zootopia and finds Nick. She apologizes genuinely,
+        admitting she was wrong and that she is the "token bunny" who
+        failed to see her own prejudice. Nick forgives her.
+        They team up to find the real villain.
+      duration_pct: 0.05
+
+    - id: beat_finale
+      name: "Finale — Bellwether's Plot Exposed"
+      type: finale
+      timestamp_pct: 0.85
+      emotional_valence: 0.7
+      emotional_arousal: 1.0
+      description: >
+        Judy and Nick discover that Bellwether has been weaponizing the
+        night howler flowers to turn predators savage, manufacturing fear
+        to seize political power. In a confrontation at the Natural History
+        Museum, Bellwether shoots Nick with a night howler pellet — but
+        Judy and Nick have swapped it with a blueberry. They record
+        Bellwether's confession. She's arrested.
+      duration_pct: 0.10
+
+    - id: beat_final_image
+      name: "Final Image — A Better Zootopia"
+      type: final_image
+      timestamp_pct: 0.95
+      emotional_valence: 0.9
+      emotional_arousal: 0.6
+      description: >
+        Zootopia begins healing. Nick becomes the first fox police officer.
+        Judy and Nick are partners. At a Gazelle concert, predator and prey
+        dance together. Judy's narration: "Real life is messy... but we
+        all get along. Regardless of what type of animal you are."
+      duration_pct: 0.05
+
+  causal_chain:
+    - cause: beat_opening_image
+      effect: beat_catalyst
+      relationship: because_of_that  # Her childhood dream drives her to the academy
+
+    - cause: beat_catalyst
+      effect: beat_debate
+      relationship: because_of_that  # Graduating leads to Precinct One assignment
+
+    - cause: beat_debate
+      effect: beat_break_into_2
+      relationship: because_of_that  # Frustration on parking duty drives her to take the case
+
+    - cause: beat_break_into_2
+      effect: beat_fun_and_games
+      relationship: because_of_that  # Taking the case forces her to find Nick
+
+    - cause: beat_fun_and_games
+      effect: beat_midpoint
+      relationship: until_finally   # Investigation builds until they find the prison
+
+    - cause: beat_midpoint
+      effect: beat_bad_guys_close_in
+      relationship: because_of_that  # Solving the case leads to the press conference
+
+    - cause: beat_bad_guys_close_in
+      effect: beat_all_is_lost
+      relationship: because_of_that  # Her prejudiced comments destroy everything
+
+    - cause: beat_all_is_lost
+      effect: beat_dark_night
+      relationship: because_of_that  # Returning home leads to the night howler discovery
+
+    - cause: beat_dark_night
+      effect: beat_break_into_3
+      relationship: because_of_that  # Understanding the truth drives her back to Nick
+
+    - cause: beat_break_into_3
+      effect: beat_finale
+      relationship: because_of_that  # Reuniting with Nick enables the final investigation
+
+  themes:
+    - "Prejudice and implicit bias"
+    - "Anyone can be anything — and its limitations"
+    - "The weaponization of fear for political power"
+    - "True friendship requires vulnerability"
+    - "Systemic vs. individual change"
+
+# ---------------------------------------------------------------------------
+# STRAND 3: CHARACTER DNA
+# ---------------------------------------------------------------------------
+character_dna:
+  characters:
+
+    - id: char_judy
+      name: "Judy Hopps"
+      archetype: reluctant_hero  # Not reluctant to be a hero, but to see her own bias
+      arc: >
+        Naive idealist who believes in the system → confronted by her own
+        unconscious prejudice → broken by the gap between her ideals and
+        actions → rebuilt as a wiser optimist who knows change starts within.
+      traits:
+        - determined
+        - optimistic
+        - naive
+        - stubborn
+        - empathetic
+        - competitive
+      introduction_beat: beat_opening_image
+      relationships:
+        - target: char_nick
+          type: "reluctant partner → trusted friend → partner"
+          evolution: >
+            Mutual distrust and manipulation → grudging respect through shared
+            danger → genuine friendship shattered by Judy's prejudice →
+            rebuilt through honest apology → equal partners.
+        - target: char_bogo
+          type: "subordinate vs. dismissive boss"
+          evolution: >
+            Bogo dismisses Judy as a diversity hire → Judy proves herself
+            through results → Bogo develops genuine respect.
+      visual:
+        color_palette:
+          - "#8B8589"   # Grey fur
+          - "#2E5090"   # Police blue uniform
+          - "#E8A87C"   # Inner ear pink
+          - "#9B59B6"   # Purple eyes
+          - "#FFD700"   # Gold badge
+        description: >
+          Small grey rabbit with long upright ears, large expressive purple
+          eyes, and a pink nose. Wears a blue police officer uniform with
+          gold badge number #1. Very small relative to most other characters.
+          Moves with bouncy energy and determination.
+      voice:
+        style: >
+          High-energy, earnest, slightly fast-talking. Voice rises when
+          excited. Gets quieter and slower during emotional moments.
+          Midwest-wholesome delivery.
+
+    - id: char_nick
+      name: "Nick Wilde"
+      archetype: charming_trickster
+      arc: >
+        Cynical hustler who uses charm as armor → forced into partnership
+        that challenges his worldview → reveals his vulnerability (childhood
+        muzzle trauma) → betrayed by Judy's prejudice (confirms his cynicism) →
+        chooses hope over cynicism → becomes the first fox cop.
+      traits:
+        - witty
+        - cynical
+        - streetwise
+        - secretly vulnerable
+        - loyal (when earned)
+        - observant
+      introduction_beat: beat_debate
+      relationships:
+        - target: char_judy
+          type: "mark → unwilling partner → friend → betrayed → forgiven"
+          evolution: >
+            Initially sees Judy as a naive mark to hustle → forced into
+            partnership → begins to respect her determination → reveals
+            his deepest wound to her → devastated when she confirms his
+            worst fears about prey animals → forgives because she's the
+            first person to truly apologize.
+      visual:
+        color_palette:
+          - "#D2691E"   # Red-orange fur
+          - "#F5DEB3"   # Cream chest fur
+          - "#228B22"   # Green Hawaiian shirt
+          - "#4A4A4A"   # Grey tie
+          - "#2E5090"   # Police blue (final act)
+        description: >
+          Tall, lean red fox with a cream-colored chest and muzzle.
+          Wears a green Hawaiian shirt over a grey tie (his hustler
+          "uniform"). Sharp green eyes with a perpetual half-smirk.
+          Moves with languid confidence. In the final act, wears a
+          police officer uniform.
+      voice:
+        style: >
+          Smooth, sardonic, laid-back delivery. Dry wit with impeccable
+          timing. Voice drops to a near-whisper during vulnerable moments.
+          Jason Bateman-esque deadpan.
+
+    - id: char_bogo
+      name: "Chief Bogo"
+      archetype: wise_mentor  # Reluctant mentor — eventually validates Judy
+      arc: >
+        Dismissive authority figure who sees Judy as a PR stunt →
+        gradually forced to acknowledge her competence → becomes
+        a genuine supporter who sees officers as individuals.
+      traits:
+        - authoritative
+        - dismissive
+        - by-the-book
+        - secretly fair-minded
+        - gruff
+      introduction_beat: beat_debate
+      relationships:
+        - target: char_judy
+          type: "dismissive superior → reluctant acknowledger → supporter"
+          evolution: >
+            Assigns Judy to parking duty to make her quit → forced to
+            give her a case → grudgingly impressed by results → becomes
+            a genuine ally after seeing her integrity.
+      visual:
+        color_palette:
+          - "#4A4A4A"   # Dark grey-brown
+          - "#2C2C2C"   # Horns, dark features
+          - "#1C3A5F"   # Dark police blue
+        description: >
+          Massive Cape buffalo in a police chief uniform. Towers over
+          most characters. Dark grey-brown hide, large curved horns.
+          Wears reading glasses when doing paperwork. Expressions
+          range from stern to grudgingly amused.
+      voice:
+        style: >
+          Deep, commanding bass. Speaks in clipped, no-nonsense sentences.
+          Idris Elba gravitas. Occasional dry humor slips through
+          the stern exterior.
+
+# ---------------------------------------------------------------------------
+# STRAND 4: VISUAL DNA
+# ---------------------------------------------------------------------------
+visual_dna:
+  color_dna:
+    act_1:
+      palette:
+        - "#FFD700"   # Gold (optimism, promise)
+        - "#87CEEB"   # Sky blue (openness)
+        - "#228B22"   # Green (Bunnyburrow nature)
+        - "#FF6347"   # Warm red-orange (energy)
+      mood: "Warm, inviting, optimistic — the world as Judy sees it"
+      saturation_level: vibrant
+      contrast: medium
+
+    act_2a:
+      palette:
+        - "#4682B4"   # Steel blue (urban, cooler)
+        - "#708090"   # Slate grey (concrete, bureaucracy)
+        - "#228B22"   # Green (Rainforest District)
+        - "#DAA520"   # Goldenrod (fading optimism)
+      mood: "Cooler, more urban — reality setting in but still exciting"
+      saturation_level: natural
+      contrast: medium
+
+    act_2b:
+      palette:
+        - "#4A4A4A"   # Dark grey (fear, division)
+        - "#8B0000"   # Dark red (danger, primal fear)
+        - "#2F4F4F"   # Dark slate (institutional walls)
+        - "#C0C0C0"   # Silver (cold, clinical)
+      mood: "Desaturated, colder — the city losing its color as fear spreads"
+      saturation_level: desaturated
+      contrast: high
+
+    act_3:
+      palette:
+        - "#FFD700"   # Gold returns (hope restored)
+        - "#87CEEB"   # Sky blue returns
+        - "#FF69B4"   # Pink (Gazelle concert, celebration)
+        - "#228B22"   # Green (renewal)
+      mood: "Colors return, warmer than act 1 — earned optimism, not naive"
+      saturation_level: vibrant
+      contrast: medium
+
+  shot_distribution:
+    wide: 0.15
+    medium: 0.35
+    close_up: 0.35
+    extreme_close_up: 0.05
+    overhead: 0.10
+
+  style:
+    render_style: 3d_stylized
+    lighting_approach: >
+      Warm key lighting in Bunnyburrow and positive scenes. Cool, directional
+      lighting in Zootopia's urban core. Dramatic chiaroscuro in thriller
+      sequences (Mr. Manchas chase, museum finale). Neon-tinged practical
+      lighting in the Rainforest and Tundratown districts.
+    reference_films_visual:
+      - "Zootopia (2016)"
+      - "Big Hero 6 (2014)"
+      - "Ratatouille (2007)"
+    art_direction_notes: >
+      The city of Zootopia should feel like a real metropolis — diverse
+      architecture scaled to different species. Each district (Sahara Square,
+      Tundratown, Rainforest District, Little Rodentia) has its own distinct
+      visual language. Background characters are always diverse species.
+      The world is a character.
+
+# ---------------------------------------------------------------------------
+# STRAND 5: PACING DNA
+# ---------------------------------------------------------------------------
+pacing_dna:
+  average_shot_length_seconds: 4.2
+  asl_by_act:
+    "1": 5.0   # Slower, establishing
+    "2": 3.8   # Faster, investigation
+    "3": 3.0   # Fastest, climax
+
+  cutting_dynamics: accelerating
+
+  tension_curve:
+    - [0.00, 0.2]   # Opening — calm childhood
+    - [0.05, 0.3]   # Theme stated — mild tension
+    - [0.10, 0.4]   # Academy — building energy
+    - [0.15, 0.3]   # Parking duty — frustration plateau
+    - [0.25, 0.5]   # Takes the case — stakes rise
+    - [0.35, 0.6]   # Investigation heats up
+    - [0.45, 0.8]   # Manchas goes savage — thriller spike
+    - [0.50, 0.7]   # Mayor's prison — false resolution
+    - [0.55, 0.6]   # Press conference — tension type shifts
+    - [0.65, 0.5]   # City unravels — slow dread
+    - [0.70, 0.3]   # Judy quits — emotional low
+    - [0.75, 0.4]   # Night howler discovery — hope returns
+    - [0.80, 0.5]   # Reunion with Nick
+    - [0.85, 0.8]   # Museum chase begins
+    - [0.90, 1.0]   # Bellwether confrontation — peak
+    - [0.95, 0.3]   # Resolution — release
+    - [1.00, 0.2]   # Concert — warm landing
+
+  rhythm_pattern: >
+    Act 1 uses longer takes and gentle transitions to build the world.
+    Investigation sequences alternate quick-cut discoveries with held
+    reaction shots. The Manchas chase uses rapid 1-2 second cuts.
+    Emotional scenes (Nick's flashback, Judy's apology) hold on
+    close-ups for 5-8 seconds with minimal cutting. The museum
+    finale accelerates to staccato cutting, then suddenly holds
+    on a long take for the twist reveal.
+
+# ---------------------------------------------------------------------------
+# STRAND 6: AUDIO DNA
+# ---------------------------------------------------------------------------
+audio_dna:
+  dialogue_ratio: 0.55
+  music_coverage: 0.75
+
+  silence_moments:
+    - beat_id: beat_all_is_lost
+      duration_seconds: 4.0
+      purpose: >
+        After Judy places her badge on Bogo's desk. The silence
+        forces the audience to feel the weight of her resignation.
+
+    - beat_id: beat_dark_night
+      duration_seconds: 3.0
+      purpose: >
+        The moment Judy realizes night howlers are flowers, not wolves.
+        Silence as the pieces click together in her mind.
+
+  music_style:
+    genre: "Orchestral with pop and world music elements"
+    reference: "Michael Giacchino (Zootopia OST)"
+    emotional_arc_follows: true
+    instruments:
+      - "Full orchestra"
+      - "Pop vocals (Shakira as Gazelle)"
+      - "African percussion (city energy)"
+      - "Jazz saxophone (Nick's theme)"
+      - "Light woodwinds (Judy's theme)"
+      - "Dark brass (villain/tension)"
+
+  voice_styles:
+    char_judy:
+      style: "Energetic, earnest, fast-talking. Ginnifer Goodwin delivery."
+    char_nick:
+      style: "Smooth, sardonic, deadpan. Jason Bateman delivery."
+    char_bogo:
+      style: "Deep, commanding, clipped sentences. Idris Elba authority."
+
+# ---------------------------------------------------------------------------
+# STRAND 7: SCENE MANIFEST (Partial — 2 key scenes)
+# ---------------------------------------------------------------------------
+scene_manifest:
+  scenes:
+
+    # =========================================================================
+    # SCENE 1: Judy arrives in Zootopia (Break into Two)
+    # =========================================================================
+    - id: scene_zootopia_arrival
+      beat_id: beat_break_into_2
+      act: 1
+      location: "Zootopia Central Station and City Streets"
+      time_of_day: morning
+      weather: "Clear, bright sunshine"
+      characters_present:
+        - char_judy
+      emotional_target:
+        valence: 0.9
+        arousal: 0.8
+      duration_seconds: 60
+
+      shots:
+        - id: shot_train_approach
+          type: wide_establishing
+          duration_seconds: 5.0
+          camera_movement: dolly_in
+          description: >
+            Wide shot of the Zootopia Express train gliding through a
+            tunnel and emerging into dazzling daylight. The city skyline
+            appears — towers scaled for giraffes next to tiny rodent
+            buildings, connected by elevated walkways. Gleaming,
+            impossibly diverse architecture.
+          characters_in_frame: []
+          dialogue: null
+          sfx:
+            - "train_whoosh"
+            - "tunnel_echo_to_open_air"
+          transition_to_next: cut
+
+        - id: shot_judy_face_train
+          type: close_up
+          duration_seconds: 3.0
+          camera_movement: static
+          description: >
+            Close-up of Judy's face pressed against the train window.
+            Her eyes are enormous, reflecting the city lights. Her ears
+            are straight up with excitement. Pure wonder and joy.
+          characters_in_frame:
+            - char_judy
+          dialogue: null
+          sfx:
+            - "train_interior_ambient"
+          transition_to_next: match_cut
+
+        - id: shot_station_entrance
+          type: wide
+          duration_seconds: 5.0
+          camera_movement: crane_up
+          description: >
+            Judy walks out of Zootopia Central Station — a grand art-deco
+            building with animal-themed columns. The camera cranes up to
+            reveal the vast city beyond. Animals of every size flow around
+            Judy. She's tiny but radiating determination.
+          characters_in_frame:
+            - char_judy
+          dialogue: "JUDY: (whispered) I'm really here."
+          sfx:
+            - "crowd_chatter_diverse"
+            - "footsteps_various_sizes"
+            - "city_ambient"
+          transition_to_next: cut
+
+        - id: shot_judy_walks_city
+          type: medium
+          duration_seconds: 4.0
+          camera_movement: steadicam
+          description: >
+            Steadicam follows Judy as she walks through the city streets,
+            looking up at everything in amazement. A giraffe passes on an
+            elevated walkway. Hamsters pop out of pneumatic tubes. The
+            climate wall separating Tundratown and Sahara Square is
+            visible in the background.
+          characters_in_frame:
+            - char_judy
+          dialogue: null
+          sfx:
+            - "city_traffic"
+            - "pneumatic_tube_woosh"
+            - "distant_music"
+          transition_to_next: dissolve
+
+    # =========================================================================
+    # SCENE 2: Press Conference — Everything Falls Apart
+    # =========================================================================
+    - id: scene_press_conference
+      beat_id: beat_bad_guys_close_in
+      act: 2
+      location: "Zootopia City Hall — Press Room"
+      time_of_day: afternoon
+      weather: null
+      characters_present:
+        - char_judy
+        - char_nick
+      emotional_target:
+        valence: -0.5
+        arousal: 0.7
+      duration_seconds: 90
+
+      shots:
+        - id: shot_podium_wide
+          type: wide
+          duration_seconds: 4.0
+          camera_movement: static
+          description: >
+            Wide shot of the press room. Judy stands at a podium surrounded
+            by microphones and cameras. Reporters fill the room. Nick stands
+            to the side, watching proudly. The ZPD banner hangs behind Judy.
+            Bright, clinical lighting — the harsh light of public scrutiny.
+          characters_in_frame:
+            - char_judy
+            - char_nick
+          dialogue: null
+          sfx:
+            - "camera_shutters"
+            - "crowd_murmur"
+          transition_to_next: cut
+
+        - id: shot_judy_answers
+          type: medium_close
+          duration_seconds: 6.0
+          camera_movement: dolly_in
+          description: >
+            Medium close-up of Judy at the podium, answering questions
+            with growing discomfort. The camera slowly dollies in as the
+            questions get harder. Her confident smile begins to crack.
+          characters_in_frame:
+            - char_judy
+          dialogue: >
+            REPORTER: Why is it only predators going savage?
+            JUDY: ...It may have something to do with biology.
+            REPORTER: What do you mean?
+            JUDY: A predator's DNA — there may be a biological component.
+          sfx:
+            - "camera_shutters_intensifying"
+          transition_to_next: cut
+
+        - id: shot_nick_reaction
+          type: close_up
+          duration_seconds: 4.0
+          camera_movement: static
+          description: >
+            Close-up of Nick's face as he hears Judy's words. His
+            half-smile freezes. His eyes widen, then narrow. The
+            emotional walls slam back up. His ears flatten. In this
+            moment, the fox who was beginning to trust is reminded
+            why he stopped trusting.
+          characters_in_frame:
+            - char_nick
+          dialogue: null
+          sfx:
+            - "room_tone_low_hum"
+          transition_to_next: cut
+
+        - id: shot_nick_confronts_judy
+          type: medium
+          duration_seconds: 8.0
+          camera_movement: static
+          description: >
+            Nick and Judy face each other outside the press room.
+            Nick's body language is closed — arms crossed, leaning away.
+            Judy is reaching toward him. The physical space between them
+            represents the emotional chasm her words created.
+          characters_in_frame:
+            - char_judy
+            - char_nick
+          dialogue: >
+            NICK: So, are you afraid of me? Think I might go savage?
+            Think I might try to — eat you?
+            JUDY: Nick, stop it. I didn't mean—
+            NICK: (quietly) You know, I think you said exactly what
+            you meant.
+          sfx:
+            - "hallway_echo"
+          transition_to_next: cut
+
+        - id: shot_nick_walks_away
+          type: wide
+          duration_seconds: 5.0
+          camera_movement: static
+          description: >
+            Wide shot from behind Judy as Nick walks away down the
+            City Hall corridor. He doesn't look back. Judy stands
+            alone, small in the frame, surrounded by cold marble
+            architecture. The warm color palette has drained — the
+            corridor is grey and blue.
+          characters_in_frame:
+            - char_judy
+            - char_nick
+          dialogue: null
+          sfx:
+            - "footsteps_receding"
+            - "silence"
+          transition_to_next: fade_to_black
+
+# ---------------------------------------------------------------------------
+# STRAND 8: RENDERING HINTS
+# ---------------------------------------------------------------------------
+rendering_hints:
+  preferred_models:
+    character_closeups: "flux-kontext-pro"
+    establishing_shots: "flux-pro-v1.1"
+    dialogue_scenes: "flux-kontext-pro"
+    action_sequences: "kling-v2"
+    bulk_transitions: "flux-schnell"
+
+  budget_mode: false
+  max_cost_usd: 50.0
+  quality_threshold: 0.8
+  target_resolution: 1080p
+  target_fps: 24

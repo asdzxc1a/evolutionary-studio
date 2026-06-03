@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbook защиты команды @monicastyle.mc</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 12mm 16mm;
+    }
+
+    :root {
+      --bg: #f5efe7;
+      --paper: rgba(255, 255, 255, 0.84);
+      --paper-strong: rgba(255, 255, 255, 0.94);
+      --ink: #1d2332;
+      --muted: #5d6679;
+      --line: rgba(29, 35, 50, 0.12);
+      --accent: #c1874f;
+      --accent-soft: rgba(193, 135, 79, 0.16);
+      --emerald: #1f6b62;
+      --emerald-soft: rgba(31, 107, 98, 0.14);
+      --rose: #8e4a5d;
+      --rose-soft: rgba(142, 74, 93, 0.14);
+      --navy: #20283d;
+      --shadow: 0 18px 40px rgba(26, 28, 44, 0.10);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html, body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(193, 135, 79, 0.14), transparent 32%),
+        radial-gradient(circle at 100% 0%, rgba(31, 107, 98, 0.10), transparent 25%),
+        linear-gradient(180deg, #f8f3ed 0%, #f1e8dc 100%);
+      color: var(--ink);
+      font-family: "Avenir Next", Avenir, "Arial Unicode MS", Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    body {
+      counter-reset: page;
+    }
+
+    .document {
+      width: 100%;
+    }
+
+    .page {
+      position: relative;
+      min-height: calc(297mm - 30mm);
+      padding: 4mm 0 0;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page-number {
+      position: absolute;
+      right: 0;
+      bottom: -2mm;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(29, 35, 50, 0.46);
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      font-size: 12.3px;
+      color: var(--ink);
+    }
+
+    .eyebrow, .tiny-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(29, 35, 50, 0.56);
+    }
+
+    .cover {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 32px;
+      padding: 18mm 16mm 14mm;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(193, 135, 79, 0.20), transparent 24%),
+        radial-gradient(circle at 82% 12%, rgba(31, 107, 98, 0.20), transparent 20%),
+        linear-gradient(145deg, rgba(32, 40, 61, 0.96), rgba(23, 31, 47, 0.93) 48%, rgba(61, 42, 35, 0.90));
+      color: #fffaf2;
+      box-shadow: var(--shadow);
+      min-height: 246mm;
+      position: relative;
+    }
+
+    .cover::before,
+    .cover::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .cover::before {
+      width: 180mm;
+      height: 180mm;
+      top: -110mm;
+      right: -74mm;
+      border: 1px solid rgba(255, 250, 242, 0.12);
+      box-shadow:
+        inset 0 0 0 28px rgba(255, 250, 242, 0.04),
+        inset 0 0 0 56px rgba(255, 250, 242, 0.03);
+    }
+
+    .cover::after {
+      width: 88mm;
+      height: 88mm;
+      left: -22mm;
+      bottom: -26mm;
+      background: radial-gradient(circle, rgba(193, 135, 79, 0.32), transparent 68%);
+      filter: blur(2px);
+    }
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22mm;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 250, 242, 0.16);
+      background: rgba(255, 250, 242, 0.08);
+      backdrop-filter: blur(12px);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 250, 242, 0.88);
+    }
+
+    .pill strong {
+      color: #fffaf2;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.82fr;
+      gap: 18mm;
+      align-items: end;
+    }
+
+    .cover h1 {
+      font-size: 29px;
+      line-height: 1.02;
+      max-width: 118mm;
+      margin-bottom: 8mm;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255, 250, 242, 0.78);
+      max-width: 112mm;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 10px;
+      margin-top: 12mm;
+    }
+
+    .meta-card {
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 250, 242, 0.07);
+      border: 1px solid rgba(255, 250, 242, 0.10);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .meta-card h3 {
+      font-size: 13px;
+      font-family: "Avenir Next", Avenir, "Arial Unicode MS", Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: rgba(255, 250, 242, 0.88);
+    }
+
+    .meta-card p {
+      color: rgba(255, 250, 242, 0.72);
+      font-size: 11.4px;
+    }
+
+    .shield {
+      justify-self: end;
+      width: 74mm;
+      min-height: 106mm;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)),
+        linear-gradient(160deg, rgba(193,135,79,0.18), rgba(255,255,255,0.02) 46%, rgba(31,107,98,0.18));
+      border: 1px solid rgba(255, 250, 242, 0.14);
+      padding: 14mm 10mm;
+      display: grid;
+      align-content: space-between;
+      text-align: left;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .shield-mark {
+      font-size: 46px;
+      line-height: 1;
+      opacity: 0.96;
+    }
+
+    .shield h2 {
+      font-size: 20px;
+      line-height: 1.06;
+      margin: 10mm 0 5mm;
+      color: #fff7ef;
+    }
+
+    .shield p {
+      color: rgba(255, 250, 242, 0.76);
+      font-size: 11.5px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.86fr;
+      gap: 10mm;
+      align-items: start;
+    }
+
+    .glass-card {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 10mm;
+    }
+
+    .glass-card.compact {
+      padding: 8mm;
+      border-radius: 22px;
+    }
+
+    .intro-quote {
+      padding: 10mm;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(32, 40, 61, 0.96), rgba(32, 40, 61, 0.86)),
+        rgba(32, 40, 61, 0.92);
+      box-shadow: var(--shadow);
+      color: #fffaf2;
+      margin-bottom: 8mm;
+    }
+
+    .intro-quote p {
+      color: rgba(255, 250, 242, 0.84);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .intro-quote strong {
+      color: #ffffff;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 7mm;
+    }
+
+    .section-title h2 {
+      font-size: 25px;
+      line-height: 1.05;
+    }
+
+    .section-title .subtitle {
+      color: var(--muted);
+      font-size: 11.5px;
+      max-width: 76mm;
+      text-align: right;
+    }
+
+    .stat-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 6mm;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 16px;
+      background: var(--paper-strong);
+      border: 1px solid rgba(29, 35, 50, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.42;
+    }
+
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 6mm;
+    }
+
+    .step-chip {
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.94));
+      padding: 12px 14px;
+      border: 1px solid rgba(29, 35, 50, 0.08);
+      min-height: 74px;
+    }
+
+    .step-chip strong {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--emerald);
+      margin-bottom: 5px;
+    }
+
+    .step-chip p {
+      font-size: 11.3px;
+      color: var(--ink);
+    }
+
+    .thinking-card {
+      padding: 9mm;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(193, 135, 79, 0.10), rgba(255, 255, 255, 0.74));
+      border: 1px solid rgba(193, 135, 79, 0.18);
+    }
+
+    .thinking-list, .bullet-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .thinking-list li, .bullet-list li {
+      padding-left: 18px;
+      position: relative;
+      font-size: 12px;
+      color: var(--ink);
+      line-height: 1.48;
+    }
+
+    .thinking-list li::before,
+    .bullet-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background: linear-gradient(180deg, var(--accent), var(--rose));
+      box-shadow: 0 0 0 4px rgba(193, 135, 79, 0.10);
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 8mm;
+    }
+
+    .signal-card {
+      border-radius: 18px;
+      background: var(--paper-strong);
+      border: 1px solid rgba(29, 35, 50, 0.09);
+      padding: 14px;
+    }
+
+    .signal-card strong {
+      display: block;
+      font-size: 12px;
+      color: var(--rose);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .signal-card p {
+      font-size: 11.4px;
+      color: var(--ink);
+    }
+
+    .step-section {
+      margin-bottom: 8mm;
+      break-inside: avoid;
+    }
+
+    .step-header {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 6mm;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--navy), #39435f);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+      box-shadow: 0 10px 22px rgba(32, 40, 61, 0.18);
+    }
+
+    .step-heading h3 {
+      font-size: 21px;
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+
+    .step-heading p {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    .lead-box {
+      padding: 10px 12px;
+      border-left: 4px solid var(--accent);
+      background: linear-gradient(90deg, var(--accent-soft), rgba(255,255,255,0.72));
+      border-radius: 0 14px 14px 0;
+      margin-bottom: 5mm;
+    }
+
+    .lead-box p {
+      font-size: 11.8px;
+      color: var(--ink);
+    }
+
+    .script-card {
+      background: linear-gradient(180deg, rgba(32, 40, 61, 0.95), rgba(38, 47, 69, 0.90));
+      color: #fffaf2;
+      padding: 8mm;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-top: 4mm;
+    }
+
+    .script-card p {
+      color: rgba(255, 250, 242, 0.86);
+      font-size: 11.6px;
+    }
+
+    .script-card strong {
+      color: #ffffff;
+    }
+
+    .script-card .tiny-label {
+      color: rgba(255, 250, 242, 0.56);
+      margin-bottom: 5mm;
+      display: block;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      align-items: start;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      align-items: start;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      font-size: 11px;
+    }
+
+    th, td {
+      padding: 11px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(29, 35, 50, 0.08);
+    }
+
+    th {
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(32, 40, 61, 0.06);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .table-card {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(29, 35, 50, 0.09);
+      background: var(--paper-strong);
+    }
+
+    .team-grid {
+      display: grid;
+      gap: 8mm;
+    }
+
+    .person-card {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.54);
+      box-shadow: var(--shadow);
+      border-radius: 24px;
+      padding: 8mm;
+      break-inside: avoid;
+    }
+
+    .person-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 5mm;
+    }
+
+    .person-name {
+      display: grid;
+      gap: 4px;
+    }
+
+    .person-name h3 {
+      font-size: 21px;
+      line-height: 1.02;
+    }
+
+    .role-tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .person-section {
+      display: grid;
+      gap: 10px;
+      margin-top: 4mm;
+    }
+
+    .mini-box {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(29, 35, 50, 0.08);
+      padding: 12px 14px;
+    }
+
+    .mini-box strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rose);
+      margin-bottom: 7px;
+    }
+
+    .mini-box p {
+      font-size: 11.5px;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      margin-top: 5mm;
+    }
+
+    .scenario {
+      border-radius: 24px;
+      padding: 9mm;
+      border: 1px solid rgba(29, 35, 50, 0.08);
+      background: var(--paper-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .scenario.good {
+      background:
+        linear-gradient(180deg, rgba(31, 107, 98, 0.12), rgba(255,255,255,0.92));
+    }
+
+    .scenario.risk {
+      background:
+        linear-gradient(180deg, rgba(142, 74, 93, 0.14), rgba(255,255,255,0.92));
+    }
+
+    .scenario h3 {
+      font-size: 18px;
+      margin-bottom: 4mm;
+    }
+
+    .agreement {
+      padding: 10mm;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(32, 40, 61, 0.96), rgba(31, 107, 98, 0.90));
+      box-shadow: var(--shadow);
+      color: #fffaf2;
+    }
+
+    .agreement h3 {
+      font-size: 22px;
+      margin-bottom: 4mm;
+      color: #fffaf2;
+    }
+
+    .agreement p, .agreement li {
+      color: rgba(255, 250, 242, 0.88);
+      font-size: 11.8px;
+    }
+
+    .agreement ul {
+      margin: 4mm 0 0;
+      padding-left: 18px;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 12px;
+      margin-top: 5mm;
+    }
+
+    .check-item {
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: rgba(255, 250, 242, 0.08);
+      border: 1px solid rgba(255, 250, 242, 0.12);
+    }
+
+    .source-note {
+      margin-top: 6mm;
+      padding-top: 4mm;
+      border-top: 1px solid rgba(29, 35, 50, 0.10);
+      font-size: 10.5px;
+      color: rgba(29, 35, 50, 0.52);
+    }
+
+    .footer-note {
+      margin-top: 8mm;
+      font-size: 10.5px;
+      color: rgba(29, 35, 50, 0.54);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 11px;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .avoid-break {
+      break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <div class="document">
+    <section class="page">
+      <div class="cover">
+        <div class="cover-top">
+          <div class="pill"><strong>Confidential</strong> Переговорный playbook</div>
+          <div class="pill">@monicastyle.mc · April 2026</div>
+        </div>
+
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">FBI Negotiation + NLP Frame</div>
+            <h1>Playbook защиты команды @monicastyle.mc</h1>
+            <p class="hero-subtitle">
+              Документ для спокойных и уверенных переговоров с клиентом, который хочет сократить бюджет.
+              Цель - не спорить, а мягко вернуть разговор к ценности системы, ролей и 8-недельного спринта.
+            </p>
+
+            <div class="hero-meta">
+              <div class="meta-card">
+                <h3>Ситуация</h3>
+                <p>Клиент хочет оставить только монтажёра, SMM и PM, потому что пока не видит достаточный ROI на ранней стадии аккаунта.</p>
+              </div>
+              <div class="meta-card">
+                <h3>Наша задача</h3>
+                <p>Сохранить команду через структуру Chris Voss, эмпатичную маркировку эмоций и NLP-рефрейм ролей как функций бренда.</p>
+              </div>
+              <div class="meta-card">
+                <h3>Тон переговоров</h3>
+                <p>Late-Night FM DJ: медленно, тёпло, уверенно. Никакого давления, только ясность, факты и чувство контроля у клиента.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="shield">
+            <div class="shield-mark">🛡️</div>
+            <div>
+              <div class="eyebrow">Ключевой тезис</div>
+              <h2>Не 7 человек. 4 функции бренда.</h2>
+              <p>Убрать людей легко. Восстановить систему, визуальное превосходство, reach и темп роста - в разы дороже.</p>
+            </div>
+            <div>
+              <div class="tiny-label">Основа документа</div>
+              <p>Chris Voss, NLP framework, Reddit / X research, маркетинговые наблюдения 2026.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">01</div>
+    </section>
+
+    <section class="page">
+      <div class="intro-quote">
+        <div class="tiny-label">Стратегическая рамка</div>
+        <p><strong>Золотое правило Voss:</strong> люди давят не потому, что правы, а потому что чувствуют, что их не слышат. Убери это чувство - и давление исчезает.</p>
+      </div>
+
+      <div class="summary-grid">
+        <div class="glass-card">
+          <div class="section-title">
+            <h2>Executive Summary</h2>
+            <p class="subtitle">Сначала снимаем защиту, потом даём клиенту ощущение контроля, потом продаём не людей, а систему.</p>
+          </div>
+
+          <div class="stat-band">
+            <div class="stat">
+              <strong>279</strong>
+              <span>Подписчиков сейчас. Клиент видит это как "слишком мало для такой команды".</span>
+            </div>
+            <div class="stat">
+              <strong>8 недель</strong>
+              <span>Оптимальный горизонт, чтобы честно оценить рост и не резать систему слишком рано.</span>
+            </div>
+            <div class="stat">
+              <strong>4 функции</strong>
+              <span>Визуал, рост, credibility, системность. Именно их нужно защищать.</span>
+            </div>
+            <div class="stat">
+              <strong>2x</strong>
+              <span>Ориентир стоимости перезапуска после паузы по сравнению с удержанием темпа сейчас.</span>
+            </div>
+          </div>
+
+          <div class="step-list">
+            <div class="step-chip">
+              <strong>1. Accusation Audit</strong>
+              <p>Озвучиваем все страхи клиента первыми и гасим защитную реакцию.</p>
+            </div>
+            <div class="step-chip">
+              <strong>2. Labeling</strong>
+              <p>Называем чувства вслух, чтобы снизить напряжение и вернуть доверие.</p>
+            </div>
+            <div class="step-chip">
+              <strong>3. That's Right</strong>
+              <p>Точно суммируем позицию клиента и добиваемся "Вот именно".</p>
+            </div>
+            <div class="step-chip">
+              <strong>4. Reframing</strong>
+              <p>Меняем угол зрения: не "много людей", а "функции бренда".</p>
+            </div>
+            <div class="step-chip">
+              <strong>5. Data Layer</strong>
+              <p>Подкрепляем разговор фактами про алгоритм, CAC, mindshare и скорость роста.</p>
+            </div>
+            <div class="step-chip">
+              <strong>6. Team Defense</strong>
+              <p>Каждый человек получает конкретную функцию и конкретную цену потери.</p>
+            </div>
+            <div class="step-chip">
+              <strong>7. Future Pacing</strong>
+              <p>Рисуем два будущих: с системой и с урезанной командой.</p>
+            </div>
+            <div class="step-chip">
+              <strong>8. Agreement Frame</strong>
+              <p>Продаём 8-недельный спринт с KPI вместо прямого отказа на сокращение.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card compact">
+          <div class="section-title">
+            <h2>Что клиент думает</h2>
+            <p class="subtitle">И что на самом деле за этим стоит.</p>
+          </div>
+
+          <div class="thinking-card">
+            <ul class="thinking-list">
+              <li>"Слишком дорого для аккаунта с 279 подписчиками."</li>
+              <li>"Я могу справиться меньшей командой."</li>
+              <li>"Не вижу ROI от каждого человека."</li>
+              <li>"Пока нет результата - зачем платить за большую команду?"</li>
+            </ul>
+          </div>
+
+          <div class="signal-grid">
+            <div class="signal-card">
+              <strong>Страх</strong>
+              <p>Деньги уходят быстрее, чем виден рост. Это про тревогу, а не про враждебность.</p>
+            </div>
+            <div class="signal-card">
+              <strong>Контроль</strong>
+              <p>Клиент хочет понимать, за что платит, и ощущать измеримость вложений.</p>
+            </div>
+            <div class="signal-card">
+              <strong>Ранняя стадия</strong>
+              <p>Проект ещё не доказал себя. Значит, нужно продавать не результат прошлого, а вероятность и систему будущего.</p>
+            </div>
+            <div class="signal-card">
+              <strong>Внешнее давление</strong>
+              <p>Могут влиять партнёр, семья или финансовые ограничения. Это надо уважить, а не спорить с этим.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">02</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="step-section">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div class="step-heading">
+              <h3>Accusation Audit</h3>
+              <p>Озвучиваем все претензии первыми, чтобы мозг клиента перестал обороняться.</p>
+            </div>
+          </div>
+
+          <div class="lead-box">
+            <p><strong>Цель:</strong> перечислить вслух все возможные обвинения до того, как клиент их сформулирует. Это снимает напряжение и переводит разговор из конфликта в сотрудничество.</p>
+          </div>
+
+          <div class="script-card">
+            <span class="tiny-label">Скрипт Яны</span>
+            <p>
+              "Прежде чем мы начнём обсуждать дальнейшие шаги, мне важно сказать кое-что.
+              Я уверена, ты думаешь, что команда слишком большая для аккаунта с 279 подписчиками.
+              Возможно, тебе кажется, что мы перестарались и что всё это можно сделать проще и дешевле.
+              Вполне вероятно, ты чувствуешь, что платишь за много людей, а результат пока не на том уровне, на котором хочется его видеть.
+              И может быть, ты даже думаешь, что мы просто оправдываем существование каждой позиции, чтобы удержать контракт.
+              Я хочу, чтобы ты знала - мы это понимаем. И я не буду с тобой спорить. Вместо этого я хочу показать тебе, что именно делает каждый человек и что случится с проектом, если его убрать."
+            </p>
+          </div>
+
+          <div class="two-col" style="margin-top:6mm;">
+            <div class="mini-box">
+              <strong>Что произойдёт</strong>
+              <p>Клиент почти автоматически начнёт смягчать свою позицию: "Ну, я не прямо так считаю..." Именно это и нужно. Защита уже ослаблена.</p>
+            </div>
+            <div class="mini-box">
+              <strong>Что важно не делать</strong>
+              <p>Не оправдываться, не спорить и не торопиться с цифрами. Сначала нужно дать клиенту почувствовать, что вы уже услышали её страхи.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-section">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div class="step-heading">
+              <h3>Labeling</h3>
+              <p>Называем эмоцию клиента так точно, чтобы её нервная система успокоилась.</p>
+            </div>
+          </div>
+
+          <div class="lead-box">
+            <p><strong>Цель:</strong> вслух маркировать переживание клиента словами "Похоже..." или "Кажется...", чтобы она почувствовала: её состояние поняли без нападения.</p>
+          </div>
+
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Когда клиент говорит</th>
+                  <th>Лейбл в ответ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Мне кажется, это слишком дорого.</td>
+                  <td>Похоже, ты чувствуешь, что инвестиция не пропорциональна тому, где аккаунт находится сейчас.</td>
+                </tr>
+                <tr>
+                  <td>Я хочу оставить только троих.</td>
+                  <td>Кажется, тебе важно чувствовать, что каждый человек реально нужен, а не просто присутствует в команде.</td>
+                </tr>
+                <tr>
+                  <td>279 подписчиков - это мало.</td>
+                  <td>Звучит так, будто ты переживаешь, что рост идёт медленнее, чем ты ожидала.</td>
+                </tr>
+                <tr>
+                  <td>Мне посоветовали сократить.</td>
+                  <td>Похоже, на тебя есть внешнее давление, и тебе важно принять максимально взвешенное решение.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="step-section" style="margin-bottom:0;">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div class="step-heading">
+              <h3>That's Right</h3>
+              <p>Суммируем позицию клиента так, чтобы она сказала "Вот именно".</p>
+            </div>
+          </div>
+
+          <div class="script-card">
+            <span class="tiny-label">Скрипт перехода</span>
+            <p>
+              "Правильно ли я понимаю? Ты видишь аккаунт с 279 подписчиками и при этом команду из 7 человек.
+              Ты чувствуешь, что соотношение не сходится. Ты хочешь видеть, что каждый рубль работает на рост, а не просто на процесс.
+              И при этом тебе важно не потерять визуальное качество, которое уже есть, потому что именно оно отличает Monica от остальных в этой нише."
+            </p>
+          </div>
+
+          <div class="two-col" style="margin-top:6mm;">
+            <div class="mini-box">
+              <strong>Ожидаемый ответ</strong>
+              <p>"Вот именно" или "Да, именно так". После этого окно к предложению открывается.</p>
+            </div>
+            <div class="mini-box">
+              <strong>Почему это ключевой момент</strong>
+              <p>До "That's right" клиент отстаивает позицию. После "That's right" клиент готов рассматривать путь вперёд.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">03</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="step-section">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div class="step-heading">
+              <h3>Reframing</h3>
+              <p>Те же факты, но другое значение: не платёж за людей, а инвестиция в функции бренда.</p>
+            </div>
+          </div>
+
+          <div class="lead-box">
+            <p><strong>Главный рефрейм:</strong> не "вы платите за 7 человек", а "вы удерживаете 4 функции бренда, без которых система не выдержит стадию роста".</p>
+          </div>
+
+          <div class="table-card avoid-break">
+            <table>
+              <thead>
+                <tr>
+                  <th>Как клиент видит</th>
+                  <th>Как мы переформатируем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7 человек - дорого.</td>
+                  <td>4 функции бренда, без которых система разваливается.</td>
+                </tr>
+                <tr>
+                  <td>279 подписчиков - мало.</td>
+                  <td>279 - это ядро. Мы на стартовой площадке ракеты, а не на финише.</td>
+                </tr>
+                <tr>
+                  <td>Можно обойтись тремя.</td>
+                  <td>Трое умеют поддерживать. Семеро строят бренд, который потом сможет зарабатывать.</td>
+                </tr>
+                <tr>
+                  <td>Пока нет ROI.</td>
+                  <td>Видимый ROI у этой системы проявляется через 8 недель. Ей нужно время, чтобы доказать себя.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="script-card" style="margin-top:6mm;">
+            <span class="tiny-label">Ключевая метафора</span>
+            <p>
+              "Представь, что Monica - это стартап. Сейчас ты на pre-seed стадии.
+              Все стартапы на этом этапе инвестируют больше, чем зарабатывают.
+              Но те, кто сокращают команду именно на стадии роста, потом теряют в два раза больше,
+              когда приходится нанимать заново и разгонять алгоритм практически с нуля."
+            </p>
+          </div>
+        </div>
+
+        <div class="step-section" style="margin-bottom:0;">
+          <div class="step-header">
+            <div class="step-number">5</div>
+            <div class="step-heading">
+              <h3>Факты и данные</h3>
+              <p>Подкрепляем новый смысл внешними сигналами рынка и платформы.</p>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Факт</th>
+                  <th>Зачем он нужен в разговоре</th>
+                  <th>Источник</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Стоимость перезапуска может быть в 2x выше, чем стоимость поддержания системы.</td>
+                  <td>Показывает, что сокращение сегодня может создать более дорогую проблему завтра.</td>
+                  <td>The Drum, MarketingFuel UK</td>
+                </tr>
+                <tr>
+                  <td>Instagram быстро "забывает" аккаунт после 2-3 недель непоследовательности.</td>
+                  <td>Объясняет, почему ежедневный ритм и непрерывность нельзя недооценивать.</td>
+                  <td>SpurNow, InfluenceFlow 2026</td>
+                </tr>
+                <tr>
+                  <td>CAC обычно растёт, когда маркетинговую систему режут слишком рано.</td>
+                  <td>Показывает, что каждый новый подписчик потом может обходиться дороже.</td>
+                  <td>CMSwire</td>
+                </tr>
+                <tr>
+                  <td>Engagement velocity в первые 30-60 минут - ключевой сигнал алгоритму.</td>
+                  <td>Поддерживает важность тайминга, сторис, комментариев и системного SMM.</td>
+                  <td>Storybox HQ</td>
+                </tr>
+                <tr>
+                  <td>Бренды, которые замолкают, могут терять до 50% mindshare за 4 недели.</td>
+                  <td>Добавляет вес аргументу о цене паузы и потере внимания аудитории.</td>
+                  <td>One2Create UK</td>
+                </tr>
+                <tr>
+                  <td>Нано-инфлюенсеры с ER 3.5-8% - один из самых ценных сегментов для брендов в 2026.</td>
+                  <td>Рамка "279 подписчиков" меняется на рамку "высокий актив ранней стадии".</td>
+                  <td>Amplify Influencer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="source-note">Данные в документе используются как разговорный слой поддержки рефрейма. Их задача - не "забомбить цифрами", а придать уверенность ключевому тезису: раннюю систему нельзя резать по метрике одной недели.</p>
+        </div>
+      </div>
+      <div class="page-number">04</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="section-title">
+          <h2>Защита команды · Часть I</h2>
+          <p class="subtitle">Каждый человек = отдельная функция системы. Убирая человека, клиент убирает не роль, а рычаг роста.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 01</div>
+                <h3>Ира</h3>
+                <p class="muted">Визуал, криейтор, идеи, креатив</p>
+              </div>
+              <span class="role-tag">Визуальный язык</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Создаёт визуальный язык бренда Monica и удерживает ощущение quality overshoot - когда маленький аккаунт выглядит как бренд на 50K.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Ира делает так, что Monica на 279 подписчиках выглядит как аккаунт на 50K. Наш AI-аудит показал, что визуальное качество контента уже на уровне микро-инфлюенсера. Это не случайность. Если убрать Иру, контент станет обычным - и бренд потеряет своё главное конкурентное преимущество."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Как ты видишь сохранение этого визуального уровня без человека, который его создаёт?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Все 4 рубрики визуально завязаны на Иру. Без неё Monica Style Edit теряет эстетику "styled for her story".</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 02</div>
+                <h3>Лера</h3>
+                <p class="muted">Head of SMM</p>
+              </div>
+              <span class="role-tag">Алгоритм и рост</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Стратегический мозг роста: алгоритм, хештеги, timing, caption SEO, системный анализ сигналов reach.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Лера - это не просто человек, который постит. Она знает, когда публиковать, какие хештеги использовать и как Instagram 2026 читает аккаунт. Монтажёр может собрать видео. Но без Леры это видео никто не увидит."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Что произойдёт с охватом, если хештег-стратегия и тайминг публикаций перестанут быть системными?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Retention в первые секунды reels, saves и DM shares важнее лайков. KPI роста невозможны без системного SMM.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 03</div>
+                <h3>Диана</h3>
+                <p class="muted">Главный фотограф</p>
+              </div>
+              <span class="role-tag">Портфолио и статус</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Создаёт статусный визуальный актив Fashion Photo - ту самую витрину, которая нужна будущим brand collaborations.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Диана - причина, по которой бренды захотят работать с Monica. Fashion Photo - это визитная карточка для Bonpoint, Il Gufo и Baby Dior. Это не то, что можно заменить телефоном. Без Дианы рубрика умирает, а вместе с ней умирает и модельное портфолио для Q3-монетизации."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Как мы покажем потенциальным брендам профессиональное модельное портфолио без профессионального фотографа?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Fashion Photo раз в 7-14 дней - это статус, визуальная память и актив для медиакита.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">05</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="section-title">
+          <h2>Защита команды · Часть II</h2>
+          <p class="subtitle">Сохраняем ритм, ускорение, credibility и каркас системы. Это не "доп. люди", это архитектура роста.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 04</div>
+                <h3>Настя</h3>
+                <p class="muted">Ведёт страницу Моники</p>
+              </div>
+              <span class="role-tag">Ежедневный пульс</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Stories, ответы на комментарии и DM, ежедневный engagement с нишей - всё, что даёт сигнал живого аккаунта.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Настя - это ежедневный пульс Monica. Если этот ритм остановить хотя бы на 2 недели, алгоритм начнёт забывать аккаунт. Это не расход. Это защита уже сделанной инвестиции."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Кто будет поддерживать ежедневную алгоритмическую активность аккаунта, если Настя уйдёт?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Пауза в 2-3 недели создаёт ощущение перезапуска. Восстановление потом обходится ощутимо дороже.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 05</div>
+                <h3>Настя</h3>
+                <p class="muted">Таргетолог</p>
+              </div>
+              <span class="role-tag">Ускоритель роста</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Платный рост, который помогает пройти "valley of death" от 279 до 1 000 подписчиков без затяжки на полгода.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Настя-таргетолог превращает путь к 1 000 подписчиков из 6 месяцев в 8 недель. Каждая неделя ожидания - это неделя, когда конкуренты занимают внимание твоей аудитории. Она не излишество, она ускоритель."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Если мы уберём платное продвижение, сколько месяцев ты готова ждать до первых коллабораций?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Без таргета путь к 1K - 6+ месяцев. С таргетом появляется шанс на UGC и первые бренд-запросы уже летом.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 06</div>
+                <h3>Маша</h3>
+                <p class="muted">PR</p>
+              </div>
+              <span class="role-tag">Credibility и медиа</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Выводит Monica за пределы Instagram: медиа, мероприятия, внешние контакты, брендовая репутация.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Маша превращает Instagram-страницу в бренд, о котором говорят. Одно правильное упоминание в медиа или одно верное событие в Монако могут принести не только подписчиков, но и реальные бренды в воронку."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Как ты планируешь получить первые 2-3 бренд-партнёрства без человека, который отвечает за внешние коммуникации?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>PR на ранней стадии отличает проекты, которые взлетают, от тех, что годами стоят на месте.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-header">
+              <div class="person-name">
+                <div class="tiny-label">Роль 07</div>
+                <h3>Яна</h3>
+                <p class="muted">Проджект-менеджер</p>
+              </div>
+              <span class="role-tag">Каркас системы</span>
+            </div>
+
+            <div class="person-section">
+              <div class="mini-box">
+                <strong>Функция в системе</strong>
+                <p>Координация, ритм, защита от хаоса и удержание стратегии как системы, а не набора красивых, но случайных идей.</p>
+              </div>
+              <div class="mini-box">
+                <strong>Bullet Point для клиента</strong>
+                <p>"Яна - это причина, почему стратегия существует как система. Без неё 4 рубрики снова станут случайным набором постов, ритм развалится, и проект вернётся к постоянной перестройке."</p>
+              </div>
+              <div class="two-col">
+                <div class="mini-box">
+                  <strong>Калиброванный вопрос</strong>
+                  <p>Кто будет следить за тем, чтобы 4 рубрики выходили по графику и система не развалилась через 3 недели?</p>
+                </div>
+                <div class="mini-box">
+                  <strong>NLP-привязка</strong>
+                  <p>Если убрать PM, клиент экономит на человеке, но снова начинает платить хаосом, переделками и потерей фокуса.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">06</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="step-header">
+          <div class="step-number">7</div>
+          <div class="step-heading">
+            <h3>Future Pacing</h3>
+            <p>Два будущих через 8 недель: спокойная уверенность с системой или дорогой откат в хаос.</p>
+          </div>
+        </div>
+
+        <div class="scenario-grid">
+          <div class="scenario good">
+            <div class="tiny-label">Сценарий A</div>
+            <h3>Полная команда</h3>
+            <p>
+              Через 8 недель, к июню 2026, Monica выходит на 800-1000 подписчиков.
+              Reels стабильно дотягиваются до 5K просмотров.
+              Bonpoint присылает первый бартер.
+              У команды уже есть медиакит, который Маша отправила в 10 релевантных редакций.
+              Диана делает фотосессию, которой хочется гордиться.
+              Ира доводит страницу до уровня, где бренды сами пишут в DM.
+              А Яна держит процесс настолько чистым, что клиенту не нужно жить в операционке.
+            </p>
+          </div>
+          <div class="scenario risk">
+            <div class="tiny-label">Сценарий B</div>
+            <h3>Только трое</h3>
+            <p>
+              Через 8 недель аккаунт остаётся в районе 350 подписчиков.
+              Контент выходит нерегулярно, reels без сильного хука набирают 200 просмотров.
+              Нет PR, нет коллабораций, нет медиакита.
+              Фото на телефон визуально не отличают Monica от десятков других страниц.
+              И снова появляется мысль: "Может, нужна новая стратегия?"
+              На практике это означает возврат к хаосу и более дорогой перезапуск позже.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-header" style="margin-top:10mm;">
+          <div class="step-number">8</div>
+          <div class="step-heading">
+            <h3>Agreement Frame</h3>
+            <p>Никогда не ставим клиента в угол. Вместо "нет" даём структуру решения и её контроль над KPI.</p>
+          </div>
+        </div>
+
+        <div class="agreement">
+          <div class="tiny-label">Финальное предложение</div>
+          <h3>8-недельный спринт вместо резкого сокращения</h3>
+          <p>
+            "Я понимаю, что бюджет - это важно. И при этом мы обе хотим, чтобы Monica стала брендом, а не просто красивой страницей.
+            Я предлагаю не сокращать людей сейчас, а зафиксировать 8-недельный спринт.
+            Через 8 недель мы вместе оценим результат: если рост не соответствует KPI, мы сами предложим оптимизацию.
+            Но если система покажет результат - а она его покажет - ты будешь рада, что не сократила её слишком рано.
+            Как тебе такой вариант?"
+          </p>
+
+          <div class="check-grid">
+            <div class="check-item">Не говорим "нет" сокращению. Говорим: "Давай оценим честно через 8 недель".</div>
+            <div class="check-item">Даём контроль через KPI: рост подписчиков, ER, бренд-контакты.</div>
+            <div class="check-item">Используем presupposition: система покажет результат, если её не ломать раньше времени.</div>
+            <div class="check-item">Финальный вопрос мягкий: "Как тебе такой вариант?" - клиент соглашается своей формулировкой.</div>
+          </div>
+        </div>
+
+        <div class="table-card" style="margin-top:8mm;">
+          <table>
+            <thead>
+              <tr>
+                <th>Человек</th>
+                <th>Функция бренда</th>
+                <th>Что теряем без этого человека</th>
+                <th>Стоимость потери</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ира</strong></td>
+                <td>Визуальный язык</td>
+                <td>Контент становится обычным, исчезает quality overshoot.</td>
+                <td>Потеря USP и визуального превосходства.</td>
+              </tr>
+              <tr>
+                <td><strong>Лера</strong></td>
+                <td>Алгоритм и стратегия</td>
+                <td>Ломаются хештеги, timing и caption SEO.</td>
+                <td>Reach может просесть на 50-70%.</td>
+              </tr>
+              <tr>
+                <td><strong>Настя</strong></td>
+                <td>Ежедневный пульс</td>
+                <td>Алгоритм перестаёт считывать Monica как живой аккаунт.</td>
+                <td>Восстановление ритма обойдётся дороже текущей работы.</td>
+              </tr>
+              <tr>
+                <td><strong>Диана</strong></td>
+                <td>Модельное портфолио</td>
+                <td>Fashion Photo умирает, бренду нечего показывать партнёрам.</td>
+                <td>Замедление монетизации и потери collab-воронки.</td>
+              </tr>
+              <tr>
+                <td><strong>Настя (таргет)</strong></td>
+                <td>Ускоритель роста</td>
+                <td>Путь к 1K растягивается на месяцы.</td>
+                <td>4+ месяца упущенного импульса.</td>
+              </tr>
+              <tr>
+                <td><strong>Маша</strong></td>
+                <td>Credibility</td>
+                <td>Нет медиа, нет выхода за пределы Instagram.</td>
+                <td>Годы вместо месяцев до статуса.</td>
+              </tr>
+              <tr>
+                <td><strong>Яна</strong></td>
+                <td>Каркас системы</td>
+                <td>Рубрики распадаются, стратегия снова становится хаосом.</td>
+                <td>Потеря всей архитектуры роста.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="page-number">07</div>
+    </section>
+
+    <section class="page">
+      <div class="glass-card">
+        <div class="section-title">
+          <h2>Шпаргалка для Яны</h2>
+          <p class="subtitle">Краткий боевой лист на переговоры: в каком порядке говорить и какое ощущение создавать у клиента.</p>
+        </div>
+
+        <div class="three-col">
+          <div class="mini-box">
+            <strong>1. Открытие</strong>
+            <p>Начни с Accusation Audit: перечисли 4 главных страха клиента раньше неё самой.</p>
+          </div>
+          <div class="mini-box">
+            <strong>2. Labeling</strong>
+            <p>На каждое возражение отвечай "Похоже, ты чувствуешь..." вместо аргумента или спора.</p>
+          </div>
+          <div class="mini-box">
+            <strong>3. That's Right</strong>
+            <p>Точно суммируй её позицию и не двигайся дальше, пока не услышишь "Вот именно".</p>
+          </div>
+          <div class="mini-box">
+            <strong>4. Reframe</strong>
+            <p>Переведи разговор из формулы "7 человек" в формулу "4 функции бренда".</p>
+          </div>
+          <div class="mini-box">
+            <strong>5. Факты</strong>
+            <p>Дай 2-3 сильных сигнала: алгоритм забывает, перезапуск дороже, early-stage бренд нельзя резать раньше времени.</p>
+          </div>
+          <div class="mini-box">
+            <strong>6. Команда</strong>
+            <p>Каждую роль объясняй через функцию, боль потери и один калиброванный вопрос.</p>
+          </div>
+          <div class="mini-box">
+            <strong>7. Будущее</strong>
+            <p>Нарисуй два сценария через 8 недель: яркий и тусклый. Пускай контраст работает за вас.</p>
+          </div>
+          <div class="mini-box">
+            <strong>8. Закрытие</strong>
+            <p>Не упирайся. Предложи 8-недельный спринт с KPI и совместной оценкой по итогам.</p>
+          </div>
+          <div class="mini-box">
+            <strong>Тон</strong>
+            <p>Late-Night FM DJ: медленный, тёплый, уверенный. Не давим. Не оправдываемся. Показываем.</p>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          <div>Playbook создан: 1 апреля 2026</div>
+          <div>Источники: Chris Voss (FBI), NLP framework, Reddit, The Drum, CMSwire, MarketingFuel UK, SpurNow, InfluenceFlow 2026</div>
+        </div>
+      </div>
+      <div class="page-number">08</div>
+    </section>
+  </div>
+</body>
+</html>

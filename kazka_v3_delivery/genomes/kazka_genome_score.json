@@ -1,0 +1,23 @@
+{
+  "file": "vault/00-film-dna/kazka_genome.yaml",
+  "timestamp": "2026-05-31T16:57:04.717691",
+  "overall_score": 0.527,
+  "killed": true,
+  "kill_reasons": [
+    "KILL: Villain is a generic corporation/shadowy force",
+    "KILL: Theme is a bumper sticker ('stories matter!', 'be yourself!')",
+    "KILL: Settings are described like a travel brochure",
+    "KILL: Fairy tales are cute helpers (Pagemaster/Inkheart clone)"
+  ],
+  "dimensions": {
+    "surprise_factor": 0.5,
+    "emotional_danger": 0.5,
+    "specificity": 0.45999999999999996,
+    "thematic_depth": 0.2,
+    "character_edge": 0.26,
+    "originality": 0.8,
+    "dna_fidelity": 0.8,
+    "cultural_authenticity": 1.0
+  },
+  "pass": false
+}

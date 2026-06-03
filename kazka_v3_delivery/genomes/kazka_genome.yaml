@@ -1,0 +1,1148 @@
+# =============================================================================
+# Film Genome Document: KAZKA (Казка) — Transmuted from Zootopia DNA
+# =============================================================================
+# TRANSMUTATION LOG:
+#   Source DNA:    Zootopia (2016)
+#   Creative Dir:  Ukrainian girl travels Europe, fairy tales fight evil
+#   DNA Transfer:  Emotional arc, character archetypes, structural beats,
+#                  pacing dynamics, visual philosophy, thematic depth
+#   DNA Mutated:   Setting, characters, specific themes, visual world
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# STRAND 1: METADATA
+# ---------------------------------------------------------------------------
+metadata:
+  title: "Kazka (Казка)"
+  reference_film: "Zootopia (2016, Walt Disney Animation Studios)"
+  genome_version: "1.0"
+  author: "Animation Genome Machine — Transmutation Engine"
+  created: "2026-05-31"
+  target_duration_minutes: 90
+  target_format: feature
+  transmutation_notes: >
+    "Kazka" means "fairy tale" in Ukrainian. This genome was transmuted from
+    Zootopia's DNA. Every structural beat, character archetype, and emotional
+    inflection point maps 1:1 to the source — but the world, characters, and
+    specific themes are entirely original.
+
+# ---------------------------------------------------------------------------
+# STRAND 2: NARRATIVE DNA
+# ---------------------------------------------------------------------------
+# ZOOTOPIA DNA TRANSFER:
+#   Structure:       Save the Cat (preserved exactly)
+#   Emotional Arc:   Cinderella / rise-fall-rise (preserved exactly)
+#   Beat Count:      12 beats (preserved exactly)
+#   Causal Chain:    "Because of that" dominant (preserved exactly)
+#
+# MUTATION:
+#   Setting:         Zootopia (one city, multiple biomes)
+#                    → Europe + USA (multiple countries, each a "biome")
+#   Core Conflict:   Predator vs prey prejudice
+#                    → Cultural erasure vs cultural identity
+#   The Lie:         "Anyone can be anything" (meritocracy illusion)
+#                    → "Old stories don't matter" (modernization illusion)
+#   The Truth:       Change starts within
+#                    → Stories shared are stories immortal
+# ---------------------------------------------------------------------------
+narrative_dna:
+  structure: save_the_cat
+  emotional_arc_shape: cinderella  # Rise → Fall → Rise (from Zootopia)
+
+  beats:
+    - id: beat_opening_image
+      name: "Opening Image — Grandmother's Story"
+      type: setup
+      timestamp_pct: 0.00
+      emotional_valence: 0.6       # MATCH: Zootopia 0.6 (warm, promising)
+      emotional_arousal: 0.5       # MATCH: Zootopia 0.5
+      description: >
+        A golden wheat field in Ukraine. Grandmother HALYNA sits with
+        12-year-old OLENKA under a cherry tree, reading from a worn
+        leather-bound book of Ukrainian fairy tales. As Halyna reads,
+        the illustrations in the book shimmer with faint light — the
+        Firebird's feathers glow, the Iron Wolf's eyes blink. Olenka
+        doesn't notice. But we do.
+        
+        TRANSMUTATION: Maps to Judy's school play. Both establish the
+        protagonist in their home world, surrounded by the mythology
+        that will drive the story.
+      duration_pct: 0.05
+
+    - id: beat_theme_stated
+      name: "Theme Stated — Stories Are Who We Are"
+      type: setup
+      timestamp_pct: 0.05
+      emotional_valence: 0.7       # MATCH: Zootopia 0.7
+      emotional_arousal: 0.3       # MATCH: Zootopia 0.3
+      description: >
+        Grandmother closes the book and hands it to Olenka. 
+        
+        HALYNA: "These stories, Olenka — they are not just words. They
+        are who we are. Every time you tell them, they become stronger.
+        Every time you forget them... a little piece of us disappears."
+        
+        Olenka rolls her eyes slightly — she loves Babusya, but fairy
+        tales are for children, right?
+        
+        TRANSMUTATION: Maps to "Anyone can be anything." Both state the
+        film's central theme early, and both will be tested and deepened.
+        Zootopia's theme is stated as aspiration; Kazka's as warning.
+      duration_pct: 0.03
+
+    - id: beat_catalyst
+      name: "Catalyst — Olenka Must Leave"
+      type: catalyst
+      timestamp_pct: 0.10
+      emotional_valence: 0.9       # MATCH: Zootopia 0.9 (but inverted emotion)
+      emotional_arousal: 0.8       # MATCH: Zootopia 0.8
+      description: >
+        Circumstances force Olenka to leave Ukraine. She must travel
+        to Paris where a distant relative awaits. Grandmother cannot
+        come — she's too old, too rooted. At the train station, Halyna
+        presses the fairy tale book into Olenka's hands.
+        
+        HALYNA: "When you are lost, open the book."
+        
+        The train pulls away. Through the window, Olenka watches her
+        grandmother grow small, still waving, until she disappears.
+        
+        TRANSMUTATION: Maps to Judy graduating and going to Zootopia.
+        Both protagonists leave home, carrying their home's values
+        into a strange new world. Both are alone for the first time.
+      duration_pct: 0.05
+
+    - id: beat_debate
+      name: "Debate — Paris Doesn't Care"
+      type: debate
+      timestamp_pct: 0.15
+      emotional_valence: -0.2      # MATCH: Zootopia -0.2 (frustration)
+      emotional_arousal: 0.4       # MATCH: Zootopia 0.4
+      description: >
+        Paris. Olenka's relative is kind but distracted. Olenka goes
+        to school but doesn't speak French well. She is invisible.
+        
+        Then she notices something wrong. A street artist is painting
+        the Eiffel Tower — but stops mid-stroke, confused, as if he's
+        forgotten what the Eiffel Tower looks like. A museum guide
+        fumbles the story of the Mona Lisa. A grandmother in the park
+        can't remember the nursery rhyme she's singing to her grandchild.
+        
+        Nobody else notices. Olenka tries to tell people. They smile
+        politely and ignore her. She's just a foreign kid.
+        
+        THE FORGETTING (Забуття) is spreading. But should she do
+        anything? She's just a girl. She barely speaks the language.
+        
+        TRANSMUTATION: Maps to Judy on parking duty. Both protagonists
+        are placed in a diminished role — dismissed, underestimated.
+        Both see a problem nobody else takes seriously.
+      duration_pct: 0.10
+
+    - id: beat_break_into_2
+      name: "Break Into Two — The Book Opens"
+      type: break_into_2
+      timestamp_pct: 0.25
+      emotional_valence: 0.4       # MATCH: Zootopia 0.4
+      emotional_arousal: 0.6       # MATCH: Zootopia 0.6
+      description: >
+        Alone in her room, desperate, Olenka opens grandmother's book.
+        
+        The pages glow. The Firebird (Жар-Птиця) erupts from the
+        illustration — a blazing creature of gold and crimson that
+        fills the room with warmth. And beside the Firebird, stepping
+        out of a different page, comes LYS (Лис) — the Fox.
+        
+        Lys is not what Olenka expected. He's sardonic, world-weary,
+        and annoyed at being summoned.
+        
+        LYS: "Oh wonderful. Another child who only opens the book when
+        they're in trouble. Do you know how long I've been waiting
+        in that page? Three generations."
+        
+        The Firebird explains: The Forgetting is real. It is erasing
+        stories — all stories, from every culture. When the stories
+        die, the people who carry them lose themselves. Olenka can
+        stop it because she is the last person who was GIVEN the
+        stories with love, by someone who remembered them all.
+        
+        But she needs allies. In each country she travels through,
+        a fairy tale guardian is trapped, weakened by The Forgetting.
+        She must find them and wake them up.
+        
+        TRANSMUTATION: Maps to Judy taking the Otterton case + meeting
+        Nick. The protagonist commits to the quest and gains a reluctant
+        partner. Lys IS Nick — same archetype, same dynamic.
+      duration_pct: 0.05
+
+    - id: beat_fun_and_games
+      name: "Fun and Games — The European Quest"
+      type: fun_and_games
+      timestamp_pct: 0.30
+      emotional_valence: 0.5       # MATCH: Zootopia 0.5
+      emotional_arousal: 0.7       # MATCH: Zootopia 0.7
+      description: >
+        Olenka and Lys travel through Europe, each country a new
+        adventure:
+        
+        🇫🇷 FRANCE (Paris): The Firebird leads them to the Louvre.
+        The Forgetting has made the paintings go blank. Olenka tells
+        the story of the Firebird to a group of confused tourists —
+        as she speaks, the Firebird grows stronger, and the paintings
+        begin to restore. First ally awakened.
+        
+        🇨🇭 SWITZERLAND (Alps): High in the mountains, they find
+        KOTYGOROSHKO (Котигорошко), the pea-born hero, frozen in ice.
+        The Forgetting turned him to stone because nobody tells his
+        story anymore. Olenka reads his tale from the book. He cracks
+        free — enormous, gentle, absurdly strong. He joins the quest.
+        
+        🇩🇪 GERMANY (Black Forest): The IRON WOLF (Залізний Вовк) hides
+        in the forest, rusted and weak. He's bitter — German fairy tales
+        (Grimm) are still told, but Ukrainian ones are forgotten. "Your
+        stories abandoned us first," he growls. Olenka must earn his
+        trust. She does — by telling him his OWN story, which she
+        knows by heart from grandmother's book.
+        
+        Classic buddy-adventure structure. Each country = each Zootopia
+        district (Tundratown, Rainforest, Sahara Square). Same
+        structural function: the protagonist explores the world's
+        variety while building alliances.
+        
+        LYS provides sarcastic commentary throughout. He pretends not
+        to care. He cares deeply.
+      duration_pct: 0.20
+
+    - id: beat_midpoint
+      name: "Midpoint — The Forgetting Has a Source"
+      type: midpoint
+      timestamp_pct: 0.50
+      emotional_valence: 0.3       # MATCH: Zootopia 0.3
+      emotional_arousal: 0.9       # MATCH: Zootopia 0.9
+      description: >
+        🇬🇧 ENGLAND: In the ancient woodlands, they find MAVKA (Мавка),
+        the forest nymph. But Mavka is different from the others — she's
+        not frozen or rusted. She's AWAKE. And she's terrified.
+        
+        MAVKA: "The Forgetting isn't natural. Someone is MAKING it.
+        There is a machine. In the new world. Across the ocean."
+        
+        False victory: They've gathered allies, they know the enemy.
+        But the stakes just got higher — this isn't entropy, it's an
+        attack. Someone is deliberately erasing cultural memory.
+        
+        TRANSMUTATION: Maps exactly to Zootopia's midpoint. Judy finds
+        the missing mammals → realizes it's bigger than one case.
+        Olenka finds the allies → realizes it's bigger than one country.
+        Both are false victories that reveal deeper problems.
+      duration_pct: 0.05
+
+    - id: beat_bad_guys_close_in
+      name: "Bad Guys Close In — Olenka's Mistake"
+      type: bad_guys_close_in
+      timestamp_pct: 0.55
+      emotional_valence: -0.3      # MATCH: Zootopia -0.3
+      emotional_arousal: 0.6       # MATCH: Zootopia 0.6
+      description: >
+        On a ferry crossing the English Channel, a journalist recognizes
+        Olenka from social media — videos of her "performing" in museums
+        have gone viral. The journalist interviews her.
+        
+        JOURNALIST: "What gives YOUR stories the right to be saved? 
+        Aren't all stories equal? Why Ukrainian fairy tales specifically?"
+        
+        Olenka, flustered, says something she doesn't mean:
+        
+        OLENKA: "Because our stories are... older. More real. The
+        Western fairy tales, they're just... copies."
+        
+        The interview goes viral. "Ukrainian girl says Western stories
+        are inferior." Lys is devastated — he is a character who exists
+        in MANY cultures' fairy tales. Fox stories are universal. Olenka
+        just said his French cousins, his German cousins, his English
+        cousins — they don't matter.
+        
+        LYS: (quietly) "You sound just like The Forgetting, Olenka.
+        Deciding which stories deserve to live."
+        
+        He walks away. The fairy tale allies fade — not from The
+        Forgetting, but from Olenka's words. She broke the bond.
+        
+        TRANSMUTATION: This IS the press conference scene. Judy says
+        predators are biologically dangerous → Nick is devastated because
+        she confirmed his worst fear. Olenka says Ukrainian stories are
+        superior → Lys is devastated because she reduced stories to
+        competition instead of connection.
+        
+        Same beat. Same emotional function. Same character wound.
+      duration_pct: 0.10
+
+    - id: beat_all_is_lost
+      name: "All Is Lost — The Book Goes Blank"
+      type: all_is_lost
+      timestamp_pct: 0.70
+      emotional_valence: -0.8      # MATCH: Zootopia -0.8
+      emotional_arousal: 0.5       # MATCH: Zootopia 0.5
+      description: >
+        Alone. Lys is gone. The other fairy tale guardians have faded
+        to near-transparency. The Firebird is just a faint ember.
+        
+        Olenka opens her grandmother's book. The pages are going blank.
+        One by one, the stories are erasing themselves. The illustrations
+        fade to white. She tries to read — but she can't remember the
+        words. She can't remember the sound of her grandmother's voice.
+        
+        She closes the book. She sits in a London park bench.
+        It starts to rain.
+        
+        TRANSMUTATION: Maps to Judy resigning and going home. Both
+        protagonists have lost everything — their ally, their mission,
+        their belief in themselves. Both have become part of the very
+        problem they set out to solve.
+      duration_pct: 0.05
+
+    - id: beat_dark_night
+      name: "Dark Night of the Soul — A Child's Voice"
+      type: dark_night
+      timestamp_pct: 0.75
+      emotional_valence: -0.4      # MATCH: Zootopia -0.4
+      emotional_arousal: 0.3       # MATCH: Zootopia 0.3
+      description: >
+        Still on the bench. Rain. Olenka hears something.
+        
+        A child nearby — a little English girl — is reading a book to
+        her teddy bear. It's a collection of world fairy tales. And the
+        page she's on... is a Ukrainian fairy tale. "The Mitten"
+        (Рукавичка). In English. Badly translated. But recognizable.
+        
+        The little girl reads it with joy. She doesn't care where the
+        story came from. She just loves it.
+        
+        And Olenka realizes: the stories aren't IN the book. The book
+        is just paper. The stories live in the TELLING. Her grandmother
+        didn't give her a book — she gave her the act of storytelling
+        itself. Stories can't be erased if they're shared. They can only
+        die if they're hoarded.
+        
+        The Forgetting doesn't erase stories. It erases SHARING.
+        
+        TRANSMUTATION: Maps exactly to Judy discovering night howlers
+        are flowers, not wolves. Same beat function: the protagonist
+        realizes their fundamental assumption was wrong, and the real
+        answer was hiding in plain sight. Judy assumed biology → it was
+        chemistry. Olenka assumed the book was the source → the TELLING
+        is the source.
+      duration_pct: 0.05
+
+    - id: beat_break_into_3
+      name: "Break Into Three — Olenka Finds Lys"
+      type: break_into_3
+      timestamp_pct: 0.80
+      emotional_valence: 0.2       # MATCH: Zootopia 0.2
+      emotional_arousal: 0.5       # MATCH: Zootopia 0.5
+      description: >
+        Olenka finds Lys in a London alley, nearly transparent, barely
+        visible. He's curled up, flickering between existence and void.
+        
+        OLENKA: "I was wrong. I said Ukrainian stories are more real.
+        That's not true. YOUR story is told in every country on Earth.
+        You are French. You are German. You are Japanese. You are
+        Nigerian. You are Ukrainian. You are ALL of them. And I tried
+        to make you just one thing."
+        
+        LYS: (faint whisper) "You're just saying that because you
+        need me."
+        
+        OLENKA: "No. I'm saying it because it's true. And because...
+        (she pulls out the blank book) ...I need to tell you YOUR
+        story. Not read it. TELL it. From memory."
+        
+        She sits next to him and begins: "Once upon a time, there was
+        a fox who was very clever..."
+        
+        As she tells the story — HER version, mixed with grandmother's
+        words and her own — Lys begins to glow again.
+        
+        TRANSMUTATION: This IS the apology scene. Judy admits she was
+        the "token bunny" who failed to see her own prejudice. Olenka
+        admits she was the "story guardian" who failed to see that
+        stories belong to everyone. Both protagonists name their flaw
+        out loud. Both are forgiven.
+      duration_pct: 0.05
+
+    - id: beat_finale
+      name: "Finale — The Telling"
+      type: finale
+      timestamp_pct: 0.85
+      emotional_valence: 0.7       # MATCH: Zootopia 0.7
+      emotional_arousal: 1.0       # MATCH: Zootopia 1.0
+      description: >
+        🇺🇸 NEW YORK: Olenka and her restored allies cross the Atlantic.
+        The source of The Forgetting is in Manhattan — a vast corporate
+        tower where a figure called THE ARCHIVIST operates a machine
+        that digitizes and "standardizes" the world's stories, stripping
+        them of cultural specificity, reducing them to algorithm-
+        optimized "universal content." No rough edges. No untranslatable
+        words. No grandmother's voice. Just content.
+        
+        THE ARCHIVIST believes they're SAVING stories by making them
+        universal. They're not evil — they're misguided. They think
+        cultural specificity causes division. If all stories are the
+        same, everyone is the same, and nobody fights.
+        
+        OLENKA: "You're not saving stories. You're killing them. A
+        story without a grandmother's voice is just... data."
+        
+        The battle isn't physical. It's narrative. Olenka doesn't
+        fight the machine — she TELLS STORIES louder than it can erase
+        them. She tells the Firebird's tale, and the Firebird blazes
+        to full power. She tells the Iron Wolf's tale, and he stands
+        unbreakable. Children in the building start TELLING THEIR OWN
+        stories — Japanese, Nigerian, Brazilian, Irish — and their own
+        fairy tale guardians begin to materialize.
+        
+        The machine can't erase stories that are being told by
+        thousands of voices simultaneously.
+        
+        TRANSMUTATION: Maps to the museum finale. Bellwether's scheme
+        was to weaponize biology for power. The Archivist's scheme is to
+        weaponize homogeneity for peace. Both villains believe they're
+        doing good. Both are undone when the protagonist turns the
+        system's own logic against it. Judy used the blueberry trick;
+        Olenka uses the one thing the machine can't process — living,
+        breathing, imperfect human storytelling.
+      duration_pct: 0.10
+
+    - id: beat_final_image
+      name: "Final Image — The New Book"
+      type: final_image
+      timestamp_pct: 0.95
+      emotional_valence: 0.9       # MATCH: Zootopia 0.9
+      emotional_arousal: 0.6       # MATCH: Zootopia 0.6
+      description: >
+        Years later. Olenka, now a young woman, sits under a tree —
+        not a cherry tree in Ukraine, but a tree in a park somewhere
+        in Europe. Around her sit children from different countries.
+        
+        She holds a book. Not grandmother's book — a NEW book she
+        wrote herself. It contains fairy tales from every country she
+        visited, interwoven with Ukrainian tales, each retold in her
+        voice and in the voices of the friends she made.
+        
+        She opens the book and begins to read. As she reads, the
+        Firebird perches on her shoulder — visible only to those
+        who believe. Lys sits beside her, pretending to nap, one
+        eye open, smiling.
+        
+        And in Ukraine, grandmother Halyna sits under the cherry tree,
+        eyes closed, listening. She can hear Olenka's voice on the wind.
+        The stories travel.
+        
+        FINAL LINE (Olenka, reading to the children):
+        "Once upon a time... Колись давно..."
+        
+        TRANSMUTATION: Maps to Nick becoming a cop and the Gazelle
+        concert. Both final images show the world CHANGED by the
+        protagonist's journey. Zootopia: predator and prey together.
+        Kazka: stories from all nations, told together. Both are
+        earned optimism — not naive, but wiser.
+      duration_pct: 0.05
+
+  causal_chain:
+    - cause: beat_opening_image
+      effect: beat_catalyst
+      relationship: because_of_that  # Grandmother's stories give Olenka the book
+
+    - cause: beat_catalyst
+      effect: beat_debate
+      relationship: because_of_that  # Arriving in Paris exposes her to The Forgetting
+
+    - cause: beat_debate
+      effect: beat_break_into_2
+      relationship: because_of_that  # Nobody believing her drives her to open the book
+
+    - cause: beat_break_into_2
+      effect: beat_fun_and_games
+      relationship: because_of_that  # Meeting Lys and the Firebird launches the quest
+
+    - cause: beat_fun_and_games
+      effect: beat_midpoint
+      relationship: until_finally    # Gathering allies leads to discovering the truth
+
+    - cause: beat_midpoint
+      effect: beat_bad_guys_close_in
+      relationship: because_of_that  # Learning it's deliberate raises the stakes
+
+    - cause: beat_bad_guys_close_in
+      effect: beat_all_is_lost
+      relationship: because_of_that  # Her interview mistake breaks her alliances
+
+    - cause: beat_all_is_lost
+      effect: beat_dark_night
+      relationship: because_of_that  # Being alone forces the epiphany
+
+    - cause: beat_dark_night
+      effect: beat_break_into_3
+      relationship: because_of_that  # Understanding the truth drives her back to Lys
+
+    - cause: beat_break_into_3
+      effect: beat_finale
+      relationship: because_of_that  # Reunion with Lys enables the final battle
+
+  themes:
+    - "Cultural identity is not competition — it is conversation"
+    - "Stories live in the telling, not in the book"
+    - "The weaponization of homogeneity disguised as harmony"
+    - "True friendship requires admitting when you're wrong"
+    - "Heritage is a gift you pass forward, not a treasure you hoard"
+
+# ---------------------------------------------------------------------------
+# STRAND 3: CHARACTER DNA
+# ---------------------------------------------------------------------------
+# ZOOTOPIA DNA TRANSFER:
+#   Protagonist archetype:    reluctant_hero → reluctant_hero (preserved)
+#   Deuteragonist archetype:  charming_trickster → charming_trickster (preserved)
+#   Authority figure:         wise_mentor → wise_mentor (preserved)
+#   Protagonist arc shape:    naive idealist → disillusioned → wiser (preserved)
+#   Deuteragonist arc shape:  cynical → vulnerable → genuine (preserved)
+#   Key relationship dynamic: distrust → respect → betrayal → forgiveness (preserved)
+#
+# MUTATION:
+#   Characters:  Animals → Human girl + fairy tale creatures
+#   Setting:     Urban police → European journey
+#   Bond type:   Professional partners → storyteller and story
+# ---------------------------------------------------------------------------
+character_dna:
+  characters:
+
+    - id: char_olenka
+      name: "Olenka (Оленка)"
+      archetype: reluctant_hero
+      arc: >
+        Naive girl who takes fairy tales for granted → thrown into a world where
+        she must champion them → makes a prejudiced mistake that costs her
+        everything → realizes stories are about sharing, not owning → becomes
+        a bridge between cultures through storytelling.
+        
+        MAPS TO: Judy Hopps. Same arc shape. Same flaw (unconscious bias
+        masquerading as passion). Same growth trajectory.
+      traits:
+        - determined
+        - optimistic
+        - naive
+        - stubborn
+        - compassionate
+        - bilingual (Ukrainian/English, learning French)
+      introduction_beat: beat_opening_image
+      relationships:
+        - target: char_lys
+          type: "annoyed partners → trusted friends → shattered → rebuilt"
+          evolution: >
+            Olenka sees Lys as a grumpy sidekick → they develop genuine banter
+            and trust → she betrays him with careless words about story
+            hierarchies → earns his trust back by telling HIS story.
+        - target: char_halyna
+          type: "granddaughter → keeper of the flame"
+          evolution: >
+            Takes grandmother's stories for granted → forced to carry them
+            alone → nearly loses them → realizes she must make them her own.
+      visual:
+        color_palette:
+          - "#F5E6CA"   # Warm wheat blonde hair
+          - "#3498DB"   # Bright blue eyes
+          - "#C0392B"   # Red vyshyvanka embroidery
+          - "#FFFFFF"   # White blouse
+          - "#F39C12"   # Amber / honey tones
+        description: >
+          12-year-old Ukrainian girl with wheat-blonde braids and bright blue
+          eyes. Wears a white vyshyvanka (embroidered blouse) under a modern
+          denim jacket — tradition meets contemporary. Carries a worn leather
+          book bag. Small for her age. Expressive face — her emotions are
+          visible from across a room. Moves with nervous energy that becomes
+          confident determination over the film.
+      voice:
+        style: >
+          Earnest, slightly breathless when excited. Speaks Ukrainian to Lys
+          and English to everyone else, occasionally mixing them when
+          emotional. Gets quiet and controlled during serious moments.
+          Accent is soft and musical.
+
+    - id: char_lys
+      name: "Lys (Лис — The Fox)"
+      archetype: charming_trickster
+      arc: >
+        Cynical, forgotten fairy tale character who pretends not to care →
+        forced into partnership → reveals his wound (three generations of
+        being unread) → betrayed when Olenka dismisses non-Ukrainian stories →
+        chooses to believe in her when she tells his story from the heart.
+        
+        MAPS TO: Nick Wilde. Same archetype. Same wound (society rejected
+        him, so he rejected society). Same redemption arc.
+      traits:
+        - witty
+        - cynical
+        - multilingual (exists in every culture's fox tales)
+        - secretly vulnerable
+        - loyal once earned
+        - dramatic
+      introduction_beat: beat_break_into_2
+      relationships:
+        - target: char_olenka
+          type: "reluctant guide → friend → betrayed → partner"
+          evolution: >
+            Annoyed at being summoned by a child → impressed by her courage →
+            reveals his fear of being forgotten forever → devastated when she
+            ranks stories → forgives because she's the first person to tell
+            his story with love, not from a book, but from the heart.
+      visual:
+        color_palette:
+          - "#D35400"   # Red-orange fox fur (PRESERVED from Nick Wilde)
+          - "#F5DEB3"   # Cream chest (PRESERVED from Nick Wilde)
+          - "#8E44AD"   # Purple embroidered vest (Ukrainian twist)
+          - "#2C3E50"   # Dark boots
+          - "#FFD700"   # Gold story-glow when fully powered
+        description: >
+          A fox who walks upright, dressed in a Ukrainian-style embroidered
+          vest over his rust-colored fur. About 4 feet tall. Has expressive
+          amber eyes and a perpetual half-smirk. His fur flickers between
+          solid and translucent depending on how "remembered" he is.
+          When fully powered by storytelling, his fur glows with warm golden
+          light and Ukrainian folk patterns trace across his coat.
+      voice:
+        style: >
+          Smooth, sardonic, theatrical. Speaks in slightly old-fashioned
+          Ukrainian with occasional French, German, and English phrases
+          (because he exists in all those cultures' fox tales). Voice drops
+          to a whisper during vulnerable moments. Think: if a fairy tale fox
+          had Jason Bateman's delivery.
+
+    - id: char_halyna
+      name: "Grandmother Halyna (Бабуся Галина)"
+      archetype: wise_mentor
+      arc: >
+        Keeper of stories who passes the torch → physically absent but
+        spiritually present → her voice echoes in Olenka's memory → final
+        image shows the connection endures across distance.
+        
+        MAPS TO: Chief Bogo (structural role) but emotionally more like
+        Judy's parents. The authority figure who sets the protagonist
+        on their path.
+      traits:
+        - gentle
+        - wise
+        - stubborn in her own way
+        - knows more than she says
+        - deeply loving
+      introduction_beat: beat_opening_image
+      relationships:
+        - target: char_olenka
+          type: "storyteller → legacy"
+          evolution: >
+            The keeper of stories passes them to the next generation.
+            She disappears from the physical story after Act 1 but
+            her presence echoes in every fairy tale Olenka tells.
+      visual:
+        color_palette:
+          - "#D4A373"   # Warm brown skin, weathered
+          - "#FAF3E0"   # White headscarf
+          - "#8B4513"   # Brown shawl
+          - "#2E7D32"   # Green garden surroundings
+        description: >
+          Elderly Ukrainian woman with deep smile lines, white hair under
+          a traditional headscarf. Wears a brown embroidered shawl. Her
+          hands are weathered from garden work but gentle when turning
+          book pages. When she reads fairy tales, her eyes light up and
+          she looks thirty years younger.
+      voice:
+        style: >
+          Warm, slow, rhythmic — the voice of someone who has told stories
+          ten thousand times and knows exactly where to pause, where to
+          whisper, where to let the silence do the work.
+
+    - id: char_archivist
+      name: "The Archivist"
+      archetype: hidden_villain
+      arc: >
+        Unseen force throughout the film → revealed as a misguided idealist
+        who believes cultural specificity causes conflict → genuinely thinks
+        they're saving the world by making all stories the same → undone
+        by the very diversity they tried to erase.
+        
+        MAPS TO: Bellwether. Same structure — hidden in plain sight,
+        revealed at the midpoint, confronted in the finale. Both believe
+        they're doing good. Both weaponize fear/homogeneity.
+      traits:
+        - intelligent
+        - articulate
+        - genuinely believes in their mission
+        - blind to the damage they cause
+        - lonely (has no stories of their own)
+      introduction_beat: beat_midpoint  # Revealed at midpoint
+      visual:
+        color_palette:
+          - "#BDC3C7"   # Silver-grey (colorless, story-less)
+          - "#ECF0F1"   # White (clinical)
+          - "#2C3E50"   # Dark navy (corporate)
+        description: >
+          Androgynous figure in a perfectly tailored silver-grey suit.
+          No cultural markers of any kind — no jewelry, no patterns,
+          no embroidery. Deliberately generic. Their office is pristine
+          white with no art on the walls. They are what happens when you
+          erase all stories from a person — a hollow, efficient nothing.
+      voice:
+        style: >
+          Calm, reasonable, articulate. Never raises their voice. Speaks
+          in perfect, accentless English. The voice of a TED talk speaker
+          who has a very convincing argument for a terrible idea.
+
+# ---------------------------------------------------------------------------
+# STRAND 4: VISUAL DNA
+# ---------------------------------------------------------------------------
+# ZOOTOPIA DNA TRANSFER:
+#   Act color philosophy:  warm→cool→desaturated→warm restored (preserved)
+#   Shot distribution:     close-up heavy for emotion (preserved)
+#   Visual diversity:      Each "biome" has distinct visual language (preserved)
+#
+# MUTATION:
+#   Biomes: Animal climate zones → European countries
+#   Style:  CGI realism → 2D/3D hybrid with folk art elements
+# ---------------------------------------------------------------------------
+visual_dna:
+  color_dna:
+    act_1_ukraine:
+      palette:
+        - "#F4D03F"   # Sunflower gold
+        - "#82E0AA"   # Wheat field green
+        - "#5DADE2"   # Ukrainian sky blue
+        - "#E74C3C"   # Vyshyvanka red embroidery
+      mood: "Warm, golden, sun-drenched — grandmother's Ukraine, idealized through memory"
+      saturation_level: vibrant
+      contrast: medium
+
+    act_2a_france_switzerland:
+      palette:
+        - "#3498DB"   # Parisian blue
+        - "#F5F5DC"   # Cream stone buildings
+        - "#FFFFFF"   # Swiss snow
+        - "#2ECC71"   # Alpine green
+      mood: "Elegant, cooler, European sophistication meets alpine grandeur"
+      saturation_level: natural
+      contrast: medium
+
+    act_2b_germany_england:
+      palette:
+        - "#2C3E50"   # Dark forest greens
+        - "#7F8C8D"   # English grey skies
+        - "#8B4513"   # Ancient wood
+        - "#95A5A6"   # Fog, mist
+      mood: "Darker, more atmospheric — ancient forests, creeping fog of The Forgetting"
+      saturation_level: desaturated
+      contrast: high
+
+    act_3_new_york:
+      palette:
+        - "#F39C12"   # Amber storytelling glow
+        - "#E74C3C"   # Energy red
+        - "#9B59B6"   # Magic purple
+        - "#F4D03F"   # Gold returns from Act 1
+      mood: "All colors return and MERGE — every country's palette present simultaneously"
+      saturation_level: vibrant
+      contrast: medium
+
+  shot_distribution:
+    wide: 0.20         # Establishing shots of each country
+    medium: 0.30       # Character interaction
+    close_up: 0.35     # Emotional beats (PRESERVED from Zootopia: 0.35)
+    extreme_close_up: 0.05  # Book pages, story details
+    overhead: 0.10     # Journey/map transitions
+
+  style:
+    render_style: mixed_media  # 3D characters in 2D-painted environments
+    lighting_approach: >
+      Each country has its own light. France: warm afternoon light filtered
+      through café windows. Switzerland: crisp, high-altitude sunlight.
+      Germany: dappled forest light, shadows that move. England: diffused,
+      grey, atmospheric. New York: electric, neon, warm orange storytelling
+      glow. The Forgetting is always grey, flat, fluorescent.
+    reference_films_visual:
+      - "Zootopia (2016) — character acting, emotional close-ups"
+      - "Wolfwalkers (2020) — 2D/3D hybrid, folk art integration"
+      - "Spider-Verse (2018) — mixed media, visual energy"
+      - "Song of the Sea (2014) — Celtic/folk visual language"
+      - "Klaus (2019) — painted lighting in animation"
+    art_direction_notes: >
+      KEY INNOVATION: When Olenka tells a fairy tale, the visual style
+      shifts to Ukrainian folk art — Petrykivka painting style, with
+      flowing floral patterns and bold colors. These sequences are 2D
+      within the 3D world, as if the story she's telling BLEEDS into
+      reality. When The Forgetting attacks, the world becomes flat,
+      grey, and geometrically uniform — all texture and pattern erased.
+
+# ---------------------------------------------------------------------------
+# STRAND 5: PACING DNA
+# ---------------------------------------------------------------------------
+pacing_dna:
+  average_shot_length_seconds: 4.2   # PRESERVED from Zootopia
+  asl_by_act:
+    "1": 5.0     # Slower, establishing (PRESERVED from Zootopia)
+    "2": 3.8     # Faster, adventure (PRESERVED from Zootopia)
+    "3": 3.0     # Fastest, climax (PRESERVED from Zootopia)
+
+  cutting_dynamics: accelerating     # PRESERVED from Zootopia
+
+  tension_curve:
+    # SHAPE PRESERVED FROM ZOOTOPIA — values mapped 1:1
+    - [0.00, 0.2]   # Ukraine — peaceful
+    - [0.05, 0.3]   # Grandmother's warning
+    - [0.10, 0.4]   # Leaving home — emotional tension
+    - [0.15, 0.3]   # Paris — confusion, frustration
+    - [0.25, 0.5]   # Book opens — quest begins
+    - [0.35, 0.6]   # European adventure heats up
+    - [0.45, 0.8]   # Iron Wolf confrontation — earning trust
+    - [0.50, 0.7]   # Mavka reveals the truth — false victory
+    - [0.55, 0.6]   # Interview mistake — tension shifts to internal
+    - [0.65, 0.5]   # Alliances crumbling
+    - [0.70, 0.3]   # Book goes blank — emotional low
+    - [0.75, 0.4]   # English girl reading — hope returns
+    - [0.80, 0.5]   # Reunion with Lys
+    - [0.85, 0.8]   # New York confrontation begins
+    - [0.90, 1.0]   # The Telling — peak
+    - [0.95, 0.3]   # Resolution — release
+    - [1.00, 0.2]   # Final image — warm landing
+
+  rhythm_pattern: >
+    PRESERVED from Zootopia with cultural adaptation:
+    Act 1 uses long takes and dissolves between Ukraine and Paris.
+    European adventure sequences alternate quick discoveries with
+    held reaction shots. Fairy tale sequences (when Olenka tells
+    stories) use a DIFFERENT rhythm — slower, more deliberate, with
+    the cadence of oral storytelling. The Forgetting scenes use
+    unnervingly steady, mechanical pacing. The finale accelerates
+    to rapid cutting, then holds on a long take of Olenka telling
+    the final story.
+
+# ---------------------------------------------------------------------------
+# STRAND 6: AUDIO DNA
+# ---------------------------------------------------------------------------
+audio_dna:
+  dialogue_ratio: 0.50     # Slightly lower than Zootopia (0.55) — more visual storytelling
+  music_coverage: 0.80     # Higher than Zootopia (0.75) — fairy tale world needs constant score
+
+  silence_moments:
+    - beat_id: beat_all_is_lost
+      duration_seconds: 5.0
+      purpose: >
+        After the book goes blank. Complete silence as Olenka stares at
+        empty pages. The audience must feel the weight of losing your
+        entire cultural memory.
+
+    - beat_id: beat_dark_night
+      duration_seconds: 3.0
+      purpose: >
+        The moment Olenka hears the English girl reading. Silence first,
+        then the child's voice — the only sound in the world.
+
+    - beat_id: beat_break_into_3
+      duration_seconds: 2.0
+      purpose: >
+        After Olenka's apology to Lys, before he responds. The silence
+        is Lys deciding whether to trust again.
+
+  music_style:
+    genre: "Orchestral with Ukrainian folk instruments and European classical elements"
+    reference: "Ludovico Einaudi meets DakhaBrakha"
+    emotional_arc_follows: true
+    instruments:
+      - "Bandura (Ukrainian string instrument — Olenka's theme)"
+      - "Sopilka (Ukrainian flute — grandmother's theme)"
+      - "Full orchestra (European journey, grandeur)"
+      - "Cello solo (Lys's theme — warm, sardonic, melancholic)"
+      - "Children's chorus (The Telling finale)"
+      - "Digital/electronic dissonance (The Forgetting)"
+      - "Glass harmonica (Mavka / ethereal moments)"
+
+  voice_styles:
+    char_olenka:
+      style: "Earnest, musical Ukrainian accent, mixes Ukrainian and English"
+    char_lys:
+      style: "Smooth, theatrical, old-fashioned. Multilingual. Jason Bateman meets a Cossack bard."
+    char_halyna:
+      style: "Warm, slow, rhythmic. The rhythm of a bedtime story."
+    char_archivist:
+      style: "Calm, accentless, perfectly reasonable. TED talk villain."
+
+# ---------------------------------------------------------------------------
+# STRAND 7: SCENE MANIFEST (2 key scenes — matching Zootopia's 2)
+# ---------------------------------------------------------------------------
+scene_manifest:
+  scenes:
+
+    # =========================================================================
+    # SCENE 1: The Book Opens — Lys Arrives
+    # TRANSMUTES: Zootopia's "Judy arrives in Zootopia" scene
+    # Same function: protagonist enters the new world, full of wonder
+    # =========================================================================
+    - id: scene_book_opens
+      beat_id: beat_break_into_2
+      act: 1
+      location: "Olenka's small bedroom in Paris apartment"
+      time_of_day: night
+      weather: "Rain against the window"
+      characters_present:
+        - char_olenka
+        - char_lys
+      emotional_target:
+        valence: 0.4
+        arousal: 0.6
+      duration_seconds: 75
+
+      shots:
+        - id: shot_rain_window
+          type: wide_establishing
+          duration_seconds: 4.0
+          camera_movement: dolly_in
+          description: >
+            Wide shot of a Parisian apartment building at night. Rain streaks
+            down grey stone walls. One window glows warm — Olenka's room.
+            Camera slowly pushes in toward the lit window.
+          characters_in_frame: []
+          dialogue: null
+          sfx:
+            - "rain_on_stone"
+            - "distant_paris_traffic"
+          transition_to_next: dissolve
+
+        - id: shot_olenka_with_book
+          type: close_up
+          duration_seconds: 5.0
+          camera_movement: static
+          description: >
+            Close-up of Olenka's hands holding grandmother's book. The leather
+            is cracked, the edges worn. Her fingers trace the Ukrainian text on
+            the cover: "КАЗКИ" (Fairy Tales). A tear drops onto the cover.
+            She opens it.
+          characters_in_frame:
+            - char_olenka
+          dialogue: null
+          sfx:
+            - "book_pages_turning"
+            - "rain_muffled"
+          transition_to_next: cut
+
+        - id: shot_pages_glow
+          type: extreme_close_up
+          duration_seconds: 3.0
+          camera_movement: static
+          description: >
+            Extreme close-up of the book's pages. The illustrated Firebird's
+            feathers begin to shimmer gold. The ink moves. The lines of the
+            Fox illustration curl into a smirk. The page IGNITES with warm
+            golden light that fills the frame.
+          characters_in_frame: []
+          dialogue: null
+          sfx:
+            - "magical_hum_building"
+            - "paper_crackling"
+          transition_to_next: match_cut
+
+        - id: shot_lys_materializes
+          type: medium
+          duration_seconds: 6.0
+          camera_movement: static
+          description: >
+            Medium shot of Olenka scrambling backward on her bed as the room
+            fills with golden light. From the pages, a shape forms — fur,
+            ears, a tail, amber eyes. LYS materializes, sitting cross-legged
+            on her desk, examining his own paws with theatrical displeasure.
+            He's slightly translucent. His embroidered vest shimmers.
+          characters_in_frame:
+            - char_olenka
+            - char_lys
+          dialogue: >
+            LYS: (examining his paw) Three generations. Three! Do you know
+            what it's like, being stuck between pages 47 and 48 for thirty
+            years? The binding is terrible, by the way. Your grandmother
+            never heard of a bookmark?
+          sfx:
+            - "magical_shimmer"
+            - "fox_tail_swish"
+          transition_to_next: cut
+
+        - id: shot_olenka_reaction
+          type: close_up
+          duration_seconds: 4.0
+          camera_movement: dolly_in
+          description: >
+            Close-up of Olenka's face. Her tears have stopped. Her expression
+            shifts from terror to wonder to the beginning of a laugh. This is
+            the moment her world changes — the fairy tales are real, and
+            they're annoyed about it.
+          characters_in_frame:
+            - char_olenka
+          dialogue: >
+            OLENKA: (whispered, in Ukrainian) Babusya was right.
+          sfx:
+            - "room_tone_warm"
+          transition_to_next: cut
+
+    # =========================================================================
+    # SCENE 2: The Interview Mistake — Everything Falls Apart
+    # TRANSMUTES: Zootopia's "Press Conference" scene
+    # Same function: protagonist's unconscious bias destroys her key relationship
+    # =========================================================================
+    - id: scene_interview_mistake
+      beat_id: beat_bad_guys_close_in
+      act: 2
+      location: "Ferry terminal, English Channel crossing"
+      time_of_day: afternoon
+      weather: "Overcast, grey water, wind"
+      characters_present:
+        - char_olenka
+        - char_lys
+      emotional_target:
+        valence: -0.5
+        arousal: 0.7
+      duration_seconds: 100
+
+      shots:
+        - id: shot_ferry_establishing
+          type: wide_establishing
+          duration_seconds: 4.0
+          camera_movement: static
+          description: >
+            Wide shot of a ferry on the English Channel. Grey sky, grey water.
+            Olenka stands at the railing with a phone held by a journalist.
+            Lys is nearby but invisible to the journalist — he sits on a
+            bollard, watching. In the background, the white cliffs of Dover
+            emerge from mist.
+          characters_in_frame:
+            - char_olenka
+            - char_lys
+          dialogue: null
+          sfx:
+            - "ferry_engine_hum"
+            - "seagulls"
+            - "wind"
+          transition_to_next: cut
+
+        - id: shot_olenka_interview
+          type: medium_close
+          duration_seconds: 8.0
+          camera_movement: dolly_in
+          description: >
+            Medium close-up of Olenka being interviewed. She's flustered —
+            the journalist is asking rapid questions. The camera slowly dollies
+            in as her composure cracks. She's trying to explain why stories
+            matter but the journalist keeps pushing: why YOURS?
+          characters_in_frame:
+            - char_olenka
+          dialogue: >
+            JOURNALIST (O.S.): But why Ukrainian stories specifically?
+            Aren't you saying some cultures matter more than others?
+            OLENKA: No, I— It's not— Our stories are older. More real.
+            The Western ones are just... they're copies. Retellings.
+            (She immediately knows she's said it wrong.)
+          sfx:
+            - "phone_recording_indicator"
+            - "wind_picking_up"
+          transition_to_next: cut
+
+        - id: shot_lys_hears
+          type: close_up
+          duration_seconds: 5.0
+          camera_movement: static
+          description: >
+            Close-up of Lys's face as he hears Olenka's words. His half-smirk
+            freezes. His ears flatten against his skull. His fur begins to
+            flicker — becoming more translucent. Not because of The Forgetting.
+            Because of HER WORDS.
+            
+            He is a fox who exists in EVERY culture. She just said only the
+            Ukrainian version of him is real. She just erased him.
+            
+            TRANSMUTES: Identical to the Nick reaction shot at the press
+            conference. Same emotional function. Same visual language.
+          characters_in_frame:
+            - char_lys
+          dialogue: null
+          sfx:
+            - "wind_howling"
+            - "magical_flicker_fading"
+          transition_to_next: cut
+
+        - id: shot_lys_confronts
+          type: medium
+          duration_seconds: 10.0
+          camera_movement: static
+          description: >
+            Medium shot. The journalist is gone. Olenka and Lys face each
+            other on the ferry deck. Wind whips Olenka's hair. Lys is
+            flickering badly — half-transparent.
+          characters_in_frame:
+            - char_olenka
+            - char_lys
+          dialogue: >
+            LYS: (voice cracking) Copies? COPIES? I am Renard in France. I am
+            Reineke in Germany. I am Kitsune in Japan. I am Anansi's cousin
+            in Ghana. I have been told and retold for three thousand years
+            in every language on this planet. And you... you just said only
+            ONE version of me is real?
+            OLENKA: Lys, I didn't mean—
+            LYS: (quietly, barely visible now) You sound exactly like The
+            Forgetting, Olenka. Deciding which stories deserve to exist.
+          sfx:
+            - "wind"
+            - "magical_dissolution"
+          transition_to_next: cut
+
+        - id: shot_lys_vanishes
+          type: wide
+          duration_seconds: 5.0
+          camera_movement: static
+          description: >
+            Wide shot from behind Olenka as Lys turns and walks toward the
+            bow of the ferry. With each step, he becomes more transparent.
+            By the time he reaches the railing, he's barely a shimmer.
+            Then he's gone. Olenka stands alone on the deck, her hair
+            whipping in the wind, her grandmother's book clutched to
+            her chest.
+            
+            The color drains from the scene. The grey of the channel
+            swallows everything.
+            
+            TRANSMUTES: Identical to Nick walking away down the City Hall
+            corridor. Same composition. Same emotional devastation.
+          characters_in_frame:
+            - char_olenka
+          dialogue: null
+          sfx:
+            - "wind"
+            - "ferry_horn_distant"
+            - "silence"
+          transition_to_next: fade_to_black
+
+# ---------------------------------------------------------------------------
+# STRAND 8: RENDERING HINTS
+# ---------------------------------------------------------------------------
+rendering_hints:
+  preferred_models:
+    character_closeups: "kling_3.0"        # Best character consistency
+    establishing_shots: "veo_3.1"          # Best 4K environments
+    dialogue_scenes: "seedance_2.0"        # Native lip-sync
+    action_sequences: "hunyuan_video"      # Open source, self-hosted
+    bulk_transitions: "wan_2.1"            # Cost-effective
+    fairy_tale_sequences: "flux_kontext"   # 2D folk art style shifts
+
+  budget_mode: false
+  max_cost_usd: 800
+  quality_threshold: 0.85
+  target_resolution: "1080p"
+  target_fps: 24
+
+  special_rendering_notes: >
+    FAIRY TALE SEQUENCES require style-switching: when Olenka tells a story,
+    the visual style shifts from 3D to 2D Ukrainian Petrykivka folk art.
+    This requires a dedicated rendering pipeline — likely FLUX for the 2D
+    segments with ControlNet to maintain character consistency during the
+    style transition. The TRANSITION between 3D and 2D should be seamless,
+    as if the fairy tale is "bleeding" into reality.

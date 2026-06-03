@@ -1,0 +1,1426 @@
+# =============================================================================
+# Film Genome Document — Formal Schema Specification v1.0
+# =============================================================================
+#
+# This schema defines the structure of a Film Genome Document (FGD), the
+# "source code" that the Animation Genome Machine compiles into a rendered
+# animated film.
+#
+# A Film Genome Document encodes 8 DNA strands that together specify every
+# creative, technical, and production decision for an animated film.
+#
+# Format: YAML Schema Definition (human-readable, machine-parseable)
+# Validation: The compiler/analyzer.py module validates against this spec
+# Version: 1.0
+# =============================================================================
+
+schema:
+  name: film_genome_document
+  version: "1.0"
+  description: >
+    Complete specification for an animated film, encoding narrative structure,
+    character design, visual style, pacing, audio design, scene-level shot plans,
+    and rendering preferences into a single machine-readable document.
+
+# =============================================================================
+# STRAND 1: METADATA
+# =============================================================================
+# Basic identification and production parameters for the film.
+# This strand is the "header" of the genome — everything the compiler needs
+# before it begins processing the creative content.
+# =============================================================================
+
+strands:
+
+  metadata:
+    description: >
+      Film identification, versioning, and top-level production parameters.
+      Every genome must have metadata; it's the entry point for the compiler.
+    required: true
+    fields:
+
+      title:
+        type: string
+        required: true
+        description: >
+          The title of the film or project. Used as the primary identifier
+          throughout the pipeline and in output filenames.
+        example: "Zootopia: A Genome Study"
+
+      reference_film:
+        type: string
+        required: false
+        description: >
+          If this genome is derived from an existing film (for study or
+          remixing), the name of the source film. Null for original works.
+        example: "Zootopia (2016)"
+
+      genome_version:
+        type: string
+        required: false
+        default: "1.0"
+        description: >
+          Version of this specific genome document. Follows semver.
+          Increment when making breaking changes to the genome content.
+        pattern: '^\d+\.\d+(\.\d+)?$'
+        example: "1.0"
+
+      author:
+        type: string
+        required: false
+        description: >
+          The person or team who authored this genome document.
+        example: "Animation Genome Machine"
+
+      created:
+        type: date
+        required: false
+        description: >
+          ISO 8601 date when this genome was first created.
+        format: "YYYY-MM-DD"
+        example: "2025-01-15"
+
+      target_duration_minutes:
+        type: number
+        required: false
+        description: >
+          Target runtime of the finished film in minutes.
+          Used by the optimizer to calculate shot budgets and pacing.
+        constraints:
+          minimum: 0.5
+          maximum: 240
+        example: 108
+
+      target_format:
+        type: enum
+        required: false
+        description: >
+          The intended format/length category of the output.
+          Affects default pacing, budget allocation, and complexity limits.
+        values:
+          - short_film       # < 15 minutes
+          - episode          # 15-45 minutes (series episode)
+          - feature          # 45+ minutes (feature film)
+        default: short_film
+        example: feature
+
+  # ===========================================================================
+  # STRAND 2: NARRATIVE DNA
+  # ===========================================================================
+  # The story skeleton. Defines the structural framework, emotional trajectory,
+  # and causal logic of the narrative. This is what makes a film "work" at the
+  # deepest level — before any visuals or audio are considered.
+  # ===========================================================================
+
+  narrative_dna:
+    description: >
+      Story structure, emotional arc, scene beats, causal chains, and themes.
+      The narrative DNA is the backbone that all other strands attach to.
+      The compiler uses this to validate story coherence and generate
+      scene-level pacing instructions.
+    required: true
+    fields:
+
+      structure:
+        type: enum
+        required: true
+        description: >
+          The high-level narrative framework used to organize the story.
+          Determines which beats are expected and their relative positions.
+        values:
+          - pixar_story_spine   # "Once upon a time... Every day... Until one day..."
+          - save_the_cat        # Blake Snyder's 15-beat structure
+          - heros_journey       # Campbell/Vogler 12-stage monomyth
+          - three_act           # Classical 3-act structure
+          - custom              # User-defined beat structure
+        example: save_the_cat
+
+      emotional_arc_shape:
+        type: enum
+        required: false
+        description: >
+          The macro emotional trajectory of the film, based on Kurt Vonnegut's
+          story shapes. Guides the emotional_valence curve across beats.
+        values:
+          - rags_to_riches      # Steady rise (Cinderella before midnight)
+          - tragedy             # Steady fall (Hamlet, Requiem for a Dream)
+          - man_in_a_hole       # Fall then rise (most comedies, Finding Nemo)
+          - icarus              # Rise then fall (Scarface, Breaking Bad)
+          - cinderella          # Rise, fall, rise (full Cinderella, Toy Story)
+          - oedipus             # Fall, rise, fall (Oedipus Rex, Chinatown)
+        example: cinderella
+
+      beats:
+        type: array
+        required: true
+        description: >
+          Ordered sequence of story beats. Each beat is a structural unit
+          of narrative — a moment where something changes. Beats are the
+          atomic units the compiler uses to generate scenes.
+        min_items: 3
+        items:
+          type: object
+          fields:
+
+            id:
+              type: string
+              required: true
+              unique: true
+              description: >
+                Unique identifier for this beat. Referenced by scenes,
+                causal chains, and character introductions.
+              pattern: '^beat_[a-z0-9_]+$'
+              example: "beat_opening_image"
+
+            name:
+              type: string
+              required: true
+              description: >
+                Human-readable name for this beat.
+              example: "Opening Image"
+
+            type:
+              type: enum
+              required: true
+              description: >
+                The structural function of this beat in the narrative.
+                Based on Save the Cat beat sheet with extensions.
+              values:
+                - setup              # World establishment, status quo
+                - catalyst           # Inciting incident, call to adventure
+                - debate             # Hero's reluctance, "should I go?"
+                - break_into_2       # Commitment to the journey
+                - fun_and_games      # Promise of the premise, upward trajectory
+                - midpoint           # False victory or false defeat, stakes raise
+                - bad_guys_close_in  # Opposition intensifies, allies fracture
+                - all_is_lost        # Lowest point, whiff of death
+                - dark_night         # Hero confronts their flaw
+                - break_into_3       # Solution found, final push begins
+                - finale             # Climax, final confrontation
+                - final_image        # Mirror of opening, transformation shown
+                - custom             # User-defined beat type
+              example: setup
+
+            timestamp_pct:
+              type: number
+              required: true
+              description: >
+                Where this beat falls in the film's timeline, as a percentage.
+                0.0 = start, 1.0 = end. Used for pacing validation.
+              constraints:
+                minimum: 0.0
+                maximum: 1.0
+              example: 0.0
+
+            emotional_valence:
+              type: number
+              required: false
+              description: >
+                The emotional positivity/negativity of this beat.
+                -1.0 = maximally negative (despair, loss)
+                 0.0 = neutral
+                +1.0 = maximally positive (joy, triumph)
+                Used to plot the emotional arc and validate against
+                the declared emotional_arc_shape.
+              constraints:
+                minimum: -1.0
+                maximum: 1.0
+              example: 0.5
+
+            emotional_arousal:
+              type: number
+              required: false
+              description: >
+                The intensity/energy level of this beat.
+                0.0 = calm, contemplative
+                1.0 = maximum intensity (action, shock, ecstasy)
+                Combined with valence, this maps to the circumplex
+                model of emotion for shot selection.
+              constraints:
+                minimum: 0.0
+                maximum: 1.0
+              example: 0.3
+
+            description:
+              type: string
+              required: true
+              description: >
+                Prose description of what happens in this beat.
+                Used by the generation engine for scene creation
+                and by the analyzer for coherence checking.
+              example: >
+                We see the vast, gleaming city of Zootopia for the first
+                time — a metropolis where predator and prey live together.
+
+            duration_pct:
+              type: number
+              required: false
+              description: >
+                What fraction of total runtime this beat occupies.
+                All beat durations should sum to approximately 1.0.
+                Used by the optimizer to allocate shot budgets.
+              constraints:
+                minimum: 0.0
+                maximum: 1.0
+              example: 0.05
+
+      causal_chain:
+        type: array
+        required: false
+        description: >
+          Explicit cause-and-effect relationships between beats.
+          Encodes the Pixar story spine logic: "Because of [X], [Y] happened."
+          The analyzer uses this to verify narrative coherence — every beat
+          (except the first) should be caused by a prior beat.
+        items:
+          type: object
+          fields:
+
+            cause:
+              type: string
+              required: true
+              description: >
+                The beat_id that causes the effect. Must reference a valid
+                beat that occurs before the effect in timestamp_pct order.
+              reference: "narrative_dna.beats[].id"
+              example: "beat_catalyst"
+
+            effect:
+              type: string
+              required: true
+              description: >
+                The beat_id that results from the cause.
+              reference: "narrative_dna.beats[].id"
+              example: "beat_debate"
+
+            relationship:
+              type: enum
+              required: true
+              description: >
+                The type of causal connection between beats.
+              values:
+                - because_of_that   # Direct consequence (A caused B)
+                - until_finally     # Cumulative pressure (A built up until B)
+                - meanwhile         # Parallel action (A happens while B happens)
+              example: because_of_that
+
+      themes:
+        type: array
+        required: false
+        description: >
+          Core thematic concerns of the film. Used by the judgment engine
+          to evaluate whether generated content reinforces thematic coherence.
+        items:
+          type: string
+        example:
+          - "Prejudice and stereotypes"
+          - "Following your dreams despite opposition"
+          - "The complexity of identity"
+
+  # ===========================================================================
+  # STRAND 3: CHARACTER DNA
+  # ===========================================================================
+  # Complete character specifications including personality, visual design,
+  # voice profiles, and relationship maps. Each character is a reusable
+  # "object" that scenes reference by ID.
+  # ===========================================================================
+
+  character_dna:
+    description: >
+      Character definitions with archetypes, visual references, voice profiles,
+      and relationship graphs. The compiler resolves character references in
+      scenes and generates consistency-enforced prompts for each appearance.
+    required: true
+    fields:
+
+      characters:
+        type: array
+        required: true
+        min_items: 1
+        description: >
+          Array of character definitions. Each character is a complete
+          specification that the generation engine uses to maintain
+          visual and behavioral consistency across all scenes.
+        items:
+          type: object
+          fields:
+
+            id:
+              type: string
+              required: true
+              unique: true
+              description: >
+                Unique identifier for this character. Referenced by scenes,
+                relationships, and voice_styles.
+              pattern: '^char_[a-z0-9_]+$'
+              example: "char_judy"
+
+            name:
+              type: string
+              required: true
+              description: >
+                The character's display name.
+              example: "Judy Hopps"
+
+            archetype:
+              type: enum
+              required: true
+              description: >
+                The character's narrative archetype. Informs default behavior
+                patterns, arc expectations, and relationship dynamics.
+              values:
+                - reluctant_hero      # Called to adventure, initially refuses
+                - charming_trickster  # Clever, morally ambiguous, lovable rogue
+                - wise_mentor         # Guides the hero, provides key insight
+                - hidden_villain      # Appears benign, revealed as antagonist
+                - loyal_friend        # Steadfast companion, provides support
+                - comic_relief        # Lightens tone, often has hidden depth
+                - love_interest       # Romantic counterpart, catalyzes growth
+                - tragic_figure       # Sympathetic character with fatal flaw
+                - custom              # User-defined archetype
+              example: reluctant_hero
+
+            arc:
+              type: string
+              required: false
+              description: >
+                Freeform description of the character's transformation
+                from their introduction to their final appearance.
+                Used by the judgment engine to verify arc completion.
+              example: >
+                Naive idealist → disillusioned realist → wiser optimist
+                who understands that real change requires acknowledging
+                one's own biases.
+
+            traits:
+              type: array
+              required: false
+              description: >
+                Personality traits that inform dialogue generation,
+                expression selection, and behavioral consistency.
+              items:
+                type: string
+              example:
+                - determined
+                - optimistic
+                - stubborn
+                - empathetic
+
+            introduction_beat:
+              type: string
+              required: false
+              description: >
+                The beat_id where this character first appears.
+                Used by the analyzer to validate character availability
+                in scenes — a character can't appear before introduction.
+              reference: "narrative_dna.beats[].id"
+              example: "beat_opening_image"
+
+            relationships:
+              type: array
+              required: false
+              description: >
+                How this character relates to other characters.
+                Relationships are directional — A→B may differ from B→A.
+              items:
+                type: object
+                fields:
+
+                  target:
+                    type: string
+                    required: true
+                    description: >
+                      The character_id this relationship points to.
+                    reference: "character_dna.characters[].id"
+                    example: "char_nick"
+
+                  type:
+                    type: string
+                    required: true
+                    description: >
+                      The nature of the relationship (e.g., "reluctant partner",
+                      "antagonist", "mentor", "love interest").
+                    example: "reluctant partner → trusted friend"
+
+                  evolution:
+                    type: string
+                    required: false
+                    description: >
+                      How this relationship changes over the course of the film.
+                    example: >
+                      Distrust and friction → grudging respect → genuine
+                      friendship and mutual reliance.
+
+            visual:
+              type: object
+              required: false
+              description: >
+                Visual design specification for the character. Used by the
+                generation engine to maintain appearance consistency.
+              fields:
+
+                reference_sheet:
+                  type: string
+                  required: false
+                  description: >
+                    File path to a character reference sheet image.
+                    Used as the primary visual anchor for generation.
+                  format: file_path
+                  example: "vault/02-characters/judy_reference.png"
+
+                turnaround:
+                  type: string
+                  required: false
+                  description: >
+                    File path to a character turnaround (front, side, back views).
+                  format: file_path
+                  example: "vault/02-characters/judy_turnaround.png"
+
+                expression_sheet:
+                  type: string
+                  required: false
+                  description: >
+                    File path to an expression/emotion sheet showing the character
+                    in various emotional states.
+                  format: file_path
+                  example: "vault/02-characters/judy_expressions.png"
+
+                color_palette:
+                  type: array
+                  required: false
+                  description: >
+                    The character's signature colors as hex values.
+                    Used for consistency checking and prompt enhancement.
+                  items:
+                    type: string
+                    pattern: '^#[0-9A-Fa-f]{6}$'
+                  example:
+                    - "#8B8589"   # Grey fur
+                    - "#2E5090"   # Blue uniform
+                    - "#E8A87C"   # Inner ear pink
+
+                description:
+                  type: string
+                  required: false
+                  description: >
+                    Text description of the character's appearance.
+                    Used directly in generation prompts when no reference
+                    sheet is available.
+                  example: >
+                    Small grey rabbit with long upright ears, large purple eyes,
+                    wearing a blue police officer uniform with a gold badge.
+
+            voice:
+              type: object
+              required: false
+              description: >
+                Voice and speech specification for the character.
+                Used by TTS generation and dialogue pacing.
+              fields:
+
+                style:
+                  type: string
+                  required: false
+                  description: >
+                    Description of the character's vocal quality and speech patterns.
+                  example: "Energetic, slightly high-pitched, fast-talking, earnest"
+
+                reference_audio:
+                  type: string
+                  required: false
+                  description: >
+                    File path to a voice reference audio clip.
+                  format: file_path
+                  example: "vault/02-characters/judy_voice_ref.wav"
+
+                tts_model:
+                  type: string
+                  required: false
+                  description: >
+                    Preferred TTS model identifier for this character's voice.
+                  example: "elevenlabs:rachel"
+
+  # ===========================================================================
+  # STRAND 4: VISUAL DNA
+  # ===========================================================================
+  # The visual identity of the film — color theory, shot composition rules,
+  # and art direction. This strand ensures the film has a cohesive visual
+  # language that evolves intentionally across the narrative.
+  # ===========================================================================
+
+  visual_dna:
+    description: >
+      Color palettes per act, shot type distribution, rendering style, and
+      art direction notes. The visual DNA ensures every frame belongs to the
+      same film while allowing intentional evolution across the story.
+    required: false
+    fields:
+
+      color_dna:
+        type: object
+        required: false
+        description: >
+          Color palette specification keyed by act or story section.
+          Each entry defines the dominant color language for that portion
+          of the film. The generation engine uses this to tint lighting,
+          backgrounds, and atmosphere.
+        keyed_by: "act identifier (e.g., 'act_1', 'act_2', 'act_3')"
+        value_schema:
+          type: object
+          fields:
+
+            palette:
+              type: array
+              required: true
+              description: >
+                Dominant colors for this act, ordered by prominence.
+              items:
+                type: string
+                pattern: '^#[0-9A-Fa-f]{6}$'
+              min_items: 2
+              max_items: 8
+              example:
+                - "#FFD700"  # Warm gold (optimism)
+                - "#87CEEB"  # Sky blue (openness)
+                - "#228B22"  # Forest green (nature)
+
+            mood:
+              type: string
+              required: false
+              description: >
+                The intended emotional atmosphere this palette evokes.
+              example: "Warm, inviting, hopeful"
+
+            saturation_level:
+              type: enum
+              required: false
+              description: >
+                Overall saturation intensity for this act.
+              values:
+                - desaturated   # Muted, subdued (grief, monotony)
+                - natural       # Realistic saturation
+                - vibrant       # Enhanced, vivid (energy, joy)
+                - hyper         # Extreme saturation (fantasy, surreal)
+              default: natural
+              example: vibrant
+
+            contrast:
+              type: enum
+              required: false
+              description: >
+                Lighting contrast level for this act.
+              values:
+                - low       # Flat, even lighting (dreamlike, safe)
+                - medium    # Natural contrast
+                - high      # Strong shadows (drama, tension)
+                - extreme   # Chiaroscuro (noir, horror, revelation)
+              default: medium
+              example: medium
+
+      shot_distribution:
+        type: object
+        required: false
+        description: >
+          Target distribution of shot types across the film.
+          All values must sum to 1.0. The optimizer uses this to
+          allocate shot types when generating scene shot lists.
+        constraint: "All values must sum to 1.0"
+        fields:
+
+          wide:
+            type: number
+            required: false
+            description: >
+              Fraction of shots that are wide/establishing shots.
+            constraints:
+              minimum: 0.0
+              maximum: 1.0
+            example: 0.15
+
+          medium:
+            type: number
+            required: false
+            description: >
+              Fraction of shots that are medium shots.
+            constraints:
+              minimum: 0.0
+              maximum: 1.0
+            example: 0.35
+
+          close_up:
+            type: number
+            required: false
+            description: >
+              Fraction of shots that are close-ups.
+            constraints:
+              minimum: 0.0
+              maximum: 1.0
+            example: 0.35
+
+          extreme_close_up:
+            type: number
+            required: false
+            description: >
+              Fraction of shots that are extreme close-ups.
+            constraints:
+              minimum: 0.0
+              maximum: 1.0
+            example: 0.05
+
+          overhead:
+            type: number
+            required: false
+            description: >
+              Fraction of shots that are overhead/bird's-eye views.
+            constraints:
+              minimum: 0.0
+              maximum: 1.0
+            example: 0.10
+
+      style:
+        type: object
+        required: false
+        description: >
+          Overall visual style and art direction for the film.
+        fields:
+
+          render_style:
+            type: enum
+            required: false
+            description: >
+              The primary rendering/animation style.
+            values:
+              - 3d_stylized     # Pixar/Disney style 3D
+              - 3d_realistic    # Photorealistic 3D
+              - 2d_anime        # Japanese animation style
+              - 2d_western      # Western 2D animation (Disney classic)
+              - mixed_media     # Combination of techniques
+              - stop_motion     # Stop-motion aesthetic
+              - watercolor      # Painterly/watercolor aesthetic
+              - custom          # User-defined style
+            example: 3d_stylized
+
+          lighting_approach:
+            type: string
+            required: false
+            description: >
+              General lighting philosophy for the film.
+            example: >
+              Natural key lighting with warm practicals. Shadows are soft
+              in safe spaces, hard in threatening ones. Night scenes use
+              strong rim lighting for character separation.
+
+          reference_films_visual:
+            type: array
+            required: false
+            description: >
+              Films whose visual style should inform this production.
+            items:
+              type: string
+            example:
+              - "Zootopia (2016)"
+              - "Ratatouille (2007)"
+              - "Spider-Verse (2018)"
+
+          art_direction_notes:
+            type: string
+            required: false
+            description: >
+              Freeform art direction notes for the generation engine.
+            example: >
+              Every environment should feel lived-in and detailed.
+              Background characters should be diverse species.
+              Architecture scales to the inhabitants of each district.
+
+  # ===========================================================================
+  # STRAND 5: PACING DNA
+  # ===========================================================================
+  # The temporal rhythm of the film. Controls how quickly shots change,
+  # how tension builds and releases, and the overall editorial cadence.
+  # ===========================================================================
+
+  pacing_dna:
+    description: >
+      Shot timing, cutting rhythm, and tension dynamics. Pacing DNA controls
+      the "heartbeat" of the film — how fast it breathes at any given moment.
+      The optimizer uses this to calculate shot durations and transition timing.
+    required: false
+    fields:
+
+      average_shot_length_seconds:
+        type: number
+        required: false
+        description: >
+          The target average shot length (ASL) in seconds across the entire film.
+          Modern animation typically ranges from 3-6 seconds.
+          Lower = faster cutting, higher = more contemplative.
+        constraints:
+          minimum: 0.5
+          maximum: 30.0
+        example: 4.2
+
+      asl_by_act:
+        type: object
+        required: false
+        description: >
+          Average shot length overrides per act. Allows the film to
+          breathe differently in setup vs. climax.
+        keyed_by: "act number (e.g., '1', '2', '3')"
+        value_schema:
+          type: number
+          constraints:
+            minimum: 0.5
+            maximum: 30.0
+        example:
+          "1": 5.0
+          "2": 4.0
+          "3": 3.0
+
+      cutting_dynamics:
+        type: enum
+        required: false
+        description: >
+          The overall pattern of cutting speed across the film.
+        values:
+          - accelerating   # Progressively faster cuts toward climax
+          - decelerating   # Starts fast, slows down (rare)
+          - constant       # Even pacing throughout
+          - wave           # Alternating fast/slow sections
+          - staccato       # Irregular, unpredictable rhythm
+        example: accelerating
+
+      tension_curve:
+        type: array
+        required: false
+        description: >
+          Explicit tension values at specific points in the film's timeline.
+          Each entry is a [timestamp_pct, tension_value] pair.
+          The compiler interpolates between points to generate a continuous curve.
+        items:
+          type: array
+          description: "[timestamp_pct (0.0-1.0), tension_value (0.0-1.0)]"
+          length: 2
+          item_types:
+            - type: number
+              constraints:
+                minimum: 0.0
+                maximum: 1.0
+            - type: number
+              constraints:
+                minimum: 0.0
+                maximum: 1.0
+        example:
+          - [0.00, 0.2]
+          - [0.10, 0.3]
+          - [0.25, 0.5]
+          - [0.50, 0.6]
+          - [0.75, 0.9]
+          - [0.85, 1.0]
+          - [0.95, 0.4]
+          - [1.00, 0.2]
+
+      rhythm_pattern:
+        type: string
+        required: false
+        description: >
+          Freeform description of the editorial rhythm philosophy.
+        example: >
+          Action sequences use rapid 1-2 second cuts with matched motion.
+          Emotional scenes hold on close-ups for 5-8 seconds.
+          Comedy beats use a setup-pause-punchline rhythm with 3-beat timing.
+
+  # ===========================================================================
+  # STRAND 6: AUDIO DNA
+  # ===========================================================================
+  # Sound design philosophy — dialogue density, music style, silence strategy,
+  # and per-character voice specifications.
+  # ===========================================================================
+
+  audio_dna:
+    description: >
+      Sound design specification including dialogue density, music coverage,
+      strategic silence, musical style, and per-character voice definitions.
+      The audio DNA ensures the soundscape reinforces the emotional arc.
+    required: false
+    fields:
+
+      dialogue_ratio:
+        type: number
+        required: false
+        description: >
+          Fraction of the film's runtime that contains dialogue.
+          0.0 = silent film, 1.0 = wall-to-wall dialogue.
+          Animation typically ranges 0.4-0.7.
+        constraints:
+          minimum: 0.0
+          maximum: 1.0
+        example: 0.55
+
+      music_coverage:
+        type: number
+        required: false
+        description: >
+          Fraction of the film's runtime that has music (score or songs).
+          0.0 = no music, 1.0 = continuous score.
+          Animated features typically range 0.6-0.9.
+        constraints:
+          minimum: 0.0
+          maximum: 1.0
+        example: 0.75
+
+      silence_moments:
+        type: array
+        required: false
+        description: >
+          Intentional moments of silence or near-silence.
+          Silence is a powerful storytelling tool — these moments
+          should be dramatically motivated.
+        items:
+          type: object
+          fields:
+
+            beat_id:
+              type: string
+              required: true
+              description: >
+                The beat during which this silence occurs.
+              reference: "narrative_dna.beats[].id"
+              example: "beat_all_is_lost"
+
+            duration_seconds:
+              type: number
+              required: true
+              description: >
+                How long the silence lasts in seconds.
+              constraints:
+                minimum: 0.5
+                maximum: 30.0
+              example: 5.0
+
+            purpose:
+              type: string
+              required: false
+              description: >
+                Why this silence exists — what emotional function it serves.
+              example: "Let the weight of the betrayal sink in"
+
+      music_style:
+        type: object
+        required: false
+        description: >
+          Musical style and scoring guidelines for the film.
+        fields:
+
+          genre:
+            type: string
+            required: false
+            description: >
+              Primary musical genre for the score.
+            example: "Orchestral with world music influences"
+
+          reference:
+            type: string
+            required: false
+            description: >
+              Reference score or composer for tonal guidance.
+            example: "Michael Giacchino (Zootopia), Thomas Newman"
+
+          emotional_arc_follows:
+            type: boolean
+            required: false
+            description: >
+              Whether the music should closely track the emotional arc
+              defined in the narrative DNA, or provide counterpoint.
+            default: true
+            example: true
+
+          instruments:
+            type: array
+            required: false
+            description: >
+              Key instruments that define the sonic palette.
+            items:
+              type: string
+            example:
+              - "Full orchestra"
+              - "Shakira-style pop vocals"
+              - "African percussion"
+              - "Jazz saxophone"
+
+      voice_styles:
+        type: object
+        required: false
+        description: >
+          Per-character voice specifications. Keyed by character_id.
+          Overrides or extends the voice spec in character_dna.
+        keyed_by: "character_id"
+        value_schema:
+          type: object
+          fields:
+
+            style:
+              type: string
+              required: true
+              description: >
+                Vocal quality and speech pattern description.
+              example: "Energetic, determined, slightly breathless when excited"
+
+            reference_audio:
+              type: string
+              required: false
+              description: >
+                File path to a voice reference audio clip.
+              format: file_path
+              example: "vault/02-characters/judy_voice_ref.wav"
+
+  # ===========================================================================
+  # STRAND 7: SCENE MANIFEST
+  # ===========================================================================
+  # The shot-by-shot breakdown of every scene. This is the most granular
+  # strand — it's where the genome becomes directly executable by the
+  # generation engine. Each scene maps to a beat, and each shot within
+  # a scene has complete render specifications.
+  # ===========================================================================
+
+  scene_manifest:
+    description: >
+      Complete scene-by-scene, shot-by-shot specification of the film.
+      This is the "assembly code" of the genome — the most granular level
+      of specification that the code generator converts directly into
+      ComfyUI workflows and API calls.
+    required: false  # Can be auto-generated from narrative_dna + visual_dna
+    fields:
+
+      scenes:
+        type: array
+        required: true
+        description: >
+          Ordered array of scenes. Each scene corresponds to a beat
+          and contains one or more shots with complete render specs.
+        items:
+          type: object
+          fields:
+
+            id:
+              type: string
+              required: true
+              unique: true
+              description: >
+                Unique identifier for this scene.
+              pattern: '^scene_[a-z0-9_]+$'
+              example: "scene_zootopia_arrival"
+
+            beat_id:
+              type: string
+              required: true
+              description: >
+                The narrative beat this scene belongs to.
+              reference: "narrative_dna.beats[].id"
+              example: "beat_break_into_2"
+
+            act:
+              type: number
+              required: true
+              description: >
+                Which act this scene belongs to (1, 2, or 3).
+              constraints:
+                minimum: 1
+                maximum: 5
+              example: 1
+
+            location:
+              type: string
+              required: true
+              description: >
+                Where this scene takes place.
+              example: "Zootopia Central Station"
+
+            time_of_day:
+              type: enum
+              required: false
+              description: >
+                Lighting and atmosphere reference for the scene.
+              values:
+                - dawn
+                - morning
+                - noon
+                - afternoon
+                - dusk
+                - night
+              example: morning
+
+            weather:
+              type: string
+              required: false
+              description: >
+                Weather conditions, if relevant to the scene's atmosphere.
+              example: "Clear, bright sunshine"
+
+            characters_present:
+              type: array
+              required: false
+              description: >
+                Character IDs of all characters in this scene.
+                Used for consistency checking and prompt generation.
+              items:
+                type: string
+                reference: "character_dna.characters[].id"
+              example:
+                - "char_judy"
+
+            emotional_target:
+              type: object
+              required: false
+              description: >
+                The intended emotional quality of this scene.
+                Used by the judgment engine to evaluate generated content.
+              fields:
+
+                valence:
+                  type: number
+                  required: true
+                  description: >
+                    Emotional positivity (-1.0 to 1.0)
+                  constraints:
+                    minimum: -1.0
+                    maximum: 1.0
+                  example: 0.8
+
+                arousal:
+                  type: number
+                  required: true
+                  description: >
+                    Emotional intensity (0.0 to 1.0)
+                  constraints:
+                    minimum: 0.0
+                    maximum: 1.0
+                  example: 0.7
+
+            duration_seconds:
+              type: number
+              required: false
+              description: >
+                Target duration of this scene in seconds.
+              constraints:
+                minimum: 1.0
+                maximum: 600.0
+              example: 45.0
+
+            shots:
+              type: array
+              required: false
+              description: >
+                Ordered sequence of shots within this scene.
+                Each shot is an atomic render unit.
+              items:
+                type: object
+                fields:
+
+                  id:
+                    type: string
+                    required: true
+                    unique: true
+                    description: >
+                      Unique identifier for this shot.
+                    pattern: '^shot_[a-z0-9_]+$'
+                    example: "shot_station_wide_01"
+
+                  type:
+                    type: enum
+                    required: true
+                    description: >
+                      The camera framing for this shot.
+                    values:
+                      - wide_establishing  # Very wide, shows full environment
+                      - wide               # Full environment with characters
+                      - medium_wide        # Characters from knees up
+                      - medium             # Characters from waist up
+                      - medium_close       # Characters from chest up
+                      - close_up           # Face/head fills frame
+                      - extreme_close_up   # Eyes, hands, detail
+                      - over_shoulder      # Over one character looking at another
+                      - pov                # Point of view of a character
+                      - overhead           # Bird's-eye view
+                      - low_angle          # Looking up at subject
+                      - dutch_angle        # Tilted frame (unease, disorientation)
+                    example: wide_establishing
+
+                  duration_seconds:
+                    type: number
+                    required: true
+                    description: >
+                      How long this shot holds on screen in seconds.
+                    constraints:
+                      minimum: 0.5
+                      maximum: 60.0
+                    example: 5.0
+
+                  camera_movement:
+                    type: enum
+                    required: false
+                    description: >
+                      How the camera moves during this shot.
+                    values:
+                      - static       # No camera movement
+                      - pan_left     # Horizontal rotation left
+                      - pan_right    # Horizontal rotation right
+                      - tilt_up      # Vertical rotation up
+                      - tilt_down    # Vertical rotation down
+                      - dolly_in     # Camera moves toward subject
+                      - dolly_out    # Camera moves away from subject
+                      - truck_left   # Camera moves laterally left
+                      - truck_right  # Camera moves laterally right
+                      - crane_up     # Camera rises vertically
+                      - crane_down   # Camera descends vertically
+                      - handheld     # Slight shake, documentary feel
+                      - steadicam    # Smooth tracking movement
+                      - zoom_in      # Lens zooms in (different from dolly)
+                      - zoom_out     # Lens zooms out
+                      - orbit        # Camera circles around subject
+                    default: static
+                    example: pan_right
+
+                  description:
+                    type: string
+                    required: true
+                    description: >
+                      Visual description of what's in the frame.
+                      This is the primary input for image/video generation.
+                    example: >
+                      Sweeping view of Zootopia Central Station — a grand
+                      art-deco building bustling with animals of all sizes.
+                      Judy stands at the entrance, suitcase in hand, eyes wide.
+
+                  characters_in_frame:
+                    type: array
+                    required: false
+                    description: >
+                      Which characters appear in this specific shot.
+                      Subset of the scene's characters_present.
+                    items:
+                      type: string
+                      reference: "character_dna.characters[].id"
+                    example:
+                      - "char_judy"
+
+                  dialogue:
+                    type: string
+                    required: false
+                    nullable: true
+                    description: >
+                      Dialogue spoken during this shot, or null if no dialogue.
+                      Format: "CHARACTER: Line" or just the line if character
+                      is obvious from context.
+                    example: "JUDY: I'm gonna make the world a better place!"
+
+                  sfx:
+                    type: array
+                    required: false
+                    description: >
+                      Sound effects present in this shot.
+                    items:
+                      type: string
+                    example:
+                      - "train_arriving"
+                      - "crowd_chatter"
+                      - "luggage_wheels"
+
+                  transition_to_next:
+                    type: enum
+                    required: false
+                    description: >
+                      How this shot transitions to the next shot.
+                    values:
+                      - cut              # Instant cut (default)
+                      - dissolve         # Cross-dissolve blend
+                      - fade_to_black    # Fade out then in
+                      - wipe             # Geometric wipe
+                      - match_cut        # Visual/motion match between shots
+                      - jump_cut         # Same angle, time skip
+                      - none             # Last shot in the film
+                    default: cut
+                    example: cut
+
+  # ===========================================================================
+  # STRAND 8: RENDERING HINTS
+  # ===========================================================================
+  # Technical preferences for the production pipeline — which AI models to
+  # use, budget constraints, quality thresholds, and output specifications.
+  # This strand is the "compiler flags" of the genome.
+  # ===========================================================================
+
+  rendering_hints:
+    description: >
+      Technical production preferences and constraints. These are the
+      "compiler flags" that control how the genome is rendered — which
+      models to use, how much to spend, and what quality to target.
+    required: false
+    fields:
+
+      preferred_models:
+        type: object
+        required: false
+        description: >
+          Model preferences for different types of generation tasks.
+          The delegation engine uses these as defaults, falling back to
+          its own judgment when a preferred model is unavailable.
+        fields:
+
+          character_closeups:
+            type: string
+            required: false
+            description: >
+              Preferred model for generating character close-up shots.
+              Close-ups require the highest consistency and detail.
+            example: "flux-kontext-pro"
+
+          establishing_shots:
+            type: string
+            required: false
+            description: >
+              Preferred model for wide/establishing environment shots.
+            example: "flux-pro-v1.1"
+
+          dialogue_scenes:
+            type: string
+            required: false
+            description: >
+              Preferred model for generating dialogue scene frames.
+            example: "flux-kontext-pro"
+
+          action_sequences:
+            type: string
+            required: false
+            description: >
+              Preferred model for dynamic action shots.
+            example: "kling-v2"
+
+          bulk_transitions:
+            type: string
+            required: false
+            description: >
+              Preferred model for bulk transition frames (lower quality OK).
+            example: "flux-schnell"
+
+      budget_mode:
+        type: boolean
+        required: false
+        description: >
+          If true, the optimizer aggressively minimizes API costs.
+          Uses cheaper models, reduces shot count, and lowers resolution
+          for non-hero shots.
+        default: false
+        example: false
+
+      max_cost_usd:
+        type: number
+        required: false
+        description: >
+          Maximum total API cost budget in USD.
+          The optimizer will refuse to generate a render plan that
+          exceeds this budget.
+        constraints:
+          minimum: 0.0
+        example: 50.0
+
+      quality_threshold:
+        type: number
+        required: false
+        description: >
+          Minimum quality score (0.0-1.0) that the judgment engine must
+          assign before a generated asset is accepted. Lower values
+          accept more outputs, higher values trigger more regenerations.
+        constraints:
+          minimum: 0.0
+          maximum: 1.0
+        default: 0.7
+        example: 0.8
+
+      target_resolution:
+        type: enum
+        required: false
+        description: >
+          Target output resolution for the final rendered film.
+        values:
+          - 720p     # 1280x720 (fast, cheap, drafts)
+          - 1080p    # 1920x1080 (standard)
+          - 4k       # 3840x2160 (high quality, expensive)
+        default: 1080p
+        example: 1080p
+
+      target_fps:
+        type: number
+        required: false
+        description: >
+          Target frames per second for the final output.
+          Higher FPS requires more generation but smoother motion.
+        constraints:
+          minimum: 12
+          maximum: 60
+        default: 24
+        example: 24
+
+# =============================================================================
+# CROSS-STRAND VALIDATION RULES
+# =============================================================================
+# These rules are enforced by the compiler/analyzer.py module.
+# They ensure internal consistency across all strands.
+# =============================================================================
+
+validation_rules:
+
+  - id: "val_beat_ids_unique"
+    description: "All beat IDs must be unique across the narrative_dna.beats array"
+    severity: error
+
+  - id: "val_character_ids_unique"
+    description: "All character IDs must be unique across the character_dna.characters array"
+    severity: error
+
+  - id: "val_scene_ids_unique"
+    description: "All scene IDs must be unique across the scene_manifest.scenes array"
+    severity: error
+
+  - id: "val_shot_ids_unique"
+    description: "All shot IDs must be globally unique across all scenes"
+    severity: error
+
+  - id: "val_beat_timestamps_ordered"
+    description: "Beat timestamp_pct values must be in non-decreasing order"
+    severity: error
+
+  - id: "val_beat_durations_sum"
+    description: "Beat duration_pct values should sum to approximately 1.0 (tolerance: 0.05)"
+    severity: warning
+
+  - id: "val_shot_distribution_sum"
+    description: "Shot distribution values must sum to 1.0 (tolerance: 0.01)"
+    severity: error
+
+  - id: "val_causal_chain_temporal"
+    description: "In causal_chain entries, cause beat must have timestamp_pct <= effect beat"
+    severity: error
+
+  - id: "val_character_intro_before_scene"
+    description: "Characters must have introduction_beat before any scene appearance"
+    severity: warning
+
+  - id: "val_scene_characters_subset"
+    description: "Shot characters_in_frame must be a subset of scene characters_present"
+    severity: error
+
+  - id: "val_emotional_arc_consistency"
+    description: "Beat emotional_valence curve should roughly match the declared emotional_arc_shape"
+    severity: warning
+
+  - id: "val_scene_beat_reference"
+    description: "Every scene.beat_id must reference a valid beat in narrative_dna.beats"
+    severity: error
+
+  - id: "val_tension_curve_ordered"
+    description: "Tension curve timestamp_pct values must be in non-decreasing order"
+    severity: error
+
+  - id: "val_total_duration_match"
+    description: "Sum of scene durations should approximate target_duration_minutes * 60"
+    severity: warning

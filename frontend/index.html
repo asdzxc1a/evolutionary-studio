@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolutionary Studio — System 3</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div id="app">
+    <!-- Header -->
+    <header class="studio-header">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">Evolutionary Studio</span>
+            <span class="logo-badge">System 3</span>
+        </div>
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="produce">New Production</button>
+            <button class="nav-tab" data-tab="dashboard">Dashboard</button>
+            <button class="nav-tab" data-tab="evolution">Evolution</button>
+            <button class="nav-tab" data-tab="package">Package</button>
+            <button class="nav-tab" data-tab="vault">Vault</button>
+            <button class="nav-tab" data-tab="memory">Memory</button>
+        </nav>
+        <div class="header-status">
+            <span class="status-dot" id="server-status"></span>
+            <span class="status-text" id="server-status-text">Connecting...</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="studio-main">
+        <!-- PRODUCE TAB -->
+        <section class="tab-panel active" id="tab-produce">
+            <div class="produce-layout">
+                <div class="produce-form-card">
+                    <h2>New Production</h2>
+                    <p class="subtitle">Describe your film. The studio will evolve concepts, prototype scenes, run critics, and compile a production package.</p>
+                    
+                    <form id="produce-form">
+                        <div class="form-group">
+                            <label>Creative DNA Source</label>
+                            <select id="dna-source" class="form-input">
+                                <option value="memory/films_analyzed/zootopia_dna.md">Zootopia (2016)</option>
+                                <option value="custom">Custom DNA (upload coming soon)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Setting</label>
+                                <input type="text" id="setting" class="form-input" placeholder="a city of robots" value="a floating city where AI and humans coexist">
+                            </div>
+                            <div class="form-group">
+                                <label>Genre</label>
+                                <input type="text" id="genre" class="form-input" placeholder="animated comedy-drama" value="sci-fi animated comedy-drama">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Group A</label>
+                                <input type="text" id="group-a" class="form-input" placeholder="robot" value="AI">
+                            </div>
+                            <div class="form-group">
+                                <label>Group B</label>
+                                <input type="text" id="group-b" class="form-input" placeholder="human" value="human">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Theme</label>
+                            <input type="text" id="theme" class="form-input" placeholder="trust between synthetic and organic life" value="what it means to be conscious">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Social Metaphor <span class="optional">(optional)</span></label>
+                            <input type="text" id="metaphor" class="form-input" placeholder="Auto-generated if left empty">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Concepts per Round</label>
+                                <input type="number" id="n-concepts" class="form-input" value="4" min="2" max="12">
+                            </div>
+                            <div class="form-group">
+                                <label>Rounds</label>
+                                <input type="number" id="n-rounds" class="form-input" value="1" min="1" max="5">
+                            </div>
+                            <div class="form-group">
+                                <label>Budget ($)</label>
+                                <input type="number" id="budget" class="form-input" value="50" min="10" max="1000">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-large" id="produce-btn">
+                            <span class="btn-icon">▶</span>
+                            Start Evolution
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="produce-preview-card">
+                    <h3>What Happens</h3>
+                    <div class="pipeline-flow">
+                        <div class="flow-step">
+                            <div class="flow-num">1</div>
+                            <div class="flow-label">Generate</div>
+                            <div class="flow-desc">{{nConcepts}} competing concepts from DNA</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-num">2</div>
+                            <div class="flow-label">Prototype</div>
+                            <div class="flow-desc">3 key scenes per concept</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-num">3</div>
+                            <div class="flow-label">Critic</div>
+                            <div class="flow-desc">4 agents score structure, emotion, pacing, theme</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-num">4</div>
+                            <div class="flow-label">Select</div>
+                            <div class="flow-desc">Top concepts advance, losers eliminated</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-num">5</div>
+                            <div class="flow-label">Produce</div>
+                            <div class="flow-desc">Full screenplay, characters, shots, environments</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dna-preview" id="dna-preview">
+                        <h4>Loaded DNA</h4>
+                        <div class="dna-tags">
+                            <span class="tag">3-Act Structure</span>
+                            <span class="tag">Buddy Cop Archetype</span>
+                            <span class="tag">Social Metaphor</span>
+                            <span class="tag">Vibrant Visual Style</span>
+                        </div>
+                        <p class="dna-desc">Zootopia's Creative DNA: prejudice as two-way street, con-man as moral center, world-building serves story, music integrated thematically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD TAB -->
+        <section class="tab-panel" id="tab-dashboard">
+            <div class="dashboard-header">
+                <h2>Production Dashboard</h2>
+                <div class="production-selector">
+                    <select id="production-select" class="form-input">
+                        <option value="">Select a production...</option>
+                    </select>
+                    <button class="btn-secondary" id="refresh-dashboard">↻ Refresh</button>
+                </div>
+            </div>
+            
+            <div id="dashboard-content" class="dashboard-content">
+                <div class="empty-state">
+                    <div class="empty-icon">📽</div>
+                    <p>No active production. Start one in the "New Production" tab.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVOLUTION TAB -->
+        <section class="tab-panel" id="tab-evolution">
+            <div class="evolution-header">
+                <h2>Evolution Results</h2>
+                <div class="evolution-filters">
+                    <select id="evolution-production-select" class="form-input">
+                        <option value="">Select production...</option>
+                    </select>
+                </div>
+            </div>
+            <div id="evolution-content" class="evolution-content">
+                <div class="empty-state">
+                    <div class="empty-icon">🧬</div>
+                    <p>Evolution results will appear here after a production completes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGE TAB -->
+        <section class="tab-panel" id="tab-package">
+            <div class="package-header">
+                <h2>Production Package</h2>
+                <div class="package-filters">
+                    <select id="package-production-select" class="form-input">
+                        <option value="">Select production...</option>
+                    </select>
+                </div>
+            </div>
+            <div id="package-content" class="package-content">
+                <div class="empty-state">
+                    <div class="empty-icon">📦</div>
+                    <p>Production package will appear here after completion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMORY TAB -->
+        <section class="tab-panel" id="tab-memory">
+            <div class="memory-header">
+                <h2>Vector Memory</h2>
+                <div class="memory-stats" id="memory-stats"></div>
+            </div>
+            <div class="memory-search-box">
+                <input type="text" id="memory-query" class="memory-input" placeholder="Ask anything about past productions... (e.g., 'redemption arcs', 'strong emotional curves')" />
+                <select id="memory-doc-type" class="memory-filter">
+                    <option value="">All types</option>
+                    <option value="concept">Concepts</option>
+                    <option value="evaluation">Evaluations</option>
+                    <option value="post_mortem">Post-Mortems</option>
+                    <option value="voice_profile">Voice Profiles</option>
+                    <option value="scene">Scenes</option>
+                    <option value="director_decision">Decisions</option>
+                </select>
+                <button class="btn-primary" onclick="searchMemory()">
+                    <span class="btn-icon">🔍</span> Search
+                </button>
+            </div>
+            <div id="memory-results" class="memory-results">
+                <div class="empty-state">
+                    <div class="empty-icon">🧠</div>
+                    <p>Search your studio's collective memory.<br>Ask questions like "What emotional curves worked?" or "Find cynical characters."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VAULT TAB -->
+        <section class="tab-panel" id="tab-vault">
+            <div class="vault-header">
+                <h2>Studio Vault</h2>
+                <div class="vault-controls">
+                    <select id="vault-folder" class="form-input">
+                        <option value="">All folders</option>
+                        <option value="concepts">Concepts</option>
+                        <option value="scenes">Scenes</option>
+                        <option value="characters">Characters</option>
+                        <option value="reviews">Reviews</option>
+                        <option value="memory">Memory</option>
+                    </select>
+                    <input type="text" id="vault-search" class="form-input" placeholder="Search vault...">
+                    <button class="btn-secondary" id="refresh-vault">↻ Refresh</button>
+                </div>
+            </div>
+            <div class="vault-layout">
+                <div class="vault-list" id="vault-list"></div>
+                <div class="vault-detail" id="vault-detail">
+                    <div class="empty-state">
+                        <p>Select a note to view</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

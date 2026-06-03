@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGC Director Studio — AI Film Platform</title>
+    <meta name="description" content="Next-generation AI film editing platform connecting young directors with advanced Chinese AI models and European post-production workflows.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --panel-bg: rgba(18, 20, 32, 0.65);
+            --border-glow: rgba(147, 51, 234, 0.25);
+            --primary-glow: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            --accent-glow: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            --accent-color: #a855f7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2.5rem;
+            background: rgba(9, 10, 15, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .badge-live {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-color);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            animation: pulse-border 2s infinite;
+        }
+
+        .badge-live::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #a855f7;
+            border-radius: 50%;
+        }
+
+        /* Workspace Grid Layout */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 340px;
+            flex: 1;
+            overflow: hidden;
+            height: calc(100vh - 73px);
+        }
+
+        /* Sidebar Panels */
+        .panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .panel-right {
+            border-right: none;
+            border-left: 1px solid var(--glass-border);
+        }
+
+        .panel-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 0.2px;
+        }
+
+        /* Character Cards */
+        .character-list {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .character-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .character-card:hover, .character-card.active {
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(168, 85, 247, 0.04);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .character-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .character-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .character-details h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .character-details p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .character-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        /* Composer Main Workspace */
+        .composer-container {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        /* Shot Composer Panel */
+        .shot-composer {
+            background: rgba(18, 20, 32, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .composer-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: none;
+            height: 100px;
+            transition: var(--transition-smooth);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+        }
+
+        /* Parameter Sliders & Controls */
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .control-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .select-custom {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 0.6rem;
+            color: var(--text-main);
+            font-family: inherit;
+            outline: none;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            accent-color: var(--accent-color);
+        }
+
+        .slider-val {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            min-width: 30px;
+            text-align: right;
+        }
+
+        .btn-generate {
+            background: var(--primary-glow);
+            border: none;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(168, 85, 247, 0.5);
+        }
+
+        .btn-generate:active {
+            transform: translateY(0);
+        }
+
+        /* Generation Status Overlay */
+        .status-container {
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 1.2rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-glow);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .status-text {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Storyboard Timeline Preview */
+        .storyboard-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .timeline-track {
+            display: flex;
+            gap: 1.2rem;
+            overflow-x: auto;
+            padding: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .timeline-card {
+            min-width: 200px;
+            width: 200px;
+            height: 125px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.8rem;
+            position: relative;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, transparent 80%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            transform: scale(1.02);
+        }
+
+        .timeline-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Right Panel: Collaboration Hub */
+        .comments-list {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .comment-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border-top: 1px solid var(--glass-border);
+            border-right: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .comment-card.wing-sight {
+            border-left-color: #a855f7;
+        }
+
+        .comment-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .author-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .author-role {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .comment-body {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .comment-action {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            background: rgba(168, 85, 247, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            align-self: flex-start;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 0.3rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .comment-action:hover {
+            background: rgba(168, 85, 247, 0.2);
+        }
+
+        /* Log Panel */
+        .logs-panel {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #10b981;
+            height: 150px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .log-entry {
+            line-height: 1.4;
+        }
+
+        .log-time {
+            color: var(--text-muted);
+            margin-right: 0.6rem;
+        }
+
+        /* Animations */
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(168, 85, 247, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-mark">A</div>
+            <div class="logo-text">Director Studio</div>
+        </div>
+        <div class="header-actions">
+            <div class="badge-live">Model Network Live</div>
+            <span style="font-size: 0.9rem; color: var(--text-muted);">Cannes Co-Production Session</span>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace-grid">
+        
+        <!-- Left Panel: Characters -->
+        <div class="panel">
+            <div class="panel-header">
+                <h3 class="panel-title">Character Casting</h3>
+                <span style="font-size: 0.75rem; color: var(--accent-color); cursor: pointer;">+ Create</span>
+            </div>
+            <div class="character-list" id="charList">
+                <!-- Character 1 -->
+                <div class="character-card active" data-id="char-1">
+                    <div class="character-meta">
+                        <div class="character-avatar" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">E</div>
+                        <div class="character-details">
+                            <h4>Elena</h4>
+                            <p>Lead Actress (ID: char-1)</p>
+                        </div>
+                    </div>
+                    <div class="character-desc">
+                        Curly blonde hair, wearing a green vintage wool coat, green eyes, determined look.
+                    </div>
+                </div>
+                <!-- Character 2 -->
+                <div class="character-card" data-id="char-2">
+                    <div class="character-meta">
+                        <div class="character-avatar" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">M</div>
+                        <div class="character-details">
+                            <h4>Marc</h4>
+                            <p>Supporting Actor (ID: char-2)</p>
+                        </div>
+                    </div>
+                    <div class="character-desc">
+                        Rugged appearance, short dark hair, wearing a brown leather pilot jacket, intense gaze.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Workspace -->
+        <div class="composer-container">
+            
+            <!-- Shot Composer -->
+            <div class="shot-composer">
+                <h3 class="composer-section-title">Compose Shot</h3>
+                
+                <div class="input-group">
+                    <label for="promptInput">Scene & Action Prompt</label>
+                    <textarea id="promptInput" placeholder="Describe the character action or landscape events... (e.g. standing under neon-lit rain, looking at the clock)"></textarea>
+                </div>
+
+                <!-- Parameters & Models -->
+                <div class="controls-grid">
+                    
+                    <div class="control-item">
+                        <label for="modelSelect">Video Foundation Model</label>
+                        <select id="modelSelect" class="select-custom">
+                            <option value="vidu">Shengshu Vidu 2.0 (Best for Physics & cinematic scenes)</option>
+                            <option value="kling" selected>Kuaishou Kling 3.0 (Best for human motion & camera paths)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-item">
+                        <label for="shotTypeSelect">Shot Routing Focus</label>
+                        <select id="shotTypeSelect" class="select-custom">
+                            <option value="character">Character / Action Action</option>
+                            <option value="landscape">Atmospheric / Landscape Focus</option>
+                        </select>
+                    </div>
+
+                    <div class="control-item">
+                        <label>Camera Zoom Modifier</label>
+                        <div class="slider-container">
+                            <input type="range" id="zoomRange" min="0.5" max="2.0" step="0.1" value="1.0">
+                            <span class="slider-val" id="zoomVal">1.0x</span>
+                        </div>
+                    </div>
+
+                    <div class="control-item">
+                        <label>Camera Pan (Degree)</label>
+                        <div class="slider-container">
+                            <input type="range" id="panRange" min="-45" max="45" step="5" value="0">
+                            <span class="slider-val" id="panVal">0°</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Generate Trigger -->
+                <button class="btn-generate" id="btnGenerate">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Generate Cinematic Shot
+                </button>
+
+                <!-- Status Progress bar -->
+                <div class="status-container" id="statusContainer">
+                    <div class="status-header">
+                        <span class="status-text" id="statusLabel">Initializing API Handshake...</span>
+                        <span class="status-text" id="percentLabel">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Timeline Storyboard -->
+            <div class="storyboard-timeline">
+                <h3 class="composer-section-title">Timeline Storyboard</h3>
+                <div class="timeline-track" id="timelineTrack">
+                    <!-- Default clips in the film timeline -->
+                    <div class="timeline-card">
+                        <div class="card-num">SHOT #1</div>
+                        <div class="card-desc">Elena walking through a foggy street</div>
+                        <div class="card-footer">
+                            <span>Vidu 2.0</span>
+                            <span>4.0s</span>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="card-num">SHOT #2</div>
+                        <div class="card-desc">Marc reading a letter under rain</div>
+                        <div class="card-footer">
+                            <span>Kling 3.0</span>
+                            <span>5.0s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Logger -->
+            <div>
+                <h3 class="composer-section-title" style="font-size: 1rem; color: var(--text-muted); margin-bottom: 0.5rem;">API Telemetry Logs</h3>
+                <div class="logs-panel" id="logsPanel">
+                    <div class="log-entry"><span class="log-time">[12:26:57]</span> Platform gateway online. Initialized adapters for Kling AI & Shengshu Vidu.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Panel: Collaboration -->
+        <div class="panel panel-right">
+            <div class="panel-header">
+                <h3 class="panel-title">Collaboration Hub</h3>
+            </div>
+            
+            <div class="comments-list">
+                
+                <div class="comment-card wing-sight">
+                    <div class="comment-author">
+                        <span class="author-name">Tina Jia</span>
+                        <span class="author-role" style="color: #a855f7;">Wing Sight CEO</span>
+                    </div>
+                    <div class="comment-body">
+                        "The European distribution partners at Cannes loved the visual pacing of the first scene, but they want tighter framing on the actors' faces. Ensure we are utilizing the high-fidelity Kling model for character focus."
+                    </div>
+                    <div class="comment-action" onclick="applyComment('Use Kling 3.0 with close-up focus and zoom in to 1.3x')">Apply Directives</div>
+                </div>
+
+                <div class="comment-card">
+                    <div class="comment-author">
+                        <span class="author-name">Jean-Pierre</span>
+                        <span class="author-role" style="color: #3b82f6;">French Editor</span>
+                    </div>
+                    <div class="comment-body">
+                        "In Shot #1, the physics of the fog moving around the building felt slightly artificial. Let's run that scene through Vidu with enhanced physics guidance weights to make the atmospheric movement look photorealistic."
+                    </div>
+                    <div class="comment-action" onclick="applyComment('Route to Vidu with detailed physics weight of 1.2')">Apply Directives</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Simulate ConsistencyEngine logic
+        class ConsistencyEngineLocal {
+            constructor() {
+                this.activeStyle = "Cinematic Teal & Orange";
+                this.stylePrompt = "cinematic film style, 35mm photography, shallow depth of field, color graded in teal and orange mood";
+            }
+
+            compilePayload(rawPrompt, charDesc) {
+                return {
+                    finalPrompt: `${charDesc}, ${rawPrompt}. ${this.stylePrompt}`,
+                    seed: Math.floor(Math.random() * 999999999),
+                    ipAdapterWeight: 0.85
+                };
+            }
+        }
+
+        const engine = new ConsistencyEngineLocal();
+        let selectedCharacterId = "char-1";
+        
+        // Handle character selection
+        document.querySelectorAll('.character-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.character-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                selectedCharacterId = card.dataset.id;
+                logEvent(`Selected active casting reference: ${card.querySelector('h4').textContent}`);
+            });
+        });
+
+        // Sliders
+        const zoomRange = document.getElementById('zoomRange');
+        const zoomVal = document.getElementById('zoomVal');
+        zoomRange.addEventListener('input', () => {
+            zoomVal.textContent = zoomRange.value + 'x';
+        });
+
+        const panRange = document.getElementById('panRange');
+        const panVal = document.getElementById('panVal');
+        panRange.addEventListener('input', () => {
+            panVal.textContent = panRange.value + '°';
+        });
+
+        // Logger helper
+        function logEvent(msg) {
+            const logsPanel = document.getElementById('logsPanel');
+            const time = new Date().toLocaleTimeString();
+            const log = document.createElement('div');
+            log.className = 'log-entry';
+            log.innerHTML = `<span class="log-time">[${time}]</span> ${msg}`;
+            logsPanel.appendChild(log);
+            logsPanel.scrollTop = logsPanel.scrollHeight;
+        }
+
+        // Apply feedback comment helper
+        function applyComment(directive) {
+            logEvent(`Applying feedback directive: "${directive}"`);
+            if (directive.includes('Kling')) {
+                document.getElementById('modelSelect').value = 'kling';
+                document.getElementById('zoomRange').value = 1.3;
+                document.getElementById('zoomVal').textContent = '1.3x';
+                document.getElementById('promptInput').value = "Close-up cinematic focus on face, looking determinedly into the distance.";
+            } else if (directive.includes('Vidu')) {
+                document.getElementById('modelSelect').value = 'vidu';
+                document.getElementById('promptInput').value = "Atmospheric dense fog rolling slowly around ancient European stone facade, macro zoom.";
+            }
+        }
+
+        // Generate Action Handler
+        const btnGenerate = document.getElementById('btnGenerate');
+        const statusContainer = document.getElementById('statusContainer');
+        const statusLabel = document.getElementById('statusLabel');
+        const percentLabel = document.getElementById('percentLabel');
+        const progressFill = document.getElementById('progressFill');
+        const timelineTrack = document.getElementById('timelineTrack');
+
+        btnGenerate.addEventListener('click', () => {
+            const prompt = document.getElementById('promptInput').value.trim();
+            if (!prompt) {
+                alert("Please write a prompt before generating.");
+                return;
+            }
+
+            btnGenerate.disabled = true;
+            statusContainer.style.display = 'flex';
+            
+            const activeCard = document.querySelector('.character-card.active');
+            const charName = activeCard.querySelector('h4').textContent;
+            const charDesc = activeCard.querySelector('.character-desc').textContent.trim();
+            const modelVal = document.getElementById('modelSelect').value;
+            const modelName = modelVal === 'kling' ? 'Kling 3.0' : 'Vidu 2.0';
+
+            // Compile using local consistency logic
+            const payload = engine.compilePayload(prompt, charDesc);
+            
+            logEvent(`[ConsistencyEngine] Consolidating prompt for ${charName}`);
+            logEvent(`[ConsistencyEngine] Linked prompt: "${payload.finalPrompt}"`);
+            logEvent(`[ConsistencyEngine] Random seed applied: ${payload.seed}`);
+
+            // Simulate Gateway routing & compilation progress
+            let progress = 0;
+            const steps = [
+                { limit: 20, label: "Initiating API gateway handshake..." },
+                { limit: 50, label: `Submitting task to ${modelName} API endpoint...` },
+                { limit: 85, label: `Rendering frames (CFG Scale: 7.5)...` },
+                { limit: 100, label: "Completing visual compilation..." }
+            ];
+
+            let stepIdx = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 5) + 3;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    statusLabel.textContent = "Shot rendered successfully!";
+                    percentLabel.textContent = "100%";
+                    progressFill.style.width = "100%";
+
+                    logEvent(`[API Gateway] ${modelName} response: Task completed successfully.`);
+                    
+                    // Add new shot to timeline
+                    setTimeout(() => {
+                        const newShot = document.createElement('div');
+                        newShot.className = 'timeline-card';
+                        newShot.innerHTML = `
+                            <div class="card-num">SHOT #${timelineTrack.children.length + 1}</div>
+                            <div class="card-desc">${prompt}</div>
+                            <div class="card-footer">
+                                <span>${modelName}</span>
+                                <span>5.0s</span>
+                            </div>
+                        `;
+                        timelineTrack.appendChild(newShot);
+                        timelineTrack.scrollLeft = timelineTrack.scrollWidth;
+                        
+                        btnGenerate.disabled = false;
+                        statusContainer.style.display = 'none';
+                        progressFill.style.width = '0%';
+                    }, 800);
+                } else {
+                    if (progress >= steps[stepIdx].limit && stepIdx < steps.length - 1) {
+                        stepIdx++;
+                    }
+                    statusLabel.textContent = steps[stepIdx].label;
+                    percentLabel.textContent = `${progress}%`;
+                    progressFill.style.width = `${progress}%`;
+                }
+            }, 120);
+        });
+    </script>
+</body>
+</html>

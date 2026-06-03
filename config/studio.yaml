@@ -1,0 +1,76 @@
+# Evolutionary Studio Configuration
+# System 3: The Compiler — Parallel Production Swarm
+
+studio:
+  name: "Evolutionary Studio"
+  version: "0.1.0"
+  vault_path: "studio"
+  
+  # Evolution parameters
+  evolution:
+    n_concepts: 6
+    n_prototype_scenes: 3
+    n_rounds: 2
+    top_k_selection: 2
+    
+  # Critic swarm configuration
+  critics:
+    structure:
+      weight: 0.25
+      thresholds:
+        min_score: 5.0
+        target_score: 7.5
+    emotion:
+      weight: 0.25
+      thresholds:
+        min_score: 5.0
+        target_score: 8.0
+    pacing:
+      weight: 0.20
+      thresholds:
+        min_score: 5.0
+        target_score: 7.0
+    theme:
+      weight: 0.30
+      thresholds:
+        min_score: 5.0
+        target_score: 8.0
+  
+  # Production constraints
+  production:
+    target_duration_minutes: 90
+    max_budget_usd: 50.00
+    max_scenes: 60
+    max_characters: 8
+    
+  # Department agent configuration
+  departments:
+    writer:
+      output_format: "fountain"
+      scenes_per_batch: 5
+    visual_planner:
+      shots_per_scene_max: 12
+      keyframes_per_shot: 3
+    character:
+      concept_art_variants: 4
+      lora_training: false
+    world_builder:
+      environment_variants: 3
+      lighting_schemes: 2
+    animation:
+      engine_priority: ["wan", "anisora", "seedance"]
+      shots_per_batch: 3
+    sound:
+      dialogue_engine: "cosyvoice"
+      music_engine: "suno"
+      sfx_engine: "elevenlabs"
+    editorial:
+      transition_library: ["cut", "dissolve", "whip"]
+      caption_burn: true
+
+  # Shared memory
+  memory:
+    working_memory_limit_scenes: 5
+    working_memory_limit_characters: 3
+    eviction_policy: "lru"
+    prefetch_adjacent_scenes: true

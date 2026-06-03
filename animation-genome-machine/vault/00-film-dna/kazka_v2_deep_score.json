@@ -1,0 +1,56 @@
+{
+    "overall_score": 0.88,
+    "surprise_factor": 0.92,
+    "emotional_danger": 0.95,
+    "specificity": 0.91,
+    "thematic_depth": 0.94,
+    "character_edge": 0.93,
+    "originality": 0.85,
+    "dna_fidelity": 0.90,
+    "cultural_authenticity": 0.82,
+    "kill_corporate_villain": false,
+    "kill_bumper_sticker_theme": false,
+    "kill_naive_protagonist": false,
+    "kill_tourism_setting": false,
+    "kill_helper_fairy_tales": false,
+    "kill_seen_before": false,
+    "verdict": "PASS",
+    "what_works": [
+        "FAIRY TALES AS PANIC ATTACKS: This is the best idea in the entire genome. Manifestations as involuntary trauma responses that consume real memories — this is a genuine genre collision (animated coming-of-age meets psychological horror) that I haven't seen done exactly this way.",
+        "THE ANNA SCENE: Beat 09 is the strongest single beat in the document. Olenka telling a 10-year-old her problems aren't real, then hearing her cry through the wall and being unable to knock — this is REAL character edge. The protagonist becomes the villain of someone else's story. The 8-second static camera with no score is a directorial choice that trusts the audience.",
+        "THEMATIC PARADOX: 'To heal, you must remember. But remembering is what keeps the wound open.' This is NOT a bumper sticker. It's a genuine philosophical paradox with no clean resolution. The film earns the right to leave it unresolved because it dramatizes BOTH sides through real characters (Halyna vs. Berger), not strawmen.",
+        "LYS AS PRE-MORAL TRICKSTER: v1's Lys was Nick Wilde in a Ukrainian vest. v2's Lys is genuinely unsettling — he's pre-moral, manipulates for amusement, and his relationship with Olenka ends as 'something unnameable,' not friendship. His line 'I'm the Fox. I don't break things. I make people believe things that aren't true' is the best character introduction in the document.",
+        "MEMORY DEGRADATION AS STAKES: Losing specific memories (Halyna's hands, then her voice, then her face) creates escalating, irreversible stakes that the audience can FEEL. Better than any villain. The line 'She knows Halyna exists. She knows the word Babusya. But the FACE — the specific arrangement of lines and light that was her grandmother — is gone' is devastating.",
+        "NO VILLAIN: v1 had The Archivist in a corporate tower. v2 has NO external villain. The antagonist is Olenka's own trauma. This is structurally brave for an animated feature.",
+        "SENSORY SPECIFICITY: 'Fluorescent lights that buzz at a frequency that makes your teeth itch. Bleach on concrete. Instant coffee in styrofoam.' — this is not tourism. This is someone who has been in a processing center at 2 AM.",
+        "DR. BERGER: A therapist who is competent, compassionate, partly wrong, and brave enough to say 'Yes' when Olenka realizes there's no answer. Her clicking pen is a perfect small detail. She's the closest thing to an antagonist and she's not an antagonist.",
+        "THE FINALE: No villain defeated, no machine destroyed. Just a girl in a community center with a microphone that feeds back, telling stories. The Syrian boy who cries because Mavka's story sounds like one his grandmother told him — that's EARNED emotion, not manufactured. 'Giving it is the only way to keep it' is the thematic resolution that doesn't feel like a resolution, which is exactly right.",
+        "VISUAL DNA: Practical lighting only, manifestations as the ONLY violation of lighting rules — this is a horror technique applied to animation. The vyshyvanka desaturation tracking is a detail that shows production awareness."
+    ],
+    "what_fails": [
+        "CULTURAL AUTHENTICITY GAP — DISPLACEMENT SPECIFICS: The genome nails the EMOTIONAL truth of displacement but is vague on the PROCEDURAL reality. A 12-year-old Ukrainian refugee doesn't just 'end up in Calais' — the route, the bureaucracy, the legal status (asylum seeker? temporary protection directive?) matters. The move from France to Switzerland to Germany to UK is geographically convenient but legally improbable without explanation. Actual displaced Ukrainians would flag this.",
+        "LYS'S ARRIVAL ON THE TRAIN: Beat 06 has Lys appear 'in the next seat' on a Deutsche Bahn train 'like he belongs.' This is the one moment that feels CUTE rather than DANGEROUS. Given that every other manifestation is involuntary and destructive, why is Lys's first appearance so casual? What emotion summoned him? The document says 'something that isn't friendship but resembles it' but doesn't earn that complexity at the moment of introduction.",
+        "THE US RESETTLEMENT ENDING: Final Image places Olenka 'somewhere in the United States' — this feels like a Hollywood reflex. The story has been resolutely European. The American placement adds nothing and slightly cheapens the specificity. 'It doesn't matter which city' is anti-specificity in a genome that otherwise demands it.",
+        "ELIF IS UNDERCOOKED: Elif is described as 'a Turkish-German girl who also knows what it's like to be from two places at once' and then helps organize the community center. That's a FUNCTION, not a CHARACTER. She deserves at least one scene where she pushes back on Olenka, or reveals her own displacement pain, or refuses to help. Right now she's a convenience.",
+        "MOTHER IS A GHOST: Olenka's mother appears in beats 02, 03, 05 and 09 but has no arc, no edge, no scene where she confronts Olenka directly. She is the person making every relocation decision — France, Switzerland, Germany, UK — and yet she's narratively invisible. The mother's guilt (taking Olenka away from Halyna) is a massive untapped emotional vein.",
+        "BEAT 07 MANIFESTATION CATALOG RISKS REPETITION: The Berlin months list three manifestations (Firebird/fire, Lys/lies, Rusalka/flood) in a catalog format. In execution, this risks becoming pattern-predictable: emotion → manifestation → blank page → lost memory. The third manifestation should break the pattern in some way or the audience will be ahead of the film."
+    ],
+    "fix_suggestions": [
+        "ADD ONE LINE about Olenka's legal status — 'temporary protection directive' or 'their asylum claim was transferred under Dublin III' — something that proves the writer knows the system. The displacement route (FR→CH→DE→UK) needs a single sentence justifying each transfer (e.g., 'the French placement fell through after the Calais incident').",
+        "MAKE LYS'S ARRIVAL DANGEROUS: Instead of casually sitting on the train, have him triggered by a specific emotion — Olenka reading the book and feeling homesick. He should appear WRONG: maybe the other passengers react (a child points, a dog whines). His first words should be threatening, not witty. Save the wit for after the power dynamic is established.",
+        "CHANGE FINAL IMAGE LOCATION: Keep her in Europe. Berlin, even. The story's geographic arc should complete, not escape. If she must move again, make it specific — a named neighborhood, a specific apartment. 'A city — it doesn't matter which one' is the only lazy sentence in 1661 lines.",
+        "GIVE ELIF ONE REAL SCENE: Beat 07 or a new beat — Elif tells Olenka about her own displacement (her parents' stories of Turkey, the things she's lost). Elif should be the person who shows Olenka that displacement is not unique to Ukraine. This sets up the community center finale where stories from ALL cultures matter.",
+        "GIVE THE MOTHER A CONFRONTATION SCENE: Between beats 09 and 10, add a moment where Mother and Olenka fight. Mother says something like 'I'm doing everything I can and you're making it impossible.' Olenka says something she can't take back. The mother is the person caught between Halyna's 'remember everything' and the therapist's 'let go' — she's living the paradox too.",
+        "BREAK THE MANIFESTATION PATTERN IN BEAT 07: The third manifestation (Rusalka/bathtub flood) should cost Olenka something DIFFERENT — not a memory of Halyna, but a memory of HERSELF. She forgets her own middle name, or forgets what her bedroom in Kherson looked like. This signals the escalation is non-linear and raises the stakes for the midpoint."
+    ],
+    "comparable_works": [
+        "Pan's Labyrinth (2006) — Fantasy as psychological survival mechanism for a displaced child. Closest structural analog. But Pan's Labyrinth has a real-world villain (Captain Vidal). Kazka v2 doesn't.",
+        "The Breadwinner (2017) — Animated displacement story with fairy-tale interludes. But The Breadwinner keeps the fairy tales separate from reality. Kazka v2 makes them INVADE reality.",
+        "Flee (2021) — Animated refugee memoir. Similar emotional territory but documentary, not fantasy.",
+        "Persepolis (2007) — Coming-of-age through displacement, animated. But Persepolis is retrospective memoir. Kazka v2 is present-tense.",
+        "Inside Out (2015) — Internal emotional states made visible/externalized. Same structural idea (emotions have physical consequences) but Inside Out is comic. Kazka v2 is horror.",
+        "Spirited Away (2001) — Child in a strange world where familiar things become dangerous. But Chihiro has a clear goal (save parents). Olenka's goal is more ambiguous.",
+        "A Monster Calls (2016) — Grief-creature relationship with a child protagonist. CLOSEST thematic match. But the Monster in A Monster Calls is a teacher. Lys is a trickster who might be lying."
+    ],
+    "one_line_diagnosis": "A genuine genre collision — animated psychological horror disguised as Pixar — with the strongest protagonist edge and thematic complexity I've seen in a genome document; fix the displacement logistics and the underdeveloped secondary characters and this is a greenlight."
+}
