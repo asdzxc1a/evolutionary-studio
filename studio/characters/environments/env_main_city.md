@@ -12,10 +12,10 @@ name: Main City
 Exterior
 
 ## Description
-a Ukrainian borderland where old stories awaken when belief returns
+a Ukrainian village on the edge of war, where a forgotten door opens into the World of Hotels
 
 ## Concept Art Prompt
-a Ukrainian borderland where old stories awaken when belief returns, environment concept art, matte painting style, 
+a Ukrainian village on the edge of war, where a forgotten door opens into the World of Hotels, environment concept art, matte painting style, 
 cinematic lighting, wide angle, detailed, atmospheric, production-ready.
 
 ## Lighting Scheme

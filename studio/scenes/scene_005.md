@@ -2,9 +2,9 @@
 scene_number: 5
 slugline: INT. HEADQUARTERS — NIGHT
 characters:
-  - Misha
-  - Claw
-  - Poppy
+  - Sam
+  - Sam
+  - Sam
 duration_estimate: 180
 concept_id: WINNER
 voice_validated: False
@@ -15,23 +15,26 @@ dialogue_score: 0.5
 
 INT. HEADQUARTERS — NIGHT
 
-A confession that should bring them together instead drives them apart.
+They celebrate. Glasses clink. But one character doesn't drink.
 
-False victory: Misha and Claw think they've solved the case.
-
-B
-Not every case is going to save the world.
+Sam delivers a speech that should be triumphant.
 
 A
-This one does. This one has to.
+We did it. We actually did it.
 
 B
-You can't save everyone, Carrots.
+Told you. Teamwork makes the dream work.
 
-A turns away.
+A's phone buzzes. They read it. Their face falls.
 A
-Watch me.
+They lied to us. It's all a lie.
 
-The partnership is broken. The case continues alone.
+B
+What are you talking about?
+
+A
+You knew. You knew the whole time and you didn't tell me.
+
+They walk away from each other. The space between them is the whole world.
 
 ~FADE OUT.

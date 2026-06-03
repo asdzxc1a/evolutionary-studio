@@ -59,3 +59,9 @@ Combined score 9.3 is promising but 3 critical issues to resolve.
 ## 2026-06-02T14:37:51.856551
 **ITERATE** — ukraine-z2-test
 Combined score 9.3 is promising but 3 critical issues to resolve.
+## 2026-06-03T15:21:22.683083
+**ACCEPT** — turkic-ukraine-hotels-v1
+All quality thresholds met. Combined score 9.6 exceeds minimum 7.0. No critical issues detected.
+## 2026-06-03T15:30:26.591586
+**ACCEPT** — turkic-ukraine-hotels-v2-nemo
+All quality thresholds met. Combined score 9.6 exceeds minimum 7.0. No critical issues detected.

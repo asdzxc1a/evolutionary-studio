@@ -1,29 +1,29 @@
 ---
 concept_id: concept-1-A
-generated_at: 2026-06-02T14:37:51.814075
+generated_at: 2026-06-03T15:30:22.427247
 status: pending_review
 ---
 
 #prototype #pending-review
 
-# Prototype: When Ukrainian Guardians Met Foreign Fairy-Tale Allies
+# Prototype: The Ukrainian Survivors Who Remembered
 
 ## Scene 1: HOOK
-**Slugline**: EXT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — DAY
+**Slugline**: EXT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — DAY
 **Duration**: 120s
 **Emotional Valence**: +0.6
-**Characters**: Misha
+**Characters**: Sam
 
 ### Description
-We open on Misha as a child, being bullied by others. A fast cut to present day: Misha is now an adult, arriving in a Ukrainian borderland where old stories awaken when belief returns with dreams of changing the world. The scene establishes the world, the rules, and Misha's optimism.
+We open on Sam as a child, being bullied by others. A fast cut to present day: Sam is now an adult, arriving in a Ukrainian village on the edge of war, where a forgotten door opens into the World of Hotels with dreams of changing the world. The scene establishes the world, the rules, and Sam's optimism.
 
 ### Dialogue
-- **Misha**: I'm going to make the world a better place.
+- **Sam**: I'm going to make the world a better place.
 - **BULLY**: You? A {concept.protagonist.archetype if concept.protagonist else 'nobody'}?
-- **Misha**: Watch me.
+- **Sam**: Watch me.
 
 ### Action Beats
-- Misha stands up to the bully
+- Sam stands up to the bully
 - Fast cut to adult {protag} arriving in the city
 - Wide shot revealing the scale of {setting}
 
@@ -31,18 +31,18 @@ We open on Misha as a child, being bullied by others. A fast cut to present day:
 ---
 
 ## Scene 25: MIDPOINT
-**Slugline**: INT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — HEADQUARTERS — NIGHT
+**Slugline**: INT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — HEADQUARTERS — NIGHT
 **Duration**: 180s
 **Emotional Valence**: -0.7
-**Characters**: Misha, Claw, Poppy
+**Characters**: Sam, Sam, Sam
 
 ### Description
-Misha and Claw celebrate cracking the case. They high-five. The crowd cheers. Misha gives a press conference. But then—a bombshell. The real villain reveals themselves. Everything Misha believed was wrong. The partnership fractures.
+Sam and Sam celebrate cracking the case. They high-five. The crowd cheers. Sam gives a press conference. But then—a bombshell. The real villain reveals themselves. Everything Sam believed was wrong. The partnership fractures.
 
 ### Dialogue
-- **Claw**: We did it. We actually did it.
-- **Misha**: I told you we could trust each other.
-- **Poppy**: Oh, you sweet naive child. You solved nothing.
+- **Sam**: We did it. We actually did it.
+- **Sam**: I told you we could trust each other.
+- **Sam**: Oh, you sweet naive child. You solved nothing.
 
 ### Action Beats
 - Celebration montage
@@ -54,19 +54,19 @@ Misha and Claw celebrate cracking the case. They high-five. The crowd cheers. Mi
 ---
 
 ## Scene 45: CLIMAX
-**Slugline**: EXT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — CEREMONY — NIGHT
+**Slugline**: EXT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — CEREMONY — NIGHT
 **Duration**: 240s
 **Emotional Valence**: +0.8
-**Characters**: Misha, Claw, Poppy
+**Characters**: Sam, Sam, Sam
 
 ### Description
-Poppy is about to be crowned. Misha bursts in with evidence. Poppy sics the guards on them. Claw arrives to help. A chase ensues. Misha confronts Poppy. The truth is revealed to all. Poppy is arrested.
+Sam is about to be crowned. Sam bursts in with evidence. Sam sics the guards on them. Sam arrives to help. A chase ensues. Sam confronts Sam. The truth is revealed to all. Sam is arrested.
 
 ### Dialogue
-- **Misha**: You wanted them to fear us. But fear is not power.
-- **Poppy**: They deserve to be afraid!
-- **Claw**: No. They deserve a chance to be better.
-- **Misha**: And that starts with us.
+- **Sam**: You wanted them to fear us. But fear is not power.
+- **Sam**: They deserve to be afraid!
+- **Sam**: No. They deserve a chance to be better.
+- **Sam**: And that starts with us.
 
 ### Action Beats
 - Bursting into the ceremony

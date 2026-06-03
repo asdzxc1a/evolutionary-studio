@@ -1,27 +1,27 @@
 ---
 character_id: char_claw
 name: Claw
-archetype: cynical trickster
-sarcasm: 90
-cynicism: 75
-warmth: 20
-formality: 25
-verbosity: 60
-subtext: 85
+archetype: wounded veteran
+sarcasm: 70
+cynicism: 80
+warmth: 30
+formality: 40
+verbosity: 40
+subtext: 75
 vocabulary_level: moderate
 sentence_structure: short
 ---
 
 #voice-profile #character
 
-Claw speaks in a highly sarcastic, deeply cynical, cold, colloquial, subtext-heavy voice.
+Claw speaks in a deeply cynical, subtext-heavy voice.
 
 ## Signature Phrases
-- It's called a hustle
-- Never let them see
-- Sly fox
+- I've seen enough
+- Trust me, you don't want to
+- Old habits
 
 ## Forbidden Phrases
-- I apologize
-- I was wrong
-- I trust you
+- Everything will be fine
+- I believe in the system
+- Love conquers all

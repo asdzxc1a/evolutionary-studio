@@ -1,29 +1,29 @@
 ---
 concept_id: concept-1-B
-generated_at: 2026-06-02T14:37:51.814204
+generated_at: 2026-06-03T15:30:22.427551
 status: pending_review
 ---
 
 #prototype #pending-review
 
-# Prototype: Ukrainiborderland of the Forgotten
+# Prototype: Ukrainian Survivors and European Hotel Spirits: A Hustle
 
 ## Scene 1: HOOK
-**Slugline**: EXT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — DAY
+**Slugline**: EXT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — DAY
 **Duration**: 120s
 **Emotional Valence**: +0.6
-**Characters**: Ivan
+**Characters**: Sam
 
 ### Description
-We open on Ivan as a child, being bullied by others. A fast cut to present day: Ivan is now an adult, arriving in a Ukrainian borderland where old stories awaken when belief returns with dreams of changing the world. The scene establishes the world, the rules, and Ivan's optimism.
+We open on Sam as a child, being bullied by others. A fast cut to present day: Sam is now an adult, arriving in a Ukrainian village on the edge of war, where a forgotten door opens into the World of Hotels with dreams of changing the world. The scene establishes the world, the rules, and Sam's optimism.
 
 ### Dialogue
-- **Ivan**: I'm going to make the world a better place.
+- **Sam**: I'm going to make the world a better place.
 - **BULLY**: You? A {concept.protagonist.archetype if concept.protagonist else 'nobody'}?
-- **Ivan**: Watch me.
+- **Sam**: Watch me.
 
 ### Action Beats
-- Ivan stands up to the bully
+- Sam stands up to the bully
 - Fast cut to adult {protag} arriving in the city
 - Wide shot revealing the scale of {setting}
 
@@ -31,18 +31,18 @@ We open on Ivan as a child, being bullied by others. A fast cut to present day: 
 ---
 
 ## Scene 25: MIDPOINT
-**Slugline**: INT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — HEADQUARTERS — NIGHT
+**Slugline**: INT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — HEADQUARTERS — NIGHT
 **Duration**: 180s
 **Emotional Valence**: -0.7
-**Characters**: Ivan, Storm, Onyx
+**Characters**: Sam, Quinn, Avery
 
 ### Description
-Ivan and Storm celebrate cracking the case. They high-five. The crowd cheers. Ivan gives a press conference. But then—a bombshell. The real villain reveals themselves. Everything Ivan believed was wrong. The partnership fractures.
+Sam and Quinn celebrate cracking the case. They high-five. The crowd cheers. Sam gives a press conference. But then—a bombshell. The real villain reveals themselves. Everything Sam believed was wrong. The partnership fractures.
 
 ### Dialogue
-- **Storm**: We did it. We actually did it.
-- **Ivan**: I told you we could trust each other.
-- **Onyx**: Oh, you sweet naive child. You solved nothing.
+- **Quinn**: We did it. We actually did it.
+- **Sam**: I told you we could trust each other.
+- **Avery**: Oh, you sweet naive child. You solved nothing.
 
 ### Action Beats
 - Celebration montage
@@ -54,19 +54,19 @@ Ivan and Storm celebrate cracking the case. They high-five. The crowd cheers. Iv
 ---
 
 ## Scene 45: CLIMAX
-**Slugline**: EXT. A UKRAINIAN BORDERLAND WHERE OLD STORIES AWAKEN WHEN BELIEF RETURNS — CEREMONY — NIGHT
+**Slugline**: EXT. A UKRAINIAN VILLAGE ON THE EDGE OF WAR, WHERE A FORGOTTEN DOOR OPENS INTO THE WORLD OF HOTELS — CEREMONY — NIGHT
 **Duration**: 240s
 **Emotional Valence**: +0.8
-**Characters**: Ivan, Storm, Onyx
+**Characters**: Sam, Quinn, Avery
 
 ### Description
-Onyx is about to be crowned. Ivan bursts in with evidence. Onyx sics the guards on them. Storm arrives to help. A chase ensues. Ivan confronts Onyx. The truth is revealed to all. Onyx is arrested.
+Avery is about to be crowned. Sam bursts in with evidence. Avery sics the guards on them. Quinn arrives to help. A chase ensues. Sam confronts Avery. The truth is revealed to all. Avery is arrested.
 
 ### Dialogue
-- **Ivan**: You wanted them to fear us. But fear is not power.
-- **Onyx**: They deserve to be afraid!
-- **Storm**: No. They deserve a chance to be better.
-- **Ivan**: And that starts with us.
+- **Sam**: You wanted them to fear us. But fear is not power.
+- **Avery**: They deserve to be afraid!
+- **Quinn**: No. They deserve a chance to be better.
+- **Sam**: And that starts with us.
 
 ### Action Beats
 - Bursting into the ceremony

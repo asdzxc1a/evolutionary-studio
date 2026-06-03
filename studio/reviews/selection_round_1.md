@@ -11,24 +11,24 @@ losers:
 # Selection Report
 
 ## Winners (Top 2)
-### 1. When Ukrainian Guardians Met Foreign Fairy-Tale Allies
-- **Combined Score**: 9.3/10
-- **Weighted Score**: 9.3/10
+### 1. The Ukrainian Survivors Who Remembered
+- **Combined Score**: 9.6/10
+- **Weighted Score**: 9.6/10
   - structure: 9.1
   - character: 10.0
   - emotion: 10.0
   - pacing: 10.0
-  - theme: 8.3
+  - theme: 10.0
   - dialogue: 8.5
 
-### 2. Ukrainiborderland of the Forgotten
-- **Combined Score**: 9.3/10
-- **Weighted Score**: 9.3/10
+### 2. Ukrainian Survivors and European Hotel Spirits: A Hustle
+- **Combined Score**: 9.6/10
+- **Weighted Score**: 9.6/10
   - structure: 9.1
   - character: 10.0
   - emotion: 10.0
   - pacing: 10.0
-  - theme: 8.3
+  - theme: 10.0
   - dialogue: 8.5
 
 ## Eliminated (0)

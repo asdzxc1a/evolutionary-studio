@@ -2,8 +2,8 @@
 scene_number: 7
 slugline: INT. PRISON CELL — NIGHT
 characters:
-  - Misha
-  - Claw
+  - Sam
+  - Sam
 duration_estimate: 150
 concept_id: WINNER
 voice_validated: False
@@ -14,21 +14,25 @@ dialogue_score: 0.5
 
 INT. PRISON CELL — NIGHT
 
-A letter is read. The handwriting is familiar. The message is devastating.
+Rain on glass. The protagonist watches their reflection distort.
 
-Without Claw, Misha is lost.
+Without Sam, Sam is lost.
 
-B
-Okay... I don't... care that we're different, you know. What I care about is you.
-
-B struggles to find words.
-B
-And I didn't say it, and I should have said it, but I didn't... because... well, because I am... an emotionally-insecure source of your discomfort...
-
-A can't believe it.
 A
-I... do... try too hard because deep down I'm afraid that I am what everyone thinks I am...
+(desperate)
+I can't... move... and you're... too cold...
 
-A tear falls. They wipe it before anyone sees.
+B
+(tiny, emotional)
+The world was never meant to be on one animal's shoulders.
+
+B
+That's why my great grandma wanted Zootopia to be for everyone. So we could all help each other.
+
+A tears up, ashamed.
+A
+I didn't... help...
+
+Hope is gone. Only the truth remains — and it hurts.
 
 ~FADE OUT.

@@ -322,3 +322,46 @@ A character's voice is their fingerprint. It must be **distinct, consistent, and
 - **Subtext**: 80/100
 - **Core Wound Pattern**: unknown
 
+
+
+---
+
+## Appendix: Archetypes from 2026-06-03 Ingestion
+
+### Observed Archetype-Voice Correlations
+
+#### Marlin (V.O.) — folksy warrior
+- **Sarcasm**: 30/100
+- **Cynicism**: 30/100
+- **Warmth**: 30/100
+- **Subtext**: 80/100
+- **Core Wound Pattern**: fear of inadequacy
+
+#### Coral — cynical trickster
+- **Sarcasm**: 30/100
+- **Cynicism**: 30/100
+- **Warmth**: 30/100
+- **Subtext**: 80/100
+- **Core Wound Pattern**: unknown
+
+#### Marlin — cynical trickster
+- **Sarcasm**: 30/100
+- **Cynicism**: 38/100
+- **Warmth**: 40/100
+- **Subtext**: 80/100
+- **Core Wound Pattern**: fear of inadequacy
+
+#### Coral (Cont'D) — unknown
+- **Sarcasm**: 40/100
+- **Cynicism**: 30/100
+- **Warmth**: 30/100
+- **Subtext**: 80/100
+- **Core Wound Pattern**: unknown
+
+#### Marlin (Cont'D) — unknown
+- **Sarcasm**: 30/100
+- **Cynicism**: 38/100
+- **Warmth**: 30/100
+- **Subtext**: 80/100
+- **Core Wound Pattern**: fear of abandonment
+

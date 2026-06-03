@@ -2,9 +2,9 @@
 scene_number: 8
 slugline: EXT. MONUMENT — DAWN
 characters:
-  - Misha
-  - Claw
-  - Poppy
+  - Sam
+  - Sam
+  - Sam
 duration_estimate: 240
 concept_id: WINNER
 voice_validated: False
@@ -15,9 +15,9 @@ dialogue_score: 0.5
 
 EXT. MONUMENT — DAWN
 
-Dawn breaks. The monument stands. Two characters stand before it, transformed.
+The antagonist holds the proof. The protagonist holds the truth.
 
-Final confrontation at the heart of the conspiracy — the Ukrainian guardians celebration where it all began.
+Sam and Sam reunite — not as partners, but as equals.
 
 ANTAGONIST
 No one will believe you over us. We've always been better than you.
@@ -30,6 +30,6 @@ B motions to the monument.
 B
 Shall we?
 
-The sun rises on a new world. They walk into it — together.
+SMASH TO: the empty monument. Then: two shadows appear.
 
 ~FADE OUT.

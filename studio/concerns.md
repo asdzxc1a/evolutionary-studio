@@ -36,3 +36,9 @@ See [[reviews/diffused_attention_ukraine-z2-test]] for details.
 
 ## ukraine-z2-test
 See [[reviews/diffused_attention_ukraine-z2-test]] for details.
+
+## turkic-ukraine-hotels-v1
+See [[reviews/diffused_attention_turkic-ukraine-hotels-v1]] for details.
+
+## turkic-ukraine-hotels-v2-nemo
+See [[reviews/diffused_attention_turkic-ukraine-hotels-v2-nemo]] for details.

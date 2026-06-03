@@ -2,9 +2,9 @@
 scene_number: 2
 slugline: INT. BUREAU — DAY
 characters:
-  - Misha
-  - Claw
-  - Poppy
+  - Sam
+  - Sam
+  - Sam
 duration_estimate: 180
 concept_id: WINNER
 voice_validated: False
@@ -17,7 +17,7 @@ INT. BUREAU — DAY
 
 The celebration continues overhead. Below, a wall cracks.
 
-Misha's ordinary world: they believes wholeheartedly in the Ukrainian guardians institution, sees the world as solvable through effort and optimism.
+In a Ukrainian village on the edge of war, where a forgotten door opens into the World of Hotels, Sam is the only one who still tells European hotel spirits stories.
 
 A
 (sotto)
@@ -34,6 +34,6 @@ B looks at A like, 'that wasn't subtle.'
 B
 That's a weird way to ask that.
 
-The alarm sounds. Too late.
+A shadow falls across the map. Someone was watching.
 
 ~FADE OUT.

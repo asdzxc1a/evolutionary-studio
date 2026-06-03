@@ -12,36 +12,36 @@ total_duration_estimate: 24
 - **Movement**: static
 - **Angle**: eye level
 - **Duration**: 5s
-- **Characters**: Misha, Claw
+- **Characters**: Sam, Sam
 - **Description**: Establishing shot of EXT. CITY — MORNING
 
 ## Shot 2: MS
 - **Movement**: pan
 - **Angle**: eye level
 - **Duration**: 4s
-- **Characters**: Misha
-- **Description**: Misha enters the scene
+- **Characters**: Sam
+- **Description**: Sam enters the scene
 
 ## Shot 3: 2S
 - **Movement**: static
 - **Angle**: eye level
 - **Duration**: 6s
-- **Characters**: Misha, Claw
-- **Description**: Misha and Claw face each other
+- **Characters**: Sam, Sam
+- **Description**: Sam and Sam face each other
 
 ## Shot 4: CU
 - **Movement**: static
 - **Angle**: slight low
 - **Duration**: 3s
-- **Characters**: Misha
-- **Description**: Close-up of Misha reacting
+- **Characters**: Sam
+- **Description**: Close-up of Sam reacting
 
 ## Shot 5: OTS
 - **Movement**: static
 - **Angle**: eye level
 - **Duration**: 4s
-- **Characters**: Misha, Claw
-- **Description**: Over Claw's shoulder at Misha
+- **Characters**: Sam, Sam
+- **Description**: Over Sam's shoulder at Sam
 
 ## Shot 6: ECU
 - **Movement**: rack focus

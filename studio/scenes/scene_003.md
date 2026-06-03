@@ -2,8 +2,8 @@
 scene_number: 3
 slugline: INT. COUNSELING ROOM — DAY
 characters:
-  - Misha
-  - Claw
+  - Sam
+  - Sam
 duration_estimate: 150
 concept_id: WINNER
 voice_validated: False
@@ -16,19 +16,18 @@ INT. COUNSELING ROOM — DAY
 
 Two characters sit in mismatched chairs. One bounces. The other slouches.
 
-Forced to work together, Misha and Claw navigate a Ukrainian borderland where old stories awaken when belief returns's hidden underworld.
+Sam and Sam form an uneasy alliance.
 
-B
-Knock-knock? Hi, you know, this kinda sounds like a 'just-a you guys' conversation...
-
-A is about to respond when B continues.
 A
-So what I'm going to do, is I'm gonna go ahead--
+We are not dysfunctional at all. Functioning fine — better than fine!
 
-B starts to head for the door.
 B
-Is there a reason why you don't take anything seriously?
+(poking A)
+Happy anniversary!
 
-The sign creaks in the wind: 'Partners in Crisis.'
+A
+And we did sorta save the city, so us being here kinda seems like a huge misunderstanding.
+
+They leave separately. The chairs remain askew.
 
 ~FADE OUT.

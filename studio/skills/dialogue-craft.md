@@ -313,3 +313,31 @@ NICK: (really milking it) I'm wounded. Deeply wounded.
 - (beat) — for emotional processing
 - (covering) — for hiding emotion behind humor
 - (then, "serious") — for comedy-to-drama pivots
+
+
+---
+
+## Appendix: Patterns from 2026-06-03 Ingestion
+
+### Observed Callback Patterns
+
+- "a shadow falls": Scene 1 → Scene 14
+- "shadow falls over": Scene 1 → Scene 14
+- "a shadow falls over": Scene 1 → Scene 14
+- "never let anything": Scene 1 → Scene 14
+- "let anything happen": Scene 1 → Scene 14
+
+### Observed Voice Contrast Pairs
+
+- **Marlin (V.O.)** vs **Coral**: Similar sarcasm levels
+- **Marlin (V.O.)** vs **Marlin**: Similar sarcasm levels
+- **Marlin (V.O.)** vs **Coral (Cont'D)**: Similar sarcasm levels
+- **Coral** vs **Marlin**: Similar sarcasm levels
+- **Coral** vs **Coral (Cont'D)**: Similar sarcasm levels
+- **Marlin** vs **Coral (Cont'D)**: Similar sarcasm levels
+
+### Learned: Effective Parenthetical Patterns
+- (sotto) — for whispered secrets
+- (beat) — for emotional processing
+- (covering) — for hiding emotion behind humor
+- (then, "serious") — for comedy-to-drama pivots
